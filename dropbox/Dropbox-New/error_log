@@ -1,0 +1,12 @@
+[08-Feb-2018 07:41:12 UTC] PHP Notice:  Undefined index: oauth_token_secret in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 38
+[08-Feb-2018 07:41:12 UTC] PHP Notice:  Undefined index: oauth_request_token in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 39
+[08-Feb-2018 07:41:12 UTC] PHP Notice:  Undefined index: oauth_access_token in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 40
+[08-Feb-2018 07:41:12 UTC] PHP Notice:  Undefined index: oauth_signature in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 41
+[08-Feb-2018 07:41:12 UTC] PHP Notice:  Undefined index: uid in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 42
+[08-Feb-2018 07:41:12 UTC] PHP Notice:  Undefined index: uid in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 49
+[08-Feb-2018 07:41:13 UTC] PHP Notice:  Undefined index: oauth_token_secret in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 93
+[08-Feb-2018 07:41:13 UTC] PHP Notice:  Undefined index: oauth_token in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 94
+[08-Feb-2018 07:41:13 UTC] PHP Notice:  Undefined index: oauth_token_secret in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 97
+[08-Feb-2018 07:41:13 UTC] PHP Notice:  Undefined index: oauth_token in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 98
+[08-Feb-2018 07:41:13 UTC] PHP Notice:  Undefined index: oauth_token in /home/martinatodapto/public_html/dropbox/Dropbox-New/Dropbox.class.php on line 101
+[08-Feb-2018 07:41:13 UTC] PHP Notice:  Undefined index: path in /home/martinatodapto/public_html/dropbox/Dropbox-New/get.php on line 17

@@ -1,0 +1,6 @@
+[16-Jun-2017 16:59:43 Asia/Kolkata] PHP Notice:  Undefined variable: list_name in /home/hxtec21y/public_html/odapto_api/create_list.php on line 60
+[16-Jun-2017 11:49:11 Etc/GMT] PHP Fatal error:  Class 'Database' not found in /home/hxtec21y/public_html/odapto_api/list_board.php on line 9
+[20-Jun-2017 14:18:08 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/hxtec21y/public_html/odapto_api/user_board.php on line 23
+[20-Jun-2017 14:18:08 Asia/Kolkata] PHP Notice:  Undefined index: page_no in /home/hxtec21y/public_html/odapto_api/user_board.php on line 24
+[20-Jun-2017 14:18:08 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/hxtec21y/public_html/odapto_api/DBInterface.php on line 585
+[20-Jun-2017 14:18:08 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/hxtec21y/public_html/odapto_api/DBInterface.php on line 619

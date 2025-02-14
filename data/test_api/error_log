@@ -1,0 +1,580 @@
+[28-Jun-2017 11:06:40 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/martinatodapto/public_html/test_api/DBInterface.php on line 996
+[28-Jun-2017 11:06:50 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/martinatodapto/public_html/test_api/DBInterface.php on line 996
+[28-Jun-2017 11:07:52 UTC] PHP Parse error:  syntax error, unexpected '$data_array' (T_VARIABLE) in /home/martinatodapto/public_html/test_api/DBInterface.php on line 997
+[28-Jun-2017 11:08:04 UTC] PHP Parse error:  syntax error, unexpected '$data_array' (T_VARIABLE) in /home/martinatodapto/public_html/test_api/DBInterface.php on line 997
+[28-Jun-2017 11:08:32 UTC] PHP Parse error:  syntax error, unexpected '$data_array' (T_VARIABLE) in /home/martinatodapto/public_html/test_api/DBInterface.php on line 997
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 16:59:23 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/DBInterface.php on line 608
+[28-Jun-2017 17:00:12 Asia/Kolkata] PHP Notice:  Undefined index: ID in /home/martinatodapto/public_html/test_api/DBInterface.php on line 609
+[29-Jun-2017 09:29:15 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 19
+[29-Jun-2017 09:29:15 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 19
+[29-Jun-2017 09:29:18 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 19
+[29-Jun-2017 09:29:18 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 19
+[29-Jun-2017 09:30:03 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/blank_api.php on line 3
+[29-Jun-2017 09:34:14 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:14 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:17 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:17 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:18 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:18 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:20 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:20 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:22 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:22 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:23 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:23 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:24 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:24 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:32 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:32 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:34 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:34 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:36 UTC] PHP Notice:  Undefined variable: db in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:34:36 UTC] PHP Fatal error:  Call to a member function verifyUserToken() on null in /home/martinatodapto/public_html/test_api/index.php on line 15
+[29-Jun-2017 09:36:08 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 131
+[29-Jun-2017 09:36:08 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 133
+[29-Jun-2017 09:36:19 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 133
+[29-Jun-2017 09:36:49 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 133
+[29-Jun-2017 09:36:58 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 131
+[29-Jun-2017 09:36:58 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 133
+[29-Jun-2017 09:37:10 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 133
+[29-Jun-2017 09:37:21 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 131
+[29-Jun-2017 09:37:21 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 133
+[29-Jun-2017 09:39:52 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 134
+[29-Jun-2017 09:39:52 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 136
+[29-Jun-2017 09:39:59 UTC] PHP Notice:  Undefined variable: file_name in /home/martinatodapto/public_html/test_api/index.php on line 136
+[29-Jun-2017 09:42:12 UTC] PHP Notice:  Undefined variable: req_type in /home/martinatodapto/public_html/test_api/index.php on line 136
+[29-Jun-2017 09:49:25 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[03-Jul-2017 16:32:12 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[03-Jul-2017 16:32:12 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[03-Jul-2017 16:32:12 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[03-Jul-2017 16:32:12 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[03-Jul-2017 16:32:12 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/martinatodapto/public_html/test_api/index.php on line 20
+[03-Jul-2017 16:32:12 UTC] PHP Notice:  Undefined variable: apikey in /home/martinatodapto/public_html/test_api/index.php on line 25
+[04-Jul-2017 05:37:34 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[04-Jul-2017 05:37:34 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[04-Jul-2017 05:37:34 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[04-Jul-2017 05:37:34 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[04-Jul-2017 05:37:34 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[04-Jul-2017 05:38:07 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[04-Jul-2017 05:38:07 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[04-Jul-2017 05:40:19 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[04-Jul-2017 05:40:19 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[04-Jul-2017 11:10:19 Asia/Kolkata] PHP Notice:  Undefined variable: uid in /home/martinatodapto/public_html/test_api/user_board.php on line 25
+[04-Jul-2017 11:10:19 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 25
+[04-Jul-2017 11:10:19 Asia/Kolkata] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 636
+[04-Jul-2017 05:41:35 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[04-Jul-2017 05:41:35 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[04-Jul-2017 11:11:35 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Jul-2017 13:17:08 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:17:08 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:17:08 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:17:08 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:17:08 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:18:04 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:18:04 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:18:04 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:18:04 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:18:04 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:21:04 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:21:04 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:21:04 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:21:04 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:21:04 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 18:51:05 Asia/Kolkata] PHP Notice:  Undefined index: accessName in /home/martinatodapto/public_html/test_api/user_register.php on line 38
+[07-Jul-2017 18:51:05 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[07-Jul-2017 18:51:05 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/martinatodapto/public_html/test_api/user_register.php on line 154
+[07-Jul-2017 13:22:42 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:22:42 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:22:42 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:22:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:22:42 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:41:32 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:41:32 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:41:32 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:41:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:41:32 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:43:08 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:43:08 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:43:08 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:43:08 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:43:08 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:43:09 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:43:09 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 19:13:09 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Jul-2017 13:44:34 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:44:34 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:44:34 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:44:34 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:44:34 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:44:35 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:44:35 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 19:14:35 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Jul-2017 13:46:13 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:46:13 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:46:13 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:46:13 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:46:13 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 19:16:13 Asia/Kolkata] PHP Notice:  Undefined index: accessName in /home/martinatodapto/public_html/test_api/user_register.php on line 38
+[07-Jul-2017 19:16:13 Asia/Kolkata] PHP Notice:  Undefined index: push_token in /home/martinatodapto/public_html/test_api/user_register.php on line 45
+[07-Jul-2017 19:16:13 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[07-Jul-2017 19:16:13 Asia/Kolkata] PHP Notice:  Undefined offset: 1 in /home/martinatodapto/public_html/test_api/user_register.php on line 155
+[07-Jul-2017 19:16:13 Asia/Kolkata] PHP Notice:  Undefined variable: companyName in /home/martinatodapto/public_html/test_api/user_register.php on line 175
+[07-Jul-2017 13:47:37 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:47:37 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:47:37 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:47:37 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:47:37 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:47:57 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:47:57 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:47:57 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:47:57 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:47:57 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:49:29 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:49:29 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:49:29 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:49:29 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:49:29 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:51:42 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Jul-2017 13:51:42 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Jul-2017 13:51:42 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:51:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[07-Jul-2017 13:51:42 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 13:51:44 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Jul-2017 13:51:44 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Jul-2017 19:21:44 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Jul-2017 13:59:29 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:01:50 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:01:50 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:01:50 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:01:50 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[17-Jul-2017 05:01:50 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:02:03 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:02:03 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:02:03 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:02:03 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[17-Jul-2017 05:02:03 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 10:32:03 Asia/Kolkata] PHP Notice:  Undefined index: push_token in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[17-Jul-2017 05:02:12 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:02:12 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:02:12 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:02:12 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[17-Jul-2017 05:02:12 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 10:32:13 Asia/Kolkata] PHP Notice:  Undefined index: push_token in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[17-Jul-2017 05:07:09 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:07:09 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 10:37:09 Asia/Kolkata] PHP Notice:  Undefined index: deviceType in /home/martinatodapto/public_html/test_api/user_logout.php on line 39
+[17-Jul-2017 10:37:09 Asia/Kolkata] PHP Notice:  Undefined index: deviceID in /home/martinatodapto/public_html/test_api/user_logout.php on line 40
+[17-Jul-2017 05:07:19 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:07:19 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:07:19 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:07:19 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 603
+[17-Jul-2017 05:07:19 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:36:54 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:36:54 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:36:54 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:36:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:36:54 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:37:20 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:37:33 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:37:33 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:07:33 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[17-Jul-2017 05:39:17 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:39:17 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:39:17 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:39:17 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:39:17 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:09:17 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[17-Jul-2017 05:41:03 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:41:03 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:41:03 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:41:03 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:41:03 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:11:03 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[17-Jul-2017 11:11:03 Asia/Kolkata] PHP Notice:  Undefined variable: companyName in /home/martinatodapto/public_html/test_api/user_register.php on line 175
+[17-Jul-2017 05:43:47 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:43:47 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:43:47 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:43:47 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:43:47 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:44:14 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:44:14 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:44:14 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:44:14 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:44:14 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:44:34 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:44:34 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:44:34 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:44:34 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:44:34 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:46:09 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:46:09 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:46:09 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:46:09 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:46:09 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:46:23 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[17-Jul-2017 05:46:23 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[17-Jul-2017 05:46:23 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:46:23 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[17-Jul-2017 05:46:23 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:46:45 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:47:06 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:47:06 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:17:06 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[17-Jul-2017 05:47:40 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:47:40 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:17:40 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[17-Jul-2017 05:51:31 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:51:31 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:21:31 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[17-Jul-2017 05:52:19 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:52:19 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 05:52:28 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:52:28 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[17-Jul-2017 11:22:28 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[17-Jul-2017 05:55:59 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[17-Jul-2017 05:55:59 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[18-Jul-2017 12:42:19 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[18-Jul-2017 12:42:19 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[18-Jul-2017 12:42:19 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[18-Jul-2017 12:42:19 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[18-Jul-2017 12:42:19 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[18-Jul-2017 18:12:19 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[18-Jul-2017 12:43:05 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[18-Jul-2017 12:43:05 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[18-Jul-2017 12:43:05 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[18-Jul-2017 12:43:05 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[18-Jul-2017 12:43:05 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[18-Jul-2017 18:13:05 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[18-Jul-2017 12:43:05 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[18-Jul-2017 12:43:05 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[18-Jul-2017 18:13:05 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[18-Jul-2017 12:44:58 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[18-Jul-2017 12:44:58 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[18-Jul-2017 12:44:58 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[18-Jul-2017 12:44:58 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[18-Jul-2017 12:44:58 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[18-Jul-2017 18:14:58 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[18-Jul-2017 12:44:58 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[18-Jul-2017 12:44:58 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[18-Jul-2017 18:14:59 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[21-Jul-2017 06:51:13 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[21-Jul-2017 06:51:13 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[21-Jul-2017 06:51:13 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[21-Jul-2017 06:51:13 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[21-Jul-2017 06:51:13 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[21-Jul-2017 12:21:14 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[21-Jul-2017 06:51:14 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[21-Jul-2017 06:51:14 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[21-Jul-2017 12:21:14 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[28-Aug-2017 17:39:31 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[28-Aug-2017 17:39:31 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[28-Aug-2017 17:39:31 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[28-Aug-2017 17:39:31 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[28-Aug-2017 17:39:31 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[28-Aug-2017 23:09:31 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[28-Aug-2017 17:39:32 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[28-Aug-2017 17:39:32 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[28-Aug-2017 23:09:32 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 03:10:22 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 03:10:22 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 03:10:22 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 03:10:22 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 03:10:22 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 08:40:22 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_register.php on line 45
+[06-Sep-2017 08:40:22 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[06-Sep-2017 03:10:41 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 03:10:41 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 03:10:41 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 03:10:41 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 03:10:41 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 08:40:41 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 03:10:41 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 03:10:41 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 08:40:41 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:12:45 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:12:45 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:12:45 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:12:45 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:12:46 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:42:46 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:12:46 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:12:46 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:42:46 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:20:22 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:20:22 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:20:22 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:20:22 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:20:22 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:50:22 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:20:23 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:20:23 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:50:23 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:22:54 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:22:54 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:22:54 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:22:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:22:54 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:52:54 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:22:54 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:22:54 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:52:55 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:24:16 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:24:16 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:24:16 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:24:16 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:24:16 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:54:16 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:24:16 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:24:16 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:54:16 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:24:24 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:24:24 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 06:24:24 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:24:24 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:54:25 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:27:29 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:27:29 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:27:29 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:27:29 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:27:29 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:57:29 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:27:30 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:27:30 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:57:30 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:29:17 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:29:17 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:59:17 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:29:23 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:29:23 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 11:59:23 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:30:47 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_card.php on line 3
+[06-Sep-2017 06:30:58 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_card.php on line 3
+[06-Sep-2017 06:31:10 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_card.php on line 3
+[06-Sep-2017 06:31:17 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_card.php on line 3
+[06-Sep-2017 06:31:29 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_card.php on line 3
+[06-Sep-2017 06:33:38 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:33:38 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:33:38 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:33:38 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:33:38 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 06:33:42 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:33:42 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:33:42 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:33:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:33:42 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 06:33:58 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/user_login.php on line 4
+[06-Sep-2017 06:34:08 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:34:08 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:34:08 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:34:08 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:34:08 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:04:09 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:34:34 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/user_login.php on line 4
+[06-Sep-2017 06:35:03 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:35:03 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:35:03 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:35:03 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:35:03 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:05:03 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:35:03 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:35:03 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:05:03 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:35:17 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:35:17 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 06:35:18 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:35:18 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:05:18 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:35:27 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:35:27 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:05:27 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:35:28 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:35:28 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:05:28 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:36:08 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:36:08 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:06:08 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:38:37 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:38:40 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:42:44 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_board.php on line 3
+[06-Sep-2017 06:43:29 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/create_board.php on line 3
+[06-Sep-2017 06:44:13 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:44:16 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:44:46 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:45:18 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:45:25 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:46:10 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/index.php on line 4
+[06-Sep-2017 06:48:19 UTC] PHP Notice:  Undefined index: data in /home/martinatodapto/public_html/test_api/user_login.php on line 4
+[06-Sep-2017 06:48:30 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:48:30 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:48:30 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:48:30 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:48:30 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:18:30 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:48:30 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:48:30 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:18:31 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:48:49 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:48:49 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 06:48:50 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:48:50 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:18:50 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:48:58 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:48:58 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:18:58 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:49:01 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:49:01 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:19:02 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:49:11 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:49:11 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:19:11 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 06:53:30 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:53:30 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:53:30 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:53:30 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:53:30 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:23:30 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_register.php on line 45
+[06-Sep-2017 12:23:30 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[06-Sep-2017 06:53:37 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:53:37 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:53:37 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:53:37 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:53:37 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:23:37 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 06:54:55 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:54:55 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:54:55 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:54:55 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:54:55 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:24:55 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_register.php on line 45
+[06-Sep-2017 12:24:55 Asia/Kolkata] PHP Notice:  Undefined variable: accessType in /home/martinatodapto/public_html/test_api/user_register.php on line 91
+[06-Sep-2017 12:24:55 Asia/Kolkata] PHP Notice:  Undefined variable: companyName in /home/martinatodapto/public_html/test_api/user_register.php on line 175
+[06-Sep-2017 06:56:34 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 06:56:34 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 06:56:34 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 06:56:34 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 06:56:34 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 07:00:22 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 07:00:22 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 07:00:22 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:00:22 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 07:00:22 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:30:22 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 07:00:22 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:00:22 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:30:22 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 07:01:37 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:01:37 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 07:01:38 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:01:38 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:31:38 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 07:02:03 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:02:03 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:32:03 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 07:02:09 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:02:09 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 07:02:10 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:02:10 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:32:10 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 07:02:33 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:02:33 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:32:33 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 07:25:17 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 07:25:17 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 07:25:17 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:25:17 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 07:25:17 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:55:17 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 07:25:17 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:25:17 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:55:17 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 07:25:21 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 07:25:21 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 12:55:21 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 13:32:47 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[06-Sep-2017 13:32:47 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[06-Sep-2017 13:32:47 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 13:32:47 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[06-Sep-2017 13:32:47 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 19:02:47 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[06-Sep-2017 13:32:48 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 13:32:48 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 19:02:48 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[06-Sep-2017 13:32:57 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[06-Sep-2017 13:32:57 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[06-Sep-2017 19:02:58 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Sep-2017 06:27:51 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[07-Sep-2017 06:27:51 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[07-Sep-2017 06:27:51 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:27:51 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[07-Sep-2017 06:27:51 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 11:57:51 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[07-Sep-2017 06:27:51 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:27:51 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 11:57:51 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Sep-2017 06:29:04 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:29:04 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 11:59:05 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Sep-2017 06:39:12 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:39:12 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 12:09:12 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Sep-2017 06:42:56 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:42:56 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 12:12:57 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Sep-2017 06:43:04 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:43:04 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 12:13:05 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[07-Sep-2017 06:43:06 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[07-Sep-2017 06:43:06 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[07-Sep-2017 12:13:06 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[09-Sep-2017 16:54:44 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[09-Sep-2017 16:54:44 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[09-Sep-2017 16:54:44 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 16:54:44 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[09-Sep-2017 16:54:44 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 22:24:45 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[09-Sep-2017 16:54:45 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 16:54:45 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 22:24:45 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[09-Sep-2017 16:54:55 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 16:54:55 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 16:54:56 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 16:54:56 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 22:24:56 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[09-Sep-2017 16:55:43 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 16:55:43 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 22:25:43 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26
+[09-Sep-2017 17:19:19 UTC] PHP Notice:  Undefined index: userToken in /home/martinatodapto/public_html/test_api/index.php on line 13
+[09-Sep-2017 17:19:19 UTC] PHP Notice:  Undefined index: user_id in /home/martinatodapto/public_html/test_api/index.php on line 14
+[09-Sep-2017 17:19:19 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 17:19:19 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/martinatodapto/public_html/test_api/DBInterface.php on line 604
+[09-Sep-2017 17:19:19 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 22:49:19 Asia/Kolkata] PHP Notice:  Undefined index: pushtoken in /home/martinatodapto/public_html/test_api/user_login.php on line 41
+[09-Sep-2017 17:19:20 UTC] PHP Notice:  Undefined index: env in /home/martinatodapto/public_html/test_api/index.php on line 15
+[09-Sep-2017 17:19:20 UTC] PHP Notice:  Undefined variable: response in /home/martinatodapto/public_html/test_api/index.php on line 125
+[09-Sep-2017 22:49:20 Asia/Kolkata] PHP Notice:  Undefined variable: pageno in /home/martinatodapto/public_html/test_api/user_board.php on line 26

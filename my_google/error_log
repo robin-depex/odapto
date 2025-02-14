@@ -1,0 +1,12 @@
+[24-Dec-2024 07:06:41 UTC] PHP Fatal error:  Uncaught Google_AuthException: Error refreshing the OAuth2 token, message: '{
+  "error": "unauthorized_client",
+  "error_description": "Unauthorized"
+}' in /home/odapto/public_html/my_google/src/auth/Google_OAuth2.php:278
+Stack trace:
+#0 /home/odapto/public_html/my_google/src/auth/Google_OAuth2.php(237): Google_OAuth2->refreshTokenRequest(Array)
+#1 /home/odapto/public_html/my_google/src/auth/Google_OAuth2.php(215): Google_OAuth2->refreshToken('1//03Ovi359kEgU...')
+#2 /home/odapto/public_html/my_google/src/service/Google_ServiceResource.php(166): Google_OAuth2->sign(Object(Google_HttpRequest))
+#3 /home/odapto/public_html/my_google/src/contrib/Google_Oauth2Service.php(37): Google_ServiceResource->__call('get', Array)
+#4 /home/odapto/public_html/my_google/index.php(18): Google_UserinfoServiceResource->get()
+#5 {main}
+  thrown in /home/odapto/public_html/my_google/src/auth/Google_OAuth2.php on line 278

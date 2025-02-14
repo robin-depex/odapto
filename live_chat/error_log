@@ -1,0 +1,16 @@
+[23-Apr-2019 15:43:06 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function update() on null in /home/odapto/public_html/live_chat/count_unseen_message.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/live_chat/count_unseen_message.php on line 69
+[23-Apr-2019 15:43:15 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function update() on null in /home/odapto/public_html/live_chat/count_unseen_message.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/live_chat/count_unseen_message.php on line 69
+[23-Apr-2019 15:43:18 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function update() on null in /home/odapto/public_html/live_chat/count_unseen_message.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/live_chat/count_unseen_message.php on line 69
+[23-Apr-2019 15:43:30 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function update() on null in /home/odapto/public_html/live_chat/count_unseen_message.php:69
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/live_chat/count_unseen_message.php on line 69

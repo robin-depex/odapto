@@ -1,0 +1,1920 @@
+/*
+	Theme Name: Kada Bootstrap Template
+	Theme URI: http://themeforest.net/user/responsiveexperts
+	Description: This css file is for light template layout alignments
+	Version: 1.0
+	Author: Responsive Experts
+	Author URI: http://themeforest.net/user/responsiveexperts
+	Tags:
+	
+	---------------------------
+	MAIN TEMPLATE STYLES
+	---------------------------
+	
+	TABLE OF CONTENTS
+	---------------------------
+	 01. Global Content Styles
+	 02. Preloader Content Styles
+     03. Header Content Styles
+	 04. Banner Content Styles
+	 05. Schedule Content Styles
+	 06. Parallax-02 Content Styles  
+	 07. community Content Styles
+	 08. Reservations Content Styles
+	 09. chef Content Styles
+	 10. Speak with Us NOW Styles
+	 11. Footer Black Styles
+	 12. Footer Main Styles
+	 13. Contact banner Styles
+	 14. Contact-Map & Form Content Styles
+	 15. Contact-adresss  Content Styles
+	 16. About internal page Styles
+	 17. Event internal page Styles
+	 18. Reservation internal page Styles 
+	 19. Our Menu internal page Styles
+	 20. Media Query
+*/
+
+
+/* ==================================================== */
+/* 01. Global Content Styles                            */
+/* ==================================================== */
+
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../font-awesome/fonts/fontawesome-webfonte0a5.eot?v=4.3.0');
+	src: url('../font-awesome/fonts/fontawesome-webfontd41d.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../font-awesome/fonts/fontawesome-webfonte0a5.html?v=4.3.0') format('woff2'), url('../font-awesome/fonts/fontawesome-webfonte0a5.woff?v=4.3.0') format('woff'), url('../font-awesome/fonts/fontawesome-webfonte0a5.ttf?v=4.3.0') format('truetype'), url('../font-awesome/fonts/fontawesome-webfonte0a5.svg?v=4.3.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+html, body {
+	font-family: 'Varela Round', sans-serif;
+	font-weight: 300;
+	height: 100%;
+	width: 100%;
+	line-height: 24px;
+	font-size: 16px;
+	color: #666666;
+	background-color: #ffffff;
+}
+/* Link Styling */
+
+a, a:hover, a:active, a:visited, a:link {
+	outline: none;
+	color:#c49e60;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	text-decoration: none;
+}
+ a {
+    font-size:16px;
+    text-decoration:underline !important;
+    text-transform: uppercase;
+	color:#c49e60;
+	font-family: 'Varela Round', sans-serif;
+	letter-spacing:4px;
+}
+/* Headings */
+
+h1 {
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size:60px;
+	font-weight:800;
+	margin:0 0 10px 0;
+	text-transform: uppercase;
+	color: #fff;
+}
+h2 {
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size:48px;
+	margin: 0 0 10px 0;
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: 800;
+}
+h2 span {
+	margin: 0 0 0 0;
+    font-family: 'Italianno', cursive;
+	font-size:70px;
+	color: #c49e60;
+	font-weight:400;
+	line-height:35px;
+	text-transform: capitalize;
+	display:block;
+}
+h3 {
+	margin: 0 0 0 0;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size:30px;
+	color: #000000;
+	font-weight:400;
+	line-height:45px;
+	text-transform: capitalize;
+}
+h4 {
+	color:#000000;
+	font-family: 'Merriweather Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 10px;
+    padding: 0;
+    text-transform:capitalize;
+}
+h5 {
+	margin: 0 0 0 0;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size:16px;
+	color: #000000;
+	font-weight: 700;
+}
+h6 {
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size:14px;
+	color: #fff;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+hr {
+	padding: 0 0 0 0;
+	margin:10px 0;
+	display:inline-block;
+	width:135px;
+	height:1px;
+	background:#c49e60;
+	border: 0;
+}
+hr.special {
+	padding: 0 0 0 0;
+	margin: 20px 0 0 0;
+	border: 0;
+	height: 34px;
+	background: url(../img/hr-spec.html) no-repeat center center;
+}
+.medium-txt {
+	padding: 10px 10%;
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+	font-weight: 300;
+	font-style: italic;
+	color: #333333;
+}
+.color {
+	color: #1e9fb4;
+}
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	width: 100%;
+}
+p {
+	font-family: 'Varela Round', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height:30px;
+	color: #666666;
+	margin-bottom:30px;
+}
+/* animation styles */
+
+.animated {
+	visibility: hidden;
+}
+.visible {
+	visibility: visible;
+}
+/* Button Styles */
+
+.button-large, .button-large:focus, .button-large:hover {
+	padding: 17px 25px;
+	margin: 25px 0 20px 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	color: #ffffff;
+	font-weight: 700;
+	background: #f20707;
+	display: inline-table;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+/* Lists */
+li {
+	list-style: none;
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.icon-list {
+	padding: 0 0 0 15px;
+	margin: 0 0 0 0;
+	list-style: none;
+}
+.icon-list li {
+	padding: 10px 0;
+	margin: 0 0 0 0;
+}
+.icon-list i {
+	padding-right: 10px;
+	color: #1e9fb4;
+	font-size: 18px;
+}
+/* Inner Page Main Content Area */
+
+.inner-main-cont-area {
+	padding: 0 0 80px 0;
+	margin: 0 0 0 0;
+	background: url(../img/sky-bottom.html) no-repeat bottom center;
+	background-size: cover;
+}
+/* ==================================================== */
+/* 02. Preloader Content Styles                         */
+/* ==================================================== */
+
+#mask {
+	background-color:#1c1a1d;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 100000;
+}
+#loader {
+	background-image: url(../img/loader.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 200px;
+	left: 50%;
+	margin: -100px 0 0 -100px;
+	position: absolute;
+	top: 50%;
+	width: 200px;
+}
+/* ==================================================== */
+/* 03. Header Content Styles                            */
+/* ==================================================== */
+
+.header-area {
+	left: 0;
+    margin: 0;
+    padding: 35px 0;
+    position: fixed;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+    z-index: 9;
+}
+.header-area.navbar-fixed-top {
+	position: fixed;
+	padding: 20px 0;
+	background: rgba(0,0,0,0.9);
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+.header-area.navbar-fixed-top .call-today {
+	display:none;
+}
+.header-area.navbar-fixed-top .header-right-sec {
+    margin:5px 0 0;
+	padding:3px 0 0 0;
+}
+.header-area.navbar-fixed-top .header-right-sec .nav-area li a {
+	font-size:14px;
+}
+.header-area.navbar-fixed-top .logo-sec {
+    padding: 0;
+}
+.header-area.navbar-fixed-top .logo-sec img {
+    height: 40px;
+	transition: all 0.5s ease 0s;
+}
+.header-top {
+	margin: 0 0 0 0;
+	padding: 25px 0;
+	background-color: rgba(255, 255, 253, 0.4);
+	color: rgba(255, 255, 253, 0.4);
+}
+.logo-sec {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	float: left;
+}
+.logo-sec img {
+	transition: all 0.5s ease 0s;
+}
+.header-right-sec {
+	margin: 0 0 0 0;
+	padding:20px 0 0 0;
+	float: right;
+	transition: all 0.5s ease 0s;
+}
+.nav-area {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.nav-area ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.nav-area li {
+	text-decoration: none;
+	display: inline-table;
+	padding: 0 0 0 20px;
+}
+.nav-area li.active, .nav-area li:hover a,.nav-area li.active a {
+	color: #c49e60;
+	text-decoration:underline;
+}
+.nav-area li a,.sidebar-nav li a {
+	font-family: 'Varela Round', sans-serif;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	display: block;
+	font-weight: 400;
+	text-decoration: none !important;
+	letter-spacing: normal;
+}
+
+/**************drop Down******************/
+
+.nav-area li:hover .sub-menu {
+    display: block;
+}
+.nav-area li .sub-menu li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.nav-area li .sub-menu li:hover a ,.nav-area li .sub-menu li.active {
+	background:#cdaa71;
+    transition: all 0.3s ease-in 0s;
+	text-decoration:none;
+}
+.nav-area li .sub-menu li a {
+    color:#fff;
+    background: hsl(280, 5%, 11%) none repeat scroll 0 0;
+    border: 0 none;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 0;
+    padding: 5px 40px 5px 20px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: capitalize;
+    white-space: nowrap;
+	text-decoration: none !important;
+}
+.nav-area li .sub-menu {
+    display: none;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+	border-bottom:2px solid #c49e60;
+}
+
+/* ==================================================== */
+/* 04.Banner Content Styles                             */
+/* ==================================================== */
+
+.banner-sec {
+	width: 100%;
+	background:#1c1a1d;
+}
+.bg-banner-full {
+	background-size:cover;
+}
+.slider_one {
+	background:url(../img/banner-img1.jpg) no-repeat fixed;
+	background-size:cover;
+}
+.slider_two {
+	background:url(../img/banner-img2.jpg) no-repeat fixed;
+	background-size:cover;
+}
+.slider_three {
+	background:url(../img/banner-img3.jpg) no-repeat fixed;
+	background-size:cover;
+}
+
+.balck-solid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.7);
+	color: rgba(0, 0, 0, 0.7);
+}
+.banner-sec .flexslider img {
+    width: 100%;
+}
+.banner-sec .flexslider li {
+	position:relative;
+}
+.banner-sec .flexslider li h1 span {
+	margin: 0 0 0 0;
+	color: #c49e60;
+	font-weight:400;
+	line-height:45px;
+	text-transform: capitalize;
+	display:block;
+    font-size: 110px;
+    line-height: 55px;
+    font-family: 'Italianno', cursive;
+}
+.banner-sec .flexslider li h1 {
+	font-weight: 800;
+    font-size:72px;
+	text-transform: uppercase;
+	margin: 0;
+}
+.banner-sec .flexslider li h5 {
+	color:#fff;
+	font-size: 18px;
+    font-weight: 400;
+    letter-spacing:4px;
+    text-transform: uppercase;
+	word-spacing:25px;
+}
+.hr-outtr-line i {
+    font-size: 18px;
+    padding: 10px;
+    vertical-align: super;
+	color:#c49e60;
+}
+.banner-sec .flex-active-slide li .banner-mid-text {
+	position:absolute;
+}
+.banner-mid-text {
+	margin: 0 auto;
+    text-align: center;
+    width: 100%;
+	padding: 350px 0 300px;
+}
+.para-width {
+	margin: 0 auto;
+	width: 60%;
+}
+/*****************flex-slider*************************/
+
+.flexslider {
+	position: relative;
+}
+.flex-control-paging li a.flex-active {
+	background:rgba(196,158,96,.8);
+}
+.flex-control-paging li a {
+	background:rgba(196,158,96,.3);
+	border-radius: 20px;
+	cursor: pointer;
+	display: block;
+	height:30px;
+	text-indent: -9999px;
+	width:30px;
+}
+.flex-control-nav li {
+	display: inline-block;
+	margin: 0 5px;
+}
+.flex-direction-nav a {
+	color: hsla(0, 0%, 0%, 0.8);
+	cursor: pointer;
+	display: block;
+	height: 50px;
+	margin: 0;
+	opacity: 1;
+	overflow: hidden;
+	position: absolute;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 hsla(0, 0%, 100%, 0.3);
+	top:200px;
+	transition: all 0.3s ease-in-out 0s;
+	width: 50px;
+	z-index: 10;
+}
+.flex-direction-nav a::before {
+	background: hsla(0, 0%, 0%, 0);
+	background-size: cover;
+	content: "";
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+}
+.flex-direction-nav a.flex-next::before {
+	background: hsla(0, 0%, 0%, 0) ;
+	background-size: cover;
+	content: "";
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+}
+.flex-direction-nav .flex-next {
+	right:0;
+	text-align: right;
+}
+.flex-direction-nav .flex-prev {
+    left:0;
+}
+#banner-slider .flex-control-paging {
+    bottom:60px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 5;
+}
+.banner-mid-text .hr-outtr-line {
+    margin: 0;
+}
+.banner-mid-text .hr-outtr-line hr {
+    width:235px;
+}
+
+
+/* ==================================================== */
+/* 05. Our Story Content Styles                          */
+/* ==================================================== */
+
+.story-area {
+	padding: 100px 0;
+    text-align: center;
+	background: #fff;
+}
+.story-left img {
+    width: 100%;
+	max-width: 625px;
+}
+.story-our-text {
+	padding-top: 25px;
+}
+.hr-outtr-line {
+    margin-bottom: 30px;
+}
+.story-our-text > h2 {
+    margin: 0;
+}
+.story-our-text > a {
+    font-size:16px;
+    text-decoration: underline;
+    text-transform: uppercase;
+	color:#c49e60;
+	font-family: 'Varela Round', sans-serif;
+}
+
+
+/* ==================================================== */
+/* 06. Parallax-01 Content Styles                         */
+/* ==================================================== */
+.balck-solid-paralax {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.7);
+	color: rgba(0, 0, 0, 0.7);
+	position:absolute;
+	top:0;
+	height:100%;
+}
+.parallax-action {
+	padding:235px 0 230px;
+	text-align: center;
+	background:url(../img/paralax-img.jpg) no-repeat;
+	background-size:cover;
+	position:relative;
+	background-attachment:fixed;
+}
+.parallax-content-sec {
+    position: relative;
+    z-index: 8;
+}
+.parallax-content-sec h1 {
+	letter-spacing: 7px;
+    line-height: 70px;
+    margin-bottom: 0;
+}
+.parallax-content-sec > p {
+	font-size: 16px;
+	line-height: 28px;
+	color: #333333;
+}
+
+/* ==================================================== */
+/* 06. Parallax-02 Content Styles                         */
+/* ==================================================== */
+
+.parallax-action-two {
+	padding:235px 0 230px;
+	text-align: center;
+	background:url(../img/paralax-img_02.jpg) no-repeat;
+	background-size:cover;
+	position:relative;
+	background-attachment:fixed;
+}
+
+/* ==================================================== */
+/* 07. community Content Styles                         */
+/* ==================================================== */
+
+.menu-area {
+	background:#fff;
+	padding:145px 0 125px;
+	text-align:center;
+}
+.menu-content-mid > p {
+    padding:0 9%;
+}
+.menu-items-box {
+	text-decoration:none !important;
+    padding:45px 0;
+}
+.menu-items-box a {
+	text-decoration:none !important;
+	overflow: hidden;
+	letter-spacing:normal;
+}
+.menu-items-box strong {
+	color: hsl(0, 0%, 0%);
+    font-family: "Merriweather Sans",sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 10px;
+    padding: 0;
+    text-transform: capitalize;	
+}
+.menu-items {
+    margin-bottom:30px;
+}
+.img-hme {
+    display: block;
+}
+.overlay-sec {
+	display:table-cell;
+	cursor: pointer;
+    height:100%;
+    background:rgba(220, 197, 160, 0.8);
+    transition: all 0.3s ease 0s;
+	opacity:0;
+    position: absolute;
+    top: 0;
+    width:100%;
+	left:0;
+}
+.menu-items-box a:hover .overlay-sec {
+    opacity: 1;
+}
+.menu-items figure {
+    position: relative;
+}
+.overlay-outr {
+    position: relative;
+    margin-bottom: 15px;
+}
+/* ==================================================== */
+/* 08. Reservations Content Styles                         */
+/* ==================================================== */
+
+.story-area.reserve {
+	background:#fff;
+	padding:135px 0 200px;
+	text-align:center;
+}
+
+/* ==================================================== */
+/* 09. chef Content Styles                              */
+/* ==================================================== */
+
+.chef-outr-sec {
+	background:#eeeeee;
+	position: relative;
+	min-height: 535px;
+}
+.chef-left-sec {
+    float: left;
+    padding-top:230px;
+    text-align: left;
+}
+.chef-left-sec h4 {
+	font-family: 'Varela Round', sans-serif;
+	font-size:36px;
+	color:#000000;
+	text-transform:uppercase;
+	margin-bottom: 5px;
+}
+.chef-left-sec h5 {
+	font-family: 'Varela Round', sans-serif;
+	font-size:18px;
+	color:#666666;
+	text-transform:uppercase;
+	margin-bottom: 0;
+	font-weight: 400;
+}
+.chef-mid-sec {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.chef-right-sec {
+    float: right;
+    padding-top:230px;
+    text-align: right;
+    width: 28%;
+}
+.chef-mid-sec img {
+	width:80%;
+	max-width:790px;
+}
+
+
+/* ==================================================== */
+/* 10. Speak with Us NOW Styles                        */
+/* ==================================================== */
+
+.subscribe-area {
+	padding: 65px 0;
+	background: #c49e60;
+	position: relative;
+}
+.subscribe-right {
+	float: right;
+}
+.subscribe-left img {
+    position: absolute;
+    top: -132px;
+}
+.subscribe-newsletr h4 {
+    color:#fff;
+    display: inline-block;
+	margin:0;
+	vertical-align: text-bottom;
+}
+.subscribe-newsletr input {
+    background:#dfcaa8;
+    border: medium none;
+    border-radius: 5px;
+    color:#121013;
+    font-size: 14px;
+    height: 50px;
+    margin: 0 10px 0 30px;
+    padding: 15px 20px;
+    width: 340px;
+	font-family: 'Varela Round', sans-serif;
+	vertical-align: super;
+}
+.subscribe-newsletr button {
+	font-family: 'Varela Round', sans-serif;
+    background:#ffffff;
+    border: medium none;
+    border-radius: 5px;
+    color:#c49e60;
+    font-size: 18px;
+    height: 50px;
+    padding: 15px 20px;
+    width:155px;
+	text-transform:uppercase;
+	vertical-align:top;
+}
+
+/* ==================================================== */
+/* 11. Footer Black Styles                              */
+/* ==================================================== */
+
+.footer-black {
+	padding:90px 0;
+	background:#121013;
+}
+.three-itm-btm p {
+	font-family: 'Varela Round', sans-serif;
+    color: hsl(0, 0%, 60%);
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: left;
+	margin-right:35px;
+	margin-bottom: 10px;
+}
+.three-itm-btm span {
+    display: block;
+}
+.ftr-black-left h6 {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+}
+.ftr-black-left hr {
+    width:150px;
+}
+.ftr-black-rgt .three-itm-btm > p {
+    margin-right: 20px;
+	margin-bottom: 10px;
+}
+.ftr-black-rgt h6 {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+
+/* ==================================================== */
+/* 12. Footer Main Styles                               */
+/* ==================================================== */
+
+footer {
+    text-align: center;
+}
+.footer-area {
+	padding:70px 0;
+	background:#1c1a1d;
+}
+.footer-area p {
+	font-family: 'Varela Round', sans-serif;
+	font-size:13px;
+	color:#666666;
+	margin-bottom:0;
+}
+.footer-area a {
+	font-size: 13px;
+    letter-spacing: normal;
+    text-decoration: none !important;
+    text-transform: capitalize;
+	color:#666666;
+}
+.social-icons {
+    margin:0 0 30px 0;
+    padding: 0;
+}
+.social-icons  ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0 0 0;
+}
+.social-icons  ul li {
+    display: inline-table;
+    margin: 0;
+    padding:0 5px;
+}
+.social-icons  ul li a {
+    background:#333134;
+    border-radius: 50%;
+    color:#1c1a1d;
+    display: block;
+    font-size:24px;
+    height:50px;
+    margin: 0;
+    padding:12px 0 0 0;
+    text-align: center;
+    text-decoration: none;
+    width:50px;
+}
+.social-icons  ul li a:hover {
+    background:#777677;
+    color: #1c1a1d;
+    text-decoration: none;
+}
+
+/*****************slidebar*********************/
+
+.togg-navi {
+    display: none;
+}
+.first-field.error, .second-field.error, .third-field.error, .forth-field.error {
+    border-bottom: 1px solid hsl(0, 100%, 50%);
+}
+
+
+/****************************************************************************************************/
+/*                            Contact internal page Styles                      
+/****************************************************************************************************/
+
+/* ==================================================== */
+/*           13. Contact banner Styles                    */
+/* ==================================================== */
+
+.internal-banner {
+    background-attachment: fixed;
+    text-align: center;
+}
+.internal-header {
+    padding: 225px 0 165px;
+}
+.internal-header h2 {
+    color:#ffffff;
+    font-size: 72px;
+	line-height: 65px;
+    margin-bottom: 0;
+}
+.internal-header .hr-outtr-line hr {
+    width: 155px;
+}
+.contact-area {
+	padding:120px 0 215px 0;
+	text-align:center;
+}
+.contact-middle-area {
+    margin-bottom:70px;
+}
+
+.contact-middle-area > p {
+    line-height: 30px;
+    padding:0 10%;
+	font-size:16px;
+}
+
+/* ==================================================== */
+/*   14. Contact-Map & Form Content Styles                 */
+/* ==================================================== */
+
+#map {
+	height: 370px;
+    width: 100%;
+}
+.quick-contact-box-left {
+    float: left;
+}
+.quick-contact-box-right {
+    background:#eeeeee;
+    display: block;
+    float: right;
+    padding: 10px;
+    width: 50%;
+}
+.contact-form-details li {
+    display: list-item;
+    margin-bottom: 20px;
+}
+.contact-form-details li input {
+	font-family: 'Varela Round', sans-serif;
+	border:none;
+	background:#eeeeee;
+	height:60px;
+	padding:0 25px;
+	font-size:14px;
+	width:555px;
+    color: #666666;
+    font-size: 16px;
+}
+.contact-form-details li:nth-child(5n+3) ,.contact-form-details li:nth-child(5n+4) {
+    margin-right: 0;
+}
+.contact-form-details li textarea {
+	font-family: 'Varela Round', sans-serif;
+	border:none;
+	padding-top: 25px;
+	background:#eeeeee;
+	height:150px;
+	padding-left:25px;
+    color: #666666;
+    font-size: 16px;
+	width:100%;
+}
+button.submit {
+	background:#c49e60;
+    color: hsl(0, 0%, 100%);
+    display: block;
+	font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+    font-weight:400;
+    height:60px;
+    margin: 0 auto;
+    padding-left:15px;
+    padding-top: 3px;
+    text-align: center;
+    vertical-align: middle;
+    width:100%;
+	border:none;
+	letter-spacing:2px;
+	text-transform:uppercase;
+}
+button.submit:hover {
+	background: #dab77e;
+	transition: all 0.5s ease 0s;
+	color:#fff;
+}
+
+/**************error-style************************/
+
+.quick-contact-box-left div {
+    color:#ff0000;
+    font-family: "Varela Round",sans-serif;
+    font-size: 14px;
+}
+
+
+
+
+
+/* ==================================================== */
+/*   15. Contact-adresss  Content Styles                   */
+/* ==================================================== */
+
+.contact-list {
+	margin:105px 0 0 0;
+	padding:0;
+}
+.contact-list ul {
+	list-style:none;
+}
+.contact-list li {
+	text-align:center;
+}
+.contact-list li i {
+	font-size:48px;
+	color:#c49e60;
+	margin-bottom:16px;
+}
+.contact-list li h5 {
+	font-family: 'Varela Round', sans-serif;
+	font-size:18px;
+	color:#333333;
+	text-transform:capitalize;
+	font-weight:400;
+	margin-bottom:22px;
+	margin-bottom: 20px;
+}
+.contact-list li h6 {
+	margin-bottom:15px;
+	font-size:14px;
+	font-weight:300;
+	font-family: 'Varela Round', sans-serif;
+	text-transform:capitalize;
+	color:#333333;
+}
+.contact-list li a {
+	font-weight:400;
+	color:#c49e60;
+	font-size:14px;
+	font-family: 'Varela Round', sans-serif;
+	display:block;
+	letter-spacing:normal;
+	text-transform:capitalize;
+	text-decoration:none !important;
+}
+
+/****************************************************************************************************/
+/*                            About internal page Styles                      
+/****************************************************************************************************/
+
+/* ==================================================== */
+/*   16. About internal page Styles                     */
+/* ==================================================== */
+
+.about-story-area {
+	padding:135px 0 100px 0;
+	text-align:center;
+}
+.abut-stry-mid {
+    margin-top: 55px;
+    text-align: left;
+}
+.features-more-area {
+    padding-bottom: 165px;
+    text-align: center;
+}
+.features-more-mid {
+    padding-top: 70px;
+}
+.features-more-area p {
+    padding: 0 9%;
+}
+.fture-mre-listitem p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+}
+.fture-mre-listitem {
+	margin-bottom:90px;
+}
+.fture-mre-listitem i {
+	margin-bottom:25px;
+	font-size:60px;
+	color:#c49e60;
+}
+.fture-mre-listitem h4 {
+	margin-bottom:10px;
+	font-size:20px;
+	color:#c49e60;
+	text-transform:none;
+	font-weight:800;
+}
+.abut-story-left img {
+    width: 100%;
+}
+
+/****************************************************************************************************/
+/*                            Event internal page Styles                      
+/****************************************************************************************************/
+
+/* ==================================================== */
+/*   17. Event internal page Styles                     */
+/* ==================================================== */
+
+.event-page-all-sec {
+    margin-top: 70px;
+}
+.event-page-all-sec .blog-box-rgt h5 {
+    color: hsl(37, 46%, 57%);
+    font-family: "Merriweather Sans",sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+.event-page-all-sec .blog-box-rgt p {
+    color: hsl(0, 0%, 40%);
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 15px;
+	padding: 0;
+}
+.event-page-all-sec .blog-box-rgt span {
+    font-size: 17px;
+    font-family: "Merriweather Sans",sans-serif;
+}
+.event-page-all-sec .blog-box-rgt {
+    padding: 55px 50px;
+}
+.event-page-all-sec .blog-box-lft .yellow-solid {
+    padding-top: 30%;
+}
+.event-page-all-sec .blog-left-sec:nth-child(2n+2) .blog-box-lft {
+    float: right!important;
+}
+.event-page-all-sec .blog-left-sec {
+    margin-bottom:0;
+}
+.event-page-outr-sec {
+    padding: 110px 0 220px;
+    text-align: center;
+}
+.event-page-outr-sec p {
+    padding: 0 10%;
+}
+.event-page-all-sec .blog-box-rgt a {
+    font-size: 16px;
+}
+
+/****************************************************************************************************/
+/*                            Reservation internal page Styles                      
+/****************************************************************************************************/
+
+/* ==================================================== */
+/*   18. Reservation internal page Styles               */
+/* ==================================================== */
+
+
+.resrvation-top-area p {
+    padding: 0 9%;
+}
+.resrvation-top-area {
+    padding: 135px 0 90px;
+    text-align: center;
+}
+.reserve-select-outr {
+    margin-top: 100px;
+	margin-bottom:55px;
+}
+.reserve-select-outr ul li span {
+    display: inline-block;
+	font-size:30px;
+	color:#666666;
+	padding-right:20px;
+	vertical-align: middle;
+}
+.reserve-select-outr ul li form {
+    display: inline-block;
+}
+.reserve-select-outr ul li form input {
+    display: inline-block;
+	width:290px;
+	height:60px;
+	font-size:16px;
+	color:#666666;
+	background:#eeeeee;
+	border:none;
+	padding:15px 25px;
+	font-family: 'Varela Round', sans-serif;
+}
+.reserve-select-outr ul li select {
+    display: inline-block;
+	width:290px;
+	height:60px;
+	font-size:16px;
+	color:#666666;
+	background:#eeeeee;
+	border:none;
+	padding:15px 25px;
+	font-family: 'Varela Round', sans-serif;
+}
+.reserve-select-outr ul li select option {
+	font-size:14px;
+	color:#666666;
+	background:#eeeeee;
+	border:none;
+	padding:5px 25px;
+	font-family: 'Varela Round', sans-serif;
+}
+.resrvation-top-area a.fint-table {
+    background:#c49e60;
+    display: inline-block;
+    font-size: 18px;
+    height: 60px;
+    padding-top: 18px;
+    text-decoration: none !important;
+    width: 300px;
+	color:#fff;
+	font-family: 'Varela Round', sans-serif;
+}
+
+/**********2nd section*************/
+
+.reservation-more-area {
+    margin: 0 0 140px;
+    text-align: center;
+}
+.resrve-sections {
+    padding-left: 0;
+    padding-right: 30px;
+    text-align: left;
+}
+.resrve-sections h4 {
+    font-weight: 800;
+    margin-bottom: 20px;
+	color:#c49e60;
+}
+.gray-line {
+    background:#cccccc;
+    display: inline-block;
+    margin-bottom: 55px;
+    width: 100%;
+}
+.reservation-more-area-last {
+	margin-bottom:200px;
+}
+.resrve-sections img {
+    margin-bottom: 40px;
+}
+.guests {
+	font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    letter-spacing: normal;
+    text-decoration: none !important;
+    text-transform: none;
+}
+.reservation-more-area-last .resrve-sections {
+    margin-top: 20px;
+}
+
+
+/****************************************************************************************************/
+/*                            Our Menu internal page Styles                      
+/****************************************************************************************************/
+
+/* ==================================================== */
+/*   19. Our Menu internal page Styles                  */
+/* ==================================================== */
+
+.our-top-sec {
+	padding:125px 0 30px 0;
+}
+.our-menu-bg {
+    padding-bottom: 115px;
+	background:url(../img/01_Menu.jpg) no-repeat;
+	background-size:100%;
+}
+.our-menu-details {
+    margin-bottom: 60px;
+}
+.our-menu-details h4 {
+	font-family: 'Varela Round', sans-serif;
+    text-align: center;
+	font-size:30px;
+	color:#999999;
+	margin-bottom:60px;
+}
+.or-lft-menu h5 {
+	font-family: 'Varela Round', sans-serif;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    padding-right:5px;
+    vertical-align: super;
+	width:100%;
+	background:url(../img/dashed.png) repeat-x;
+	background-position:center;
+	margin-bottom: 10px;
+}
+.or-lft-menu span {
+    background:#fff;
+    padding-right: 10px;
+}
+.our-menu-one {
+    display: inline-block;
+    padding-right: 55px;
+    width: 50%;
+	margin-bottom: 30px;
+}
+.our-menu-one:nth-last-child(2n+2) {
+    float: right;
+    padding-left: 55px;
+    padding-right: 0;
+}
+.or-rgt-menu h1 {
+    font-size: 72px;
+    font-weight: 400;
+	color:#c49e60;
+	font-family: 'Varela Round', sans-serif;
+}
+.or-lft-menu {
+    float: left;
+	width: 70%;
+}
+.or-rgt-menu span {
+    font-size: 36px;
+}
+.or-rgt-menu {
+    float: right;
+}
+.or-lft-menu p {
+    font-size: 14px;
+    line-height: 24px;
+}
+.parallax-action h2 {
+    margin: 0;
+}
+.parallax-action-two h2 {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================== */
+/* 20. Media Query                                      */
+/* ==================================================== */
+
+@media (max-width: 1200px) { /* This media query is written for 1400PX resolution devices */
+
+.menu-items img {
+    width: 100%;
+}
+.three-itm-btm p {
+    margin-right: 12px;
+}
+.three-itm-btm span {
+    display: inline;
+}
+.quick-contact-box-left {
+    width: 48%;
+}
+.contact-form-details li input {
+    width: 100%;
+}
+.quick-contact-box-right {
+    width: 49%;
+}
+.overlay-sec {
+    height: 100%;
+    width: 100%;
+}
+
+}
+ @media (max-width: 1100px) { /* This media query is written for 1100PX resolution devices */
+ 
+.contact-list li {
+    margin-bottom: 20px;
+} 
+.blog-left-sec {
+    width: 100%;
+	float:left;
+}
+.blog-right-sec {
+    width: 100%;
+	float:left;
+}
+.yellow-solid {
+    padding-top: 40%;
+}
+/***************row*****************/
+.parallax-action .row {
+    margin: 0;
+}
+.menu-area .row {
+    margin: 0;
+}
+.chef-outr-sec .row {
+    margin: 0;
+}
+.blog-outr-sec .row {
+    margin: 0;
+}
+.footer-area .row {
+    margin: 0;
+}
+.features-more-area .row {
+    margin: 0;
+}
+.resrvation-top-area .row {
+    margin: 0;
+}
+.reservation-more-area .row {
+    margin: 0;
+}
+.our-menu-bg .row {
+    margin: 0;
+}
+.subscribe-right {
+    width: 88%;
+}
+.contact-middle-area > p {
+    padding: 0 15px;
+}
+/********************************/
+ 
+}
+ @media (max-width: 991px) { /* This media query is written for Ipad and tablets */
+ 
+.three-itm-btm p {
+    display: block;
+}
+.resrvation-top-area p {
+    padding: 0;
+}
+.abut-story-left {
+	margin-bottom:30px;
+}
+.event-page-all-sec .blog-box-lft {
+    width: 100%;
+}
+.event-page-all-sec .blog-box-rgt {
+    width: 100%;
+}
+.event-page-all-sec .blog-box-rgt {
+    padding: 55px 30px;
+}
+.reservation-more-area-last .resrve-sections {
+    margin-bottom: 50px;
+}
+.reserve-select-outr li {
+    margin-bottom: 20px;
+}
+.resrve-sections {
+    padding-right: 0;
+}
+ 
+}
+ @media (max-width: 768px) { /* This media query is written for Mobile landscape and Ipad and tablets portrait */
+ 
+.chef-left-sec h4 {
+    font-size: 32px;
+}
+.or-rgt-menu h1 {
+    font-size: 60px;
+}
+.our-menu-one {
+    padding-right: 0;
+}
+.or-lft-menu {
+    width: 65%;
+}
+.our-menu-one:nth-last-child(2n+2) {
+    padding-left: 20px;
+}
+.subscribe-right {
+    width: 98%;
+}
+.our-menu-bg {
+    background:  none;
+}
+
+}
+ @media (max-width: 767px) { /* This media query is written for Mobile only */
+ 
+ .resrve-sections {
+    text-align: center;
+}
+.header-area.navbar-fixed-top {
+    background:#000;
+}
+.header-area {
+    background:#000;
+}
+.story-area.reserve {
+    padding: 135px 0;
+}
+.menu-content-mid p {
+    padding: 0 0%;
+}
+.features-more-area p {
+    padding: 0;
+}
+.features-more-area {
+    padding-bottom: 45px;
+}
+.event-page-outr-sec p {
+    padding:0 2%;
+}
+.blog-page-outr-sec p {
+    padding: 0 2%;
+}
+.logo-sec {
+    padding: 0;
+}
+
+/*****************toggle-style***********************/
+
+.nav-area li .sub-menu {
+    display: block;
+}
+.logo-sec {
+	width: 100%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+}
+.header-right-sec {
+    float: none;
+    text-align: center;
+	padding:0;
+}
+.togg-navi {
+    display: block;
+}
+.togg-text-menu {
+    background: hsla(0, 0%, 0%, 0.4) none repeat scroll 0 0;
+    float: left;
+    font-size: 30px;
+    margin: 0 auto;
+    padding:12px 0 8px 10px ;
+    text-align: left;
+    width: 100%;
+	color:#c49e60;
+}
+.menu-main {
+    display: none;
+}
+.nav-area ul {
+    background: hsla(0, 0%, 0%, 0.4) none repeat scroll 0 0;
+    padding-top:65px;
+	padding-bottom: 30px;
+}
+.nav-area li {
+    display: list-item;
+    padding: 5px 0;
+}
+.header-area {
+    padding:15px 0 25px;
+}
+
+/***************header-fixsed*******************/
+
+.header-area {
+    position: static;
+}
+.header-area.navbar-fixed-top {
+    position: static;
+}
+.header-area.navbar-fixed-top .logo-sec img {
+    height: 45px;
+}
+.logo-sec img {
+    height: 45px;
+    margin-top: 5px;
+}
+.header-area.navbar-fixed-top .call-today {
+    display: block;
+}
+.header-area.navbar-fixed-top .header-right-sec {
+    margin: 0;
+}
+.togg-text-menu i {
+    cursor: pointer;
+}
+.nav-area li .sub-menu {
+    position: static;
+}
+.nav-area li .sub-menu li a {
+    background: hsla(0, 0%, 0%, 0) none repeat scroll 0 0;
+    text-align: center;
+	padding: 6px 0;
+}
+.nav-area li a, .sidebar-nav li a {
+	font-size:14px;
+}
+
+/**************************************/
+
+.subscribe-newsletr h4 {
+    display: block;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.subscribe-right {
+    float: none;
+    margin: 0 auto;
+    width: 75%;
+}
+.banner-mid-text {
+    padding: 230px 0 200px;
+}
+.banner-sec .flexslider li h1 {
+    font-size: 52px;
+	}
+
+.banner-sec .flexslider li h3 {
+    font-size: 120px;
+}
+.menu-items-box a {
+    padding: 0;
+}
+.menu-items img {
+    width: 100%;
+}
+.subscribe-right {
+    width: 100%;
+}
+.chef-left-sec {
+    float: none;
+    padding-top: 110px;
+    text-align: center;
+}
+.chef-right-sec {
+    float: none;
+    padding-top: 40px;
+    text-align: center;
+    width: 100%;
+}
+.chef-mid-sec {
+    position: static;
+}
+
+/**********************/
+
+.quick-contact-box-left {
+    float: none;
+    width: 100%;
+	margin-bottom:40px;
+}
+.quick-contact-box-right {
+    width: 100%;
+}
+.internal-header h2 {
+    font-size: 62px;
+}
+
+.reservation-more-area.reservation-more-area-last {
+    margin-bottom: 150px;
+}
+/*********************************/
+
+.resrve-sections img {
+    width: 100%;
+}
+.our-menu-one {
+    display: block;
+    float: none;
+    margin: 0 auto 30px;
+    width:82%;
+}
+.our-menu-one:nth-last-child(2n+2) {
+    float: none;
+    padding-left: 0;
+}
+.reservation-more-area-last {
+    margin-bottom: 60px;
+}
+.logo {
+    float: left;
+    padding-left: 15px;
+}
+.togg-navi {
+    float: right;
+    padding-right: 15px;
+}
+.banner-sec .flexslider li h5 {
+    font-size: 14px;
+	word-spacing: 10px;
+}
+.reservation-more-area {
+    margin: 0 0 80px;
+}
+.tab-container .our-menu-one {
+    text-align: center;
+}
+.or-lft-menu {
+    width:100%;
+}
+.or-rgt-menu {
+    float: none;
+}
+.tab-container .our-menu-one {
+    background: hsla(0, 0%, 0%, 0) url("../img/dashed.png") repeat-x scroll center bottom;
+    padding-bottom:20px;
+}
+.or-lft-menu h5 {
+	background:none;
+}
+.blog-box-rgt {
+    text-align: center;
+}
+.three-itm-btm p {
+    text-align: center;
+}
+.footer-black {
+    text-align: center;
+}
+
+
+
+ }
+ @media (max-width: 480px) { /* This media query is written for Mobile only */
+
+
+.banner-sec .flexslider li h1 span {
+    font-size: 70px;
+}
+.contact-area {
+    padding: 120px 0 175px;
+}
+.flex-direction-nav a {
+    display: none;
+}
+.header-area {
+    padding:16px 0 20px;
+}
+.subscribe-left img {
+    top: -110px;
+}
+
+/*************************/
+
+.subscribe-left img {
+    width: 100%;
+}
+.subscribe-newsletr input {
+    display: block;
+    margin: 0 auto 15px;
+    width: 95%;
+}
+.subscribe-newsletr button {
+    display: block;
+    margin: 0 auto;
+}
+.parallax-content-sec h1 {
+    font-size: 37px;
+    line-height: 60px;
+}
+h3 {
+    font-size: 70px;
+}
+.banner-mid-text .hr-outtr-line hr {
+    width: 30%;
+}
+.banner-mid-text {
+    padding: 170px 0 160px;
+}
+.three-itm-btm p {
+    margin-right: 0;
+}
+.story-our-text > h2 {
+    font-size: 40px;
+}
+
+.internal-header h2 {
+    font-size: 42px;
+}
+.features-more-area p {
+    padding: 0;
+}
+.or-lft-menu {
+    width:100%;
+}
+
+.or-rgt-menu h1 {
+    font-size: 40px;
+}
+.our-menu-one {
+    width: 100%;
+}
+.banner-sec .flexslider li h1 {
+    font-size: 44px;
+}
+h2 span {
+    font-size: 56px;
+}
+.event-page-outr-sec {
+    padding: 110px 0 180px;
+}
+
+}
+ @media (max-width: 414px) { /* This media query is written for Mobile only */
+ 
+ .reservation-more-area.reservation-more-area-last {
+    margin-bottom: 120px;
+}
+.subscribe-left img {
+    top: -90px;
+}
+.reserve-select-outr ul li form {
+    width: 84%;
+} 
+.reserve-select-outr ul li form input {
+    width: 100%;
+} 
+.reserve-select-outr ul li select {
+    width: 84%;
+} 
+.resrvation-top-area a.fint-table {
+    width: 100%;
+}
+.or-rgt-menu span {
+    font-size: 25px;
+}
+.or-rgt-menu h1 {
+    font-size: 35px;
+}
+.or-lft-menu p {
+    margin-bottom: 15px;
+}
+.our-menu-bg {
+    padding-bottom: 85px;
+}
+
+}
+ @media (max-width: 380px) { /* This media query is written for Mobile only */
+ 
+hr {
+    width: 40%;
+} 
+.banner-sec .flexslider li h1 {
+    font-size: 35px;
+}
+.banner-sec .flexslider li h3 {
+    font-size: 80px;
+}
+.story-our-text > h2 {
+    font-size: 35px;
+}
+h2 {
+    font-size: 35px;
+}
+.reserve-select-outr ul li span {
+    padding-right: 9px;
+}
+.banner-sec .flexslider li h5 {
+    font-size: 11px;
+    word-spacing: 0;
+}
+.togg-text-menu {
+    padding: 13px 0 8px 10px;
+}
+.subscribe-left img {
+    top: -82px;
+}
+.reservation-more-area.reservation-more-area-last {
+    margin-bottom: 90px;
+}
+.contact-area {
+    padding: 120px 0;
+}
+.blog-main-details {
+    padding: 110px 0 160px;
+}
+
+}
+ @media (max-width: 320px) { /* This media query is written for Mobile only */
+ 
+.subscribe-left img {
+    top: -68px;
+}
+.our-menu-bg {
+    padding-bottom: 55px;
+} 
+}

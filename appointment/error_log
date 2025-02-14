@@ -1,0 +1,8 @@
+[15-Apr-2023 14:44:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/odapto/public_html/appointment/ajax.php on line 30
+[15-Apr-2023 14:44:19 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/odapto/public_html/appointment/ajax.php on line 51
+[15-Apr-2023 14:47:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/odapto/public_html/appointment/ajax.php on line 30
+[15-Apr-2023 14:47:42 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/odapto/public_html/appointment/ajax.php on line 51
+[15-Apr-2023 19:16:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/odapto/public_html/appointment/ajax.php on line 30
+[15-Apr-2023 19:16:46 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/odapto/public_html/appointment/ajax.php on line 51
+[15-Apr-2023 19:21:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/odapto/public_html/appointment/ajax.php on line 30
+[15-Apr-2023 19:21:18 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/odapto/public_html/appointment/ajax.php on line 51

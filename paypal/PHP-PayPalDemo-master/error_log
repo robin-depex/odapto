@@ -1,0 +1,12 @@
+[01-Nov-2018 05:40:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/odapto/public_html/paypal/PHP-PayPalDemo-master/index.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/paypal/PHP-PayPalDemo-master/index.php on line 19
+[01-Nov-2018 05:48:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/odapto/public_html/paypal/PHP-PayPalDemo-master/paypal_success.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/paypal/PHP-PayPalDemo-master/paypal_success.php on line 13
+[01-Nov-2018 05:50:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/odapto/public_html/paypal/PHP-PayPalDemo-master/paypal_success.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/odapto/public_html/paypal/PHP-PayPalDemo-master/paypal_success.php on line 13

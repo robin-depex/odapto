@@ -1,0 +1,127 @@
+/*
+	Theme Name: Kada Bootstrap Template
+	Theme URI: http://themeforest.net/user/responsiveexperts
+	Description: This css file is for light template layout alignments
+	Version: 1.0
+	Author: Responsive Experts
+	Author URI: http://themeforest.net/user/responsiveexperts
+	Tags:
+	
+	---------------------------
+	MAIN TEMPLATE STYLES
+	---------------------------
+	
+*/
+
+
+/* ==================================================== */
+/* One page design styles                              */
+/* ==================================================== */
+
+
+.our-menu-bg.menu-padding {
+    padding-bottom: 60px;
+}
+.onepage-blog {
+    padding-bottom: 115px;
+    padding-top: 140px;
+}
+
+/**********************************/
+
+
+
+.tab-container {
+	padding-top:10px;
+}
+.tab-container h2 {
+	line-height: 45px;
+    padding: 0 0 10px;
+}
+.tab-container .etabs {
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+	list-style:none;
+	text-align:center;
+}
+.tab-container .etabs .tab {
+	padding:0 12px;
+	margin:0 0 0 0;
+	display:inline-table;
+}
+.tab-container .etabs .tab a {
+	background: hsl(37, 46%, 57%) none repeat scroll 0 0;
+    color:#fff !important;
+    display: inline-block;
+    font-family: "Varela Round",sans-serif;
+    font-size: 18px;
+    height: 60px;
+    padding-top: 18px;
+    text-decoration: none !important;
+	padding-left:25px;
+	padding-right:25px;
+}
+.tab-container .etabs .tab a:hover, .tab-container .etabs .tab a.active {
+	color:#ffffff;
+	background:#a5772c;
+	text-decoration:none;
+}
+.tab-container .tab-cont {
+	padding:50px 0 0 0;
+	margin:0 0 0 0;
+}
+.tab-container .tab-cont.active {
+	visibility:visible!important;
+}
+.our-menu-details.tab-cont.active {
+	visibility:visible!important;
+}
+.panel-container .tab-cont.active {
+    display: block;
+}
+
+
+
+/**************************************/
+
+.onepage-feature {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+/* ==================================================== */
+/* 20. Media Query                                      */
+/* ==================================================== */
+
+ @media (max-width: 767px) { /* This media query is written for Mobile only */
+ 
+ 
+.tab-container .our-menu-one {
+    width: 98%;
+} 
+ }
+ @media (max-width: 480px) { /* This media query is written for Mobile only */
+
+.tab-container .etabs .tab {
+    margin: 0 2px 20px;
+    padding: 0;
+}
+.tab-container .etabs .tab a {
+	width:100%;
+}
+.tab-container .etabs .tab {
+    display: list-item;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+
+}
+ @media (max-width: 414px) { /* This media query is written for Mobile only */
+}
+ @media (max-width: 380px) { /* This media query is written for Mobile only */
+
+}
+ @media (max-width: 320px) { /* This media query is written for Mobile only */
+ 
+}

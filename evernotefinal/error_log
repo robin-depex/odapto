@@ -1,0 +1,326 @@
+[27-Mar-2019 09:28:33 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 3
+[27-Mar-2019 09:28:35 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 3
+[27-Mar-2019 09:35:03 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:37:49 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:38:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:40:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:41:16 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:41:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:42:16 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:42:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:44:48 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[27-Mar-2019 09:45:47 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/odapto/public_html/evernotefinal/EDAMTest.php:136) in /home/odapto/public_html/evernotefinal/EDAMTest.php on line 140
+[05-Apr-2019 10:34:22 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:34:37 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:35:34 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:35:46 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:41:22 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:45:44 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:50:31 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:52:08 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:53:12 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:54:35 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(47): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 10:55:34 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[05-Apr-2019 11:00:06 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:26:44 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:28:37 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:29:25 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:30:14 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:30:16 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:36:53 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php:29
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/viewevernote.php(49): Evernote\Client->__construct(0, true)
+#1 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php on line 29
+[08-Apr-2019 05:36:55 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php:29
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/viewevernote.php(49): Evernote\Client->__construct(0, true)
+#1 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php on line 29
+[08-Apr-2019 05:37:01 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php:29
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/viewevernote.php(49): Evernote\Client->__construct(0, true)
+#1 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php on line 29
+[08-Apr-2019 05:37:03 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php:29
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/viewevernote.php(49): Evernote\Client->__construct(0, true)
+#1 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php on line 29
+[08-Apr-2019 05:37:44 UTC] PHP Fatal error:  Uncaught Error: Unsupported operand types in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php:29
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/viewevernote.php(49): Evernote\Client->__construct(0, true)
+#1 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php on line 29
+[08-Apr-2019 05:38:06 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(51): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:40:14 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(51): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:41:55 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:42:20 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:42:58 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:43:15 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(48): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 05:43:53 UTC] PHP Warning:  include_once(/Thrift.php): failed to open stream: No such file or directory in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 9
+[08-Apr-2019 05:43:53 UTC] PHP Warning:  include_once(): Failed opening '/Thrift.php' for inclusion (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear:lib:') in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 9
+[08-Apr-2019 05:43:53 UTC] PHP Fatal error:  Class 'TException' not found in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 77
+[08-Apr-2019 05:43:55 UTC] PHP Warning:  include_once(/Thrift.php): failed to open stream: No such file or directory in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 9
+[08-Apr-2019 05:43:55 UTC] PHP Warning:  include_once(): Failed opening '/Thrift.php' for inclusion (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear:lib:') in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 9
+[08-Apr-2019 05:43:55 UTC] PHP Fatal error:  Class 'TException' not found in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 77
+[08-Apr-2019 05:47:04 UTC] PHP Warning:  include_once(/Thrift.php): failed to open stream: No such file or directory in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 9
+[08-Apr-2019 05:47:04 UTC] PHP Warning:  include_once(): Failed opening '/Thrift.php' for inclusion (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear:lib:') in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 9
+[08-Apr-2019 05:47:04 UTC] PHP Fatal error:  Class 'TException' not found in /home/odapto/public_html/evernotefinal/lib/packages/Errors/Errors_types.php on line 77
+[08-Apr-2019 05:59:21 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 06:11:47 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMUserException in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3196
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl(NULL)
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3196
+[08-Apr-2019 06:12:00 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 06:14:03 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204
+[08-Apr-2019 06:14:04 UTC] PHP Fatal error:  Uncaught EDAM\Error\EDAMSystemException: authenticationToken in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php:3204
+Stack trace:
+#0 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(711): EDAM\UserStore\UserStore_getNoteStoreUrl_result->read(Object(TBinaryProtocol))
+#1 /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php(672): EDAM\UserStore\UserStoreClient->recv_getNoteStoreUrl()
+#2 [internal function]: EDAM\UserStore\UserStoreClient->getNoteStoreUrl('S=s387:U=bfe3d1...')
+#3 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(154): ReflectionMethod->invokeArgs(Object(EDAM\UserStore\UserStoreClient), Array)
+#4 /home/odapto/public_html/evernotefinal/lib/Evernote/Client.php(81): Evernote\Store->__call('getNoteStoreUrl', Array)
+#5 /home/odapto/public_html/evernotefinal/viewevernote.php(50): Evernote\Client->getNoteStore()
+#6 {main}
+  thrown in /home/odapto/public_html/evernotefinal/lib/packages/UserStore/UserStore.php on line 3204

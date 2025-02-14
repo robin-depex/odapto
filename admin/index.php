@@ -1,0 +1,11 @@
+<?php  
+session_start();
+define('SITE_URL','https://www.odapto.com/admin/dashboard.php?page=home');
+if(empty($_SESSION['admin_auth'])){
+  include('header.php');
+  include('login.php');
+  include('footer.php');
+}else{
+  header("location:".SITE_URL);
+}
+?>

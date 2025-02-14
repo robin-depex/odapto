@@ -1,0 +1,1 @@
+[04-Sep-2017 10:37:14 UTC] PHP Fatal error:  Class 'Composer\Autoload\ClassLoader' not found in /home/martinatodapto/public_html/my_push/vendor/composer/autoload_real.php on line 23
