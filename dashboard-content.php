@@ -221,14 +221,30 @@ if($bid != $board_id){
 .layout-scroll::-webkit-scrollbar-thumb:hover {
   background: #333; 
 }
+.form-group.color{
+width: 100%;
+    max-width: 100%;
+    margin: 0;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-#loadMore {
-            cursor: pointer;
-            color: #007bff;
-            text-decoration: underline;
-            display: inline-block;
-            margin: 20px 0;
-        }
+.IconDiv{
+    /*display: block;*/
+    height: 300px;
+    overflow: scroll;
+}
+.iconImg
+{
+    width: 10%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
 .number {
     width: 40px;
     height: 40px;
