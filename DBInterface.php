@@ -1,23 +1,14 @@
 <?php
 require_once('common/config.php');
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+
 
 class Database
 {
     var $rs;
     var $dbh;
 
-    /*
-    function Database()
-    {
-        $this->rs = "";
-        $this->dbh = "";
-        $this->site_url='https://www.odapto.com/';
-    //  $this->site_url='http://depextechnologies.org/odapto/';
-    } */
+   
     function __construct()
     {
         $this->rs = "";
@@ -554,41 +545,31 @@ return true;
 /* Sending email*/
 
 function sendEmail1($subject,$message,$email,$from){
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
-$mail = new PHPMailer(true);
-try {
-    $mail->isSMTP();
-    $mail->Host = 'smtp-relay.brevo.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = '7673e7012@smtp-brevo.com';
-    $mail->Password = 'wPnDy4O2Z0UvdNxg';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    // $mail->SMTPSecure='ssl';
-    $mail->Port = 587;
-
-
-    $mail->setfrom($from, 'Odapto Team');
-
-    $mail->addaddress($email);
+    require_once('phpmailer/PHPMailerAutoload.php');
+    $mail = new PHPMailer;
+    $mail->isSMTP(); // enable SMTP
+    //$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true; // authentication enabled
+    $mail->SMTPSecure = 'AUTO'; // secure transfer enabled REQUIRED for Gmail
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 587; // or 587
     $mail->isHTML(true);
+    $mail->Username = 'robin.depex@gmail.com';
+    $mail->Password = 'szyplotvskisdxbb';
+    $mail->setFrom($from,"Odapto Team");
+    
     $mail->Subject = $subject;
     $mail->Body = $message;
-
-    $send = $mail->send();
+    $mail->addAddress($email);
+    $send = $mail->Send();
     if($send) {
-  // $response = "Mailer Error: " . $mail->ErrorInfo;
-    $response = 1;
+      // $response = "Mailer Error: " . $mail->ErrorInfo;
+        $response = 1;
     } else {
         //$response = "Mailer Error: " . $mail->ErrorInfo;
         $response = 0;
     }
     return $response;
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
 
 }
 
