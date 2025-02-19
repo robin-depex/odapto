@@ -804,7 +804,7 @@ return '<h6 class="heading">'.$heading.' <span class="close-div fa fa-times pull
 						}
 						
 
-						?> style="margin: 5px 0px;padding: 3px; background-color: #e8e8e8; border:1px solid #eeeeee;" onclick="addMyMember(<?=$boardid?>,<?=$result[0]?>,<?=$cardid?>,<?=$value?>,'<?=$result['initials']?>','<?=$idjs?>')" id="meber<?php echo $result[0] ?> <?=$idjs?>"><span id="profile_initials"><?php echo $result['initials']; ?>
+						?> style="margin: 5px 0px;padding: 3px; background-color: #e8e8e8; border:1px solid #eeeeee;" onclick="addMyMember(<?=$boardid?>,<?=$result[0]?>,<?=$list_id?>,<?=$cardid?>,<?=$value?>,'<?=$result['initials']?>','<?=$idjs?>')" id="meber<?php echo $result[0] ?> <?=$idjs?>"><span id="profile_initials"><?php echo $result['initials']; ?>
 						</span> 
 
 						<span class="heading"><?php echo $result1['Email_ID'] ;  ?></span>
@@ -969,7 +969,7 @@ $('#checklistolddata').append(response1);
 		
 		}
 });
-function addMyMember(board_id,userId,cardId,menberId,myname,idjs){
+function addMyMember(board_id,userId,listId,cardId,menberId,myname,idjs){
     
 	var myid = $(this).attr("id");
 	//alert(myid);
@@ -977,7 +977,7 @@ function addMyMember(board_id,userId,cardId,menberId,myname,idjs){
 	$.ajax({
 		url: 'profile_ajax.php',
 		type: 'POST',
-		data: { board_id: board_id,userId:userId,cardId:cardId,addmenber:addmenber,menberId:menberId},
+		data: { board_id: board_id,userId:userId,listId:listId,cardId:cardId,addmenber:addmenber,menberId:menberId},
 		success: function(data){
 			//alert(data);
 			//alert('#meber'+userId);
@@ -997,7 +997,7 @@ function addMyMember(board_id,userId,cardId,menberId,myname,idjs){
 
 
 
-function addMylabel(board_id,userId,labelId,cardId,idjlab,labelname,labelColor){
+function addMylabel(board_id,userId,labelId,listId,cardId,idjlab,labelname,labelColor){
 	var myid = $(this).attr("id");
 	if(labelname==''){
 var labname = '&nbsp';
@@ -1010,7 +1010,7 @@ var labname = labelname;
 	$.ajax({
 		url: 'profile_ajax.php',
 		type: 'POST',
-		data: { board_id: board_id,userId:userId,cardId:cardId,addlabel:addlabel,labelId:labelId,idjlab:idjlab,labelname:labelname,labelColor:labelColor},
+		data: { board_id: board_id,userId:userId,listId:listId,cardId:cardId,addlabel:addlabel,labelId:labelId,idjlab:idjlab,labelname:labelname,labelColor:labelColor},
 		success: function(data){
 		if(data==1){
 			$('#'+idjlab).removeClass("hiddeni tog_bg");
@@ -1105,6 +1105,7 @@ $('#checklistolddata').change(function(){
 <div class="clearfix"></div>
  <div class="form-group">	
  	<input type="hidden" id="duecardid" value="<?php echo $_SESSION['cardid']; ?>">
+	 <input type="hidden" id="duelistid" value="<?php echo $_SESSION['list_id']; ?>">
  	<input type="hidden" id="dueuserid" value="<?php echo $_SESSION['sess_login_id']; ?>">
  	<input type="hidden" id="dueboardid" value="<?php echo $_SESSION['boardid'] ; ?>">
    <button type="button" class="form-control btn btn-primary" name="saveduedate" id="saveduedate">Save</button>
@@ -1140,6 +1141,7 @@ $('#saveduedate').click(function(event){
 	var duedate = $('#duedate').val();
 	var duetime = $('#duetime').val();
 	var cardid = $('#duecardid').val();
+	var listid = $('#duelistid').val();
 	var userid = $('#dueuserid').val();
 	var boardid = $('#dueboardid').val();
 
@@ -1148,7 +1150,7 @@ var addduedate='addduedate';
 	$.ajax({
 		url: 'profile_ajax.php',
 		type: 'POST',
-		data: {cardid:cardid,userid:userid,addduedate:addduedate,duedate:duedate,duetime:duetime,boardid:boardid},
+		data: {listid:listid,cardid:cardid,userid:userid,addduedate:addduedate,duedate:duedate,duetime:duetime,boardid:boardid},
 		success: function(data){
 			//alert(data);
 			//alert('#meber'+userId);
@@ -1558,7 +1560,7 @@ $labelColor = $value['color'];
 	?>
 <li style="position:relative"> 
 	
-	<span onclick="addMylabel(<?=$boardid?>,<?php echo $uid;?>,<?=$value['id']?>,<?=$cardid?>,'<?=$idjlab?>','<?php echo $labelname ?>','<?php echo $labelColor;?>')" id="<?php echo $idjlab; ?>" class="label-div <?php echo $classlab; ?>" id="<?php echo $value['color'] ?>" style="background: <?php echo $value['color'] ?>">
+	<span onclick="addMylabel(<?=$boardid?>,<?php echo $uid;?>,<?=$value['id']?>,<?=$list_id?>,<?=$cardid?>,'<?=$idjlab?>','<?php echo $labelname ?>','<?php echo $labelColor;?>')" id="<?php echo $idjlab; ?>" class="label-div <?php echo $classlab; ?>" id="<?php echo $value['color'] ?>" style="background: <?php echo $value['color'] ?>">
 		<span class="labmyname" style="color: #fff;"><?php echo $value['label_name'] ?></span>
 		<!--<span class="select-icon2 fa fa-check" >-->
 

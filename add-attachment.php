@@ -83,6 +83,19 @@ if($_FILES['image']['name'] != ''){
                             'status' => 1
                         );
                     $insertNotification = $db->insert("tbl_push_notification",$notify_data);
+
+					$card_notify_data=array(
+						'title' =>  'New Attachment Added',
+						'message' =>  $name.' added a  new attachment',
+						'notify_date_time' => date('Y-m-d H:i:s'),
+						'user_from' =>$senderid,
+						'user_to' => $usr_id,
+						'list_id' => $card_data['list_id'],
+						'card_id' => $cardid,
+						'notif_for' => 'web'
+					);
+		 
+			 $insertCardNotification = $db->insert("tbl_card_notification",$card_notify_data);
 						    
 						}
 					}

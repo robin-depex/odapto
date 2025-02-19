@@ -42,6 +42,8 @@ if(isset($_POST['addmenber']) && $_POST['addmenber']==="addmenber"){
 	}else{
 	    //to push send notification
 	    $board_id=$_POST['board_id'];
+		$listId = $_POST['listId'];
+		$cardId = $_POST['cardId'];
 	    $dd=$db->getBoardKeyValue($board_id);
             $key = explode(",", $dd['mvalue']);
            $t= $key[0];
@@ -74,6 +76,19 @@ if(isset($_POST['addmenber']) && $_POST['addmenber']==="addmenber"){
                             'status' => 1
                         );
                     $insertNotification = $db->insert("tbl_push_notification",$notify_data);
+
+					$card_notify_data=array(
+						'title' =>  'New Member added',
+						'message' =>  $name.' added a  new Member',
+						'notify_date_time' => date('Y-m-d H:i:s'),
+						'user_from' =>$senderid,
+						'user_to' => $usr_id,
+						'list_id' => $listId,
+						'card_id' => $cardId,
+						'notif_for' => 'web'
+					);
+		 
+			 $insertCardNotification = $db->insert("tbl_card_notification",$card_notify_data);
 						    
 						}
 					}
@@ -152,6 +167,7 @@ $dataset['cardid'] = $_POST['cardId'];
 	$duedate = date('Y-m-d',strtotime($_POST['duedate']));
 	$duetime = $_POST['duetime'];
 	$cardid = $_POST['cardid'];
+	$listid= $_POST['listid']; 
 	$userid = $_POST['userid'];
 	$boardid = $_POST['boardid'];
 if(count($duedatecount ?? [])>0){
@@ -189,6 +205,19 @@ if(count($duedatecount ?? [])>0){
                             'status' => 1
                         );
                     $insertNotification = $db->insert("tbl_push_notification",$notify_data);
+
+					$card_notify_data=array(
+						'title' =>  'New due added',
+						'message' =>  $name.' added a  new Due date',
+						'notify_date_time' => date('Y-m-d H:i:s'),
+						'user_from' =>$senderid,
+						'user_to' => $usr_id,
+						'list_id' => $listid,
+						'card_id' => $cardid,
+						'notif_for' => 'web'
+					);
+		 
+			 $insertCardNotification = $db->insert("tbl_card_notification",$card_notify_data);
 						    
 						}
 					}
