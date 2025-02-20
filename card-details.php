@@ -667,7 +667,49 @@ $parcentcheck = 0;
 	</form>
 	<div class="clearfix"></div>
 	<!--<h3 style="color:#606060;font-size:16px;font-weight: bold;letter-spacing: 1px;"><span class="fa fa-comments"></span> Activities:</h3>-->
+	<div class="col-md-12 n-p" id="cardNotification">
+
+	<?php 
+	 	$notification = $db->getCardNotification($cardid);
+		 foreach ($notification as $value) {
+			$title = $value['title'];
+			$message = $value['message'];
+			$user_from = $db->getUserMeta($value['user_from']);
+			$user_to = $db->getUserMeta($value['user_to']);
+			$list_id = $value['list_id'];
+			$notify_date_time = $db->dateDiff($value['notify_date_time']);
+		?>
+		<div class="col-md-12" id="cardnotiicationfMainDiv">
+			
+			<div class="col-md-10 n-p" style="width: 88%">
+				<h3 class="name">
+	      			<span class="heading"><?php echo $result['full_name']; ?></span>
+	      		</h3>
+	      		<span class="time-ago pull-right">
+	      				<?php echo $notify_date_time; ?> ago
+	      		</span>
+	      		<p class="cardsnotify" id="display_notify">
+	      		 <?php 
+	      		 $regex = "/#+([a-zA-Z0-9_-]+)/";
+	      		 $str = preg_replace($regex, '<img src="'.SITE_URL.'smile/$1.png" style="width:20px">', $message);
+	      		 echo $str;
+	      		 ?></p>
+				 
+
+	      		<!-- comment edit -->
+	      		
+			</div>
+
+
+		</div>
+		<?php
+		 }
+	?>		
+
+
+	</div>
 	<div class="col-md-12 n-p" id="cardCommetns" style="display:block;"></div>
+	
 	<?php
 		$result = $db->getCardComments($cardid); 
 		foreach ($result as $value) {
@@ -859,8 +901,7 @@ return '<h6 class="heading">'.$heading.' <span class="close-div fa fa-times pull
 				      $(this).not('.labmyname').hide();
 				    }
 				    if (($(this).find('span').text().search(patt) >= 0)) {
-
-				      $(this).show();
+						$(this).show();
 				    }
 				  });
 				  

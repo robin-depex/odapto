@@ -2492,5 +2492,24 @@ function getAll($tbl, $pageno){
         }
     }
 
+    function getCardNotification()  {
+        $query = "SELECT * FROM tbl_card_notification where card_id='".$cardid."' AND notif_for='web'";
+        $sql_query = mysqli_query($this->dbh, $query);
+        $num_rows = mysqli_num_rows($sql_query);
+        if($num_rows > 0){
+            $data_array = array();
+            while($result = mysqli_fetch_array($sql_query)){
+                $data['title'] = $result['title'];
+                $data['message'] = $result['message'];
+                $data['user_from'] = $result['user_from'];
+                $data['user_to'] = $result['user_to'];
+                $data['list_id'] = $result['list_id'];
+                $data['notify_date_time'] = $result['notify_date_time'];
+                $data_array[] = $data;
+            }
+            return $data_array;
+        }
+    }
+
 }    
 ?>
