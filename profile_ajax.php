@@ -84,7 +84,7 @@ if(isset($_POST['addmenber']) && $_POST['addmenber']==="addmenber"){
 						'user_from' =>$senderid,
 						'user_to' => $usr_id,
 						'list_id' => $listId,
-						'card_id' => $cardId,
+						'card_id' => $_POST['cardId'],
 						'notif_for' => 'web'
 					);
 		 
