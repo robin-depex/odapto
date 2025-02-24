@@ -679,11 +679,14 @@ $parcentcheck = 0;
 			$list_id = $value['list_id'];
 			$notify_date_time = $db->dateDiff($value['notify_date_time']);
 		?>
-		<div class="col-md-12" id="cardnotiicationfMainDiv">
+		<div class="col-md-12 comentdiv" id="cardnotiicationfMainDiv_<?php echo $notify_id; ?>">
+			<div class="col-md-1 pro-mar">
+				<span id="profile_initials"><?php echo $user_from['initials']; ?></span>
+			</div>
 			
 			<div class="col-md-10 n-p" style="width: 88%">
 				<h3 class="name">
-	      			<span class="heading"><?php echo $result['full_name']; ?></span>
+	      			<span class="heading"><?php echo $user_from['full_name']; ?></span>
 	      		</h3>
 	      		<span class="time-ago pull-right">
 	      				<?php echo $notify_date_time; ?> ago

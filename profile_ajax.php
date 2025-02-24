@@ -324,7 +324,7 @@ $dataset['complete_status']=1;
 
 
 		if(isset($_POST['addtype']) &&  $_POST['addtype']==="drivestatus"){
-			echo 'hhh';
+			
 	$dataset = array();
 	$datasset1 = array();
 
