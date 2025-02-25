@@ -250,9 +250,7 @@ $sql = "SELECT * FROM $table";
     function getName($id){
         $sql = "SELECT Full_Name FROM tbl_users WHERE ID = '".$id."'";
         $sql_query = mysqli_query($this->dbh,$sql);
-        
         $row=mysqli_fetch_array($sql_query);
-       
         return $row['Full_Name'];
     }
     function getEmail($id){
