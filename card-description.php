@@ -65,7 +65,18 @@ if(isset($_REQUEST['data'])){
                             'status' => 1
                         );
                     $insertNotification = $db->insert("tbl_push_notification",$notify_data);
-						    
+					$card_notify_data=array(
+						'title' =>  'New Description added',
+						'message' =>  $name.' added a  description',
+						'notify_date_time' => date('Y-m-d H:i:s'),
+						'user_from' =>$senderid,
+						'user_to' => $usr_id,
+						'list_id' => '0',
+						'card_id' => $card_id,
+						'notif_for' => 'web'
+					);
+		 
+			 $insertCardNotification = $db->insert("tbl_card_notification",$card_notify_data);
 						}
 					}
 					

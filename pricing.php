@@ -21,7 +21,6 @@ $result = $db->getUserMeta($uid);
         <title>Pricing</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link rel="icon" href="https://www.odapto.com/images/small-logo.png" sizes="16x16">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -79,19 +78,19 @@ $result = $db->getUserMeta($uid);
                                             </p>
                                             <span class="pricing-section-price" style="margin-bottom: 0.7em; display: block;">  $<?= $plans['plan_price']; ?> </span>
                                             <?php
-                                       if($plans['id']==1)
-                                       {
-                                           echo '<p class="pricing-section-quiet">  Free, forever. </p>';
-                                       }elseif($plans['id']==2 || $plans['id']==3){
-                                           echo '<p class="pricing-section-quiet"> Per user/month </p>';
-                                       }
+                                                if($plans['id']==1)
+                                                {
+                                                    echo '<p class="pricing-section-quiet">  Free, forever. </p>';
+                                                }elseif($plans['id']==2 || $plans['id']==3){
+                                                    echo '<p class="pricing-section-quiet"> Per user/month </p>';
+                                                }
 
-                                       ?>
+                                            ?>
 
-                                                <?php if(empty($_SESSION['auth'])){ ?>
-                                                    <a class="u-link" href="login.php?logintype=pricing" data-track="Sign Up"> Login </a>
-                                                    <?php 
-                                               }else{
+                                            <?php if(empty($_SESSION['auth'])){ ?>
+                                                <a class="u-link" href="login.php?logintype=pricing" data-track="Sign Up"> Login </a>
+                                                <?php 
+                                                    }else{
                                                    if($plans['id']==1)
                                                    {
                                                        echo '<a class="u-link" href="dashboard.php" data-track="Dashboard"> Dashboard </a> ';
