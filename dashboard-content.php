@@ -221,6 +221,7 @@ if($bid != $board_id){
 .layout-scroll::-webkit-scrollbar-thumb:hover {
   background: #333; 
 }
+
 .form-group.color{
 width: 100%;
     max-width: 100%;
@@ -246,8 +247,8 @@ width: 100%;
     font-weight: bold;
 }
 .number {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,6 +256,9 @@ width: 100%;
     background-color: white;
     color: black;
     font-weight: bold;
+}
+.dc_filter_val:hover {
+   border-color: black;
 }
 </style>
 <div class="second-header">
@@ -483,7 +487,18 @@ if($teamDetails == 0){
    ?>
 <!--  main div  -->
 
-
+<!-- Category Modal (Hidden Initially) -->
+<div id="categoryPopup">
+    <label>Select Category:</label>
+    <select id="categorySelect">
+        <option value="">-- Choose --</option>
+        <?php $where = array(); $Tempcategory = $db->get_data('tbl_tmp_category',$where); foreach($Tempcategory as $category) { ?>
+        
+        <option value="<?php echo $category['id']?>"><?php echo $category['cat_name']?></option>
+        <?php } ?>
+    </select>
+    <button id="confirmCategory">Confirm</button>
+</div>
   
      <div class="clearfix"></div>
 
@@ -566,7 +581,7 @@ if($teamDetails == 0){
 
         <span class="icon" onClick="return ShowIcon(<?php echo $value['list_id'];?>)" style="display: inline-flex;" >
              <?php if($list['list_icon'] != '') { ?>
-        <img src="<?php echo $list['list_icon'];?>" style="width:20px; filter: grayscale(100%)">
+        <img src="<?php echo $list['list_icon'];?>" class="iconImg">
         <?php } else { ?>
         <i class="fa fa-plus" style="width:20px; color:#fff"></i>
         <?php } ?>
@@ -1014,17 +1029,33 @@ function changeVisibilivt(elem){
           $("#resultVisibility").html(response);
           window.location.href = redirect;
       });
-    }else if(selectedVal == "2"){
-        var bid = $("#boardid").val();
-        var vstatus = selectedVal;
-        var visdata = vstatus+"_"+bid;
-        $.post('board-privacy.php', {data: visdata }, function(response) {
-            //alert(response) ;
-            $("#BoardVisibilityDiv,#oldVis").css({'display': 'none'});
-            $("#resultVisibility").html(response);
-            window.location.href = redirect;
-        });
-    }else if(selectedVal == "1"){
+    }else if (selectedVal == "2") {
+    // Open the category selection popup
+            $("#categoryPopup").show();
+        
+            // Handle category selection
+            $("#confirmCategory").on("click", function () {
+                var selectedCategory = $("#categorySelect").val();
+                if (!selectedCategory) {
+                    alert("Please select a category.");
+                    return;
+                }
+        
+                var bid = $("#boardid").val();
+                var vstatus = selectedVal;
+                var visdata = vstatus + "_" + bid + "_" + "_" + " "+ selectedCategory; // Include category in data
+        
+                // Hide popup after selection
+                $("#categoryPopup").hide();
+        
+                // Proceed with AJAX call
+                $.post('board-privacy.php', { data: visdata }, function (response) {
+                    $("#BoardVisibilityDiv,#oldVis").css({ 'display': 'none' });
+                    $("#resultVisibility").html(response);
+                    window.location.href = redirect;
+                });
+            });
+        }else if(selectedVal == "1"){
         $("#selectTeamDiv").css({'display':'block'});
         $("#list_status_board").css({'display': 'none'});
         window.location.href = redirect;
@@ -1233,8 +1264,8 @@ function createList(){
                 $('#list_name').val('');
                 $('.boardlistitem').append(obj.msgdata);
                 $('.boardlistitem').css('width',obj.divwidth);
-               
-                //window.location.href = url;
+               location.reload();
+                // window.location.href = url;
               }else if(obj.result=="FALSE"){
                   $("#listTitle").html(obj.message);
               }
@@ -1498,4 +1529,23 @@ $(document).ready(function(){
 .all-item{
   display: flex;
 }
+
+#categoryPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1051; /* Bootstrap modal z-index is 1050, set higher */
+}
+
+/* If using Bootstrap, ensure backdrop is also above */
+.modal-backdrop {
+    z-index: 1050;
+}
+
       </style>
