@@ -935,17 +935,17 @@ $result = $db->getUserMeta($value);
    </div>
    
 
-        <div class="save-board">    
+        <div class="save-board">     
      <div style="display:none;position:relative;left: 0px;bottom:0px;width:100%;background-color: #f1f1f1;border-top: 1px solid #f1f1f1;padding:7px;z-index: 99" id="Boardlist_<?php echo $i ?>" class="cardboxnew_<?php echo $listid;?>  col-sm-12 status">
         <div style="width: 100%;">
-        <form action="" method="post" id="addCardForm_<?php echo $listid ?>"  enctype="multipart/data">
+        <form action="" m                                                     thod="post" id="addCardForm_<?php echo $listid ?>"  enctype="multipart/data">
          <div class="form-group" style="margin-bottom: 0px;">
             <textarea rows="3" id="cardName_<?php echo $listid; ?>" class="form-control" style="height: 50px;"></textarea>
          </div>
          <div class="col-sm-12 n-p">
            <a id="<?php echo $i."_".$listid; ?>" href="javascript:void(0)" class="list-btn save_card" onclick="return createCard(this.id);">Save</a>
 
-           <a href="jabascript:void(0)" id="<?php echo $i."_closeList" ?>" onclick="return close_list(this.id)" style="width:16px; height: 16px;display: inline-block; margin-left: 10px;color: #000"><span class="fa fa-times"></span></a>
+           <a href="javascript:void(0)" id="<?php echo $i."_closeList" ?>" onclick="return close_list(this.id)" style="width:16px; height: 16px;display: inline-block; margin-left: 10px;color: #000"><span class="fa fa-times"></span></a>
          </div>
 
         </form>

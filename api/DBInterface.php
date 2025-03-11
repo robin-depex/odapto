@@ -111,32 +111,30 @@ return $response;
 function sendEmail1($subject,$message,$email,$from){
 
 require_once('phpmailer/PHPMailerAutoload.php');
-$mail = new PHPMailer;
-$mail->isSMTP(); // enable SMTP
-//$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-$mail->SMTPAuth = true; // authentication enabled
-$mail->SMTPSecure = 'AUTO'; // secure transfer enabled REQUIRED for Gmail
-$mail->Host = "smtp-relay.brevo.com";
-$mail->Port = 587; // or 587
-$mail->isHTML(true);
-// $mail->Username = "mrabhishekpatel24@gmail.com";
-// $mail->Password = "FxgLC7MkhQ0pnSsb";
-$mail->Username = "abhishekpatel.depex@gmail.com";
-$mail->Password = "FxgLC7MkhQ0pnSsb";
-$mail->setFrom($from,"Odapto Team");
-
-$mail->Subject = $subject;
-$mail->Body = $message;
-$mail->addAddress($email);
-$send = $mail->Send();
-if($send) {
-  // $response = "Mailer Error: " . $mail->ErrorInfo;
-    $response = 1;
-} else {
-    //$response = "Mailer Error: " . $mail->ErrorInfo;
-    $response = 0;
-}
-return $response;
+    $mail = new PHPMailer;
+    $mail->isSMTP(); // enable SMTP
+    //$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true; // authentication enabled
+    $mail->SMTPSecure = 'AUTO'; // secure transfer enabled REQUIRED for Gmail
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 587; // or 587
+    $mail->isHTML(true);
+    $mail->Username = 'robin.depex@gmail.com';
+    $mail->Password = 'szyplotvskisdxbb';
+    $mail->setFrom($from,"Odapto Team");
+    
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+    $mail->addAddress($email);
+    $send = $mail->Send();
+    if($send) {
+      // $response = "Mailer Error: " . $mail->ErrorInfo;
+        $response = 1;
+    } else {
+        //$response = "Mailer Error: " . $mail->ErrorInfo;
+        $response = 0;
+    }
+    return $response;
 
 }
 
@@ -4076,6 +4074,27 @@ function getbordlistduedate2($cardid){
         
         return json_encode( array("Pagination" => $data_pageinfo , "Result" => $data_array));
 
+    }
+    
+    function getActiveBoard($uid)
+    {
+       
+        $query = "SELECT COUNT(board_id) AS total_active_board FROM `tbl_user_board` WHERE admin_id = '".$uid."'";
+        $result = mysqli_query($this->dbh,$query);
+        $DataSet = mysqli_fetch_array($result);
+        $total_active_board = $DataSet['total_active_board'];
+        return $total_active_board;
+    
+    }
+    
+    function getCompleteLateBoard($uid)
+    {
+        $today = date('Y-m-d');
+        $query = "SELECT COUNT(id) as totallateduedate FROM `tbl_board_list_duedate` WHERE userid ='".$uid."' AND duedate < '".$today."' AND complete_status ='0';";
+        $result = mysqli_query($this->dbh,$query);
+        $DataSet = mysqli_fetch_array($result);
+        $total_late_due_date = $DataSet['totallateduedate'];
+        return $total_late_due_date;
     }
 }    
 ?>

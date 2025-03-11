@@ -40,6 +40,10 @@ if($api_key == $apikey){
                         'InvitedBoard' => strval(count($db->getInvitedBoard($uid))),
                          'TeamBoard' => strval(count($db->TeamData($uid))),
                     ),
+                    "boardProgreass" => array(
+                            'active_board' => $db->getActiveBoard($uid),
+                            'complete_late' => $db->getCompleteLateBoard($uid),
+                        ),
                     
                     "ErrorObj"   => array(
                         "ErrorCode" => "",
