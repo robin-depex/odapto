@@ -118,16 +118,16 @@ require_once('phpmailer/PHPMailerAutoload.php');
     $mail->SMTPSecure = 'AUTO'; // secure transfer enabled REQUIRED for Gmail
     $mail->Host = "smtp.gmail.com";
     $mail->Port = 587; // or 587
-    $mail->isHTML(true);
     $mail->Username = 'robin.depex@gmail.com';
+    $mail->isHTML(true);
     $mail->Password = 'szyplotvskisdxbb';
     $mail->setFrom($from,"Odapto Team");
     
-    $mail->Subject = $subject;
     $mail->Body = $message;
+    $mail->Subject = $subject;
     $mail->addAddress($email);
-    $send = $mail->Send();
     if($send) {
+        $send = $mail->Send();
       // $response = "Mailer Error: " . $mail->ErrorInfo;
         $response = 1;
     } else {
@@ -2779,7 +2779,8 @@ function gettemplatebyCatid($id){
                  $catresult = mysqli_query($this->dbh,$catquery);
                  $catdata = mysqli_fetch_array($catresult);
                  $data['cat_name'] = $catdata['cat_name'];
-               
+                 $data['no_of_subscription'] = $this->templateusercount($id);
+               $data['no_of_card'] = $this->templatecardcount($DataSet['cat_id']);
                  $data['description'] = $DataSet['description'];
                $data['board_detail'] = $this->boarddetailbyid($DataSet['id']);
                 $data_array[] = $data;
@@ -3499,11 +3500,11 @@ function getuserlabellistios($uid){
          $result = mysqli_query($this->dbh,$query);
         $rowcount = mysqli_num_rows($result);
         $data_array = array();
-           $data1['id'] = 'featured';
-                $data1['cat_name'] = 'Featured';
-                $data1['cat_slug'] = 'featured';
-                // $data['description'] = '';
-                      
+                // $data1['id'] = 'featured';
+                // $data1['cat_name'] = 'Featured';
+                // $data1['cat_slug'] = 'featured';
+                // $data1['description'] = '';
+                // $data1['Alltemplate'] = array();      
             
             while($DataSet = mysqli_fetch_array($result)){
                 $data['id'] = (int)$DataSet['id'];
@@ -4095,6 +4096,24 @@ function getbordlistduedate2($cardid){
         $DataSet = mysqli_fetch_array($result);
         $total_late_due_date = $DataSet['totallateduedate'];
         return $total_late_due_date;
+    }
+
+    function templateusercount($tmpId)
+    {
+        $query = "SELECT COUNT(id) as total_user FROM `tbl_user_template` WHERE template_id  ='".$tmpId."'";
+        $result = mysqli_query($this->dbh,$query);
+        $DataSet = mysqli_fetch_array($result);
+        $total_template_user = $DataSet['total_user'];
+        return $total_template_user;
+    }
+    
+    function templatecardcount($tmpId)
+    {
+        $query = "SELECT COUNT(id) as total_template_card FROM `tbl_tmp_board_list_card` WHERE cat_id  ='".$tmpId."'";
+        $result = mysqli_query($this->dbh,$query);
+        $DataSet = mysqli_fetch_array($result);
+        $total_template_card = $DataSet['total_template_card'];
+        return $total_template_card;
     }
 }    
 ?>
