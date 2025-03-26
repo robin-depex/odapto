@@ -118,16 +118,16 @@ require_once('phpmailer/PHPMailerAutoload.php');
     $mail->SMTPSecure = 'AUTO'; // secure transfer enabled REQUIRED for Gmail
     $mail->Host = "smtp.gmail.com";
     $mail->Port = 587; // or 587
-    $mail->Username = 'robin.depex@gmail.com';
     $mail->isHTML(true);
+    $mail->Username = 'robin.depex@gmail.com';
     $mail->Password = 'szyplotvskisdxbb';
     $mail->setFrom($from,"Odapto Team");
     
-    $mail->Body = $message;
     $mail->Subject = $subject;
+    $mail->Body = $message;
     $mail->addAddress($email);
+    $send = $mail->Send();
     if($send) {
-        $send = $mail->Send();
       // $response = "Mailer Error: " . $mail->ErrorInfo;
         $response = 1;
     } else {
@@ -298,11 +298,11 @@ return $data_array;
             $data_result = array();
             while($DataSet = mysqli_fetch_array($result)){
                 $data['id']=$DataSet['id'];
-                $data['admin_id']=$DataSet['admin_id'];
+                $data['admin_id']=isset($DataSet['admin_id']) ? $DataSet['admin_id'] : '';
                 $data['board_name']=$DataSet['board_name'];
                 $data['board_key']=$DataSet['board_key'];
                 $data['board_url']=$DataSet['board_url'];
-                $data['bg_color']=$DataSet['bg_color'];
+                $data['bg_color']=isset($DataSet['bg_color']) ? $DataSet['bg_color'] : '';
                 $data['board_fontcolor']=$DataSet['board_fontcolor'];
                 $data['type']='PB';
                 $data['admin_board_id']=0;
@@ -325,11 +325,11 @@ function get_temp_boards_byId($id,$cat_id){
             $data_result = array();
             while($DataSet = mysqli_fetch_array($result)){
                 $data['id']=$DataSet['id'];
-                $data['admin_id']=$DataSet['admin_id'];
+                $data['admin_id']=isset($DataSet['admin_id']) ? $DataSet['admin_id'] : '';
                 $data['board_name']=$DataSet['board_name'];
                 $data['board_key']=$DataSet['board_key'];
                 $data['board_url']=$DataSet['board_url'];
-                $data['bg_color']=$DataSet['bg_color'];
+                $data['bg_color']=isset($DataSet['bg_color']) ? $DataSet['bg_color'] : '';
                 $data['board_fontcolor']=$DataSet['board_fontcolor'];
                 $data['type']='PB';
                 $data['admin_board_id']=0;
@@ -2716,7 +2716,7 @@ function gettemplatebyCatid_old($id){
                  $catresult = mysqli_query($this->dbh,$catquery);
                  $catdata = mysqli_fetch_array($catresult);
                  $data['cat_name'] = $catdata['cat_name'];
-               
+                 
                  $data['description'] = $DataSet['description'];
                $data['board_detail'] = $this->boarddetailbyid($DataSet['id']);
                 $data_array[] = $data;
@@ -2753,15 +2753,15 @@ function gettemplatebyCatid_old($id){
     
 function gettemplatebyCatid($id){
     // AND cat_id = '".$id."'
-    if($id=='featured'){
-    $query = "SELECT * FROM  tbl_templates WHERE status = '1'";
-         $result = mysqli_query($this->dbh,$query);
-        $rowcount = mysqli_num_rows($result);
-    }else{
+    // if($id=='featured'){
+    // $query = "SELECT * FROM  tbl_templates WHERE status = '1'";
+    //      $result = mysqli_query($this->dbh,$query);
+    //     $rowcount = mysqli_num_rows($result);
+    // }else{
  $query = "SELECT * FROM  tbl_templates WHERE status = '1' AND cat_id = '".$id."'";
          $result = mysqli_query($this->dbh,$query);
         $rowcount = mysqli_num_rows($result);
-    }
+    //}
         if($rowcount > 0){
             $data_array = array();
             while($DataSet = mysqli_fetch_array($result)){
@@ -2779,7 +2779,7 @@ function gettemplatebyCatid($id){
                  $catresult = mysqli_query($this->dbh,$catquery);
                  $catdata = mysqli_fetch_array($catresult);
                  $data['cat_name'] = $catdata['cat_name'];
-                 $data['no_of_subscription'] = $this->templateusercount($id);
+               $data['no_of_subscription'] = $this->templateusercount($id);
                $data['no_of_card'] = $this->templatecardcount($DataSet['cat_id']);
                  $data['description'] = $DataSet['description'];
                $data['board_detail'] = $this->boarddetailbyid($DataSet['id']);
@@ -2903,6 +2903,7 @@ function gettemplatebyCatid($id){
                 $data['list_title'] = $DataSet['list_title'];
                 $data['list_color'] = $DataSet['list_color'];
                 $data['list_icon'] = $DataSet['list_icon'];
+                
                 $data_array[] = $data;
             }
          }else{
@@ -3203,7 +3204,7 @@ function getuserlabellist($uid){
                     $colordata = $this->getColorbyid($DataSet['label_id']);
                 $data['label_id'] = (int)$DataSet['id'];
                 // $data['color_id'] = (int)$DataSet['color'];
-                $data['label_name'] = $DataSet['label_text'];
+                $data['label_name'] = $DataSet['label_name'];
                 $data['color'] = $colordata['color'];
                
                 $data_array[] = $data;
@@ -3500,11 +3501,11 @@ function getuserlabellistios($uid){
          $result = mysqli_query($this->dbh,$query);
         $rowcount = mysqli_num_rows($result);
         $data_array = array();
-                // $data1['id'] = 'featured';
-                // $data1['cat_name'] = 'Featured';
-                // $data1['cat_slug'] = 'featured';
-                // $data1['description'] = '';
-                // $data1['Alltemplate'] = array();      
+        //   $data1['id'] = 'featured';
+        //         $data1['cat_name'] = 'Featured';
+        //         $data1['cat_slug'] = 'featured';
+                // $data['description'] = '';
+                      
             
             while($DataSet = mysqli_fetch_array($result)){
                 $data['id'] = (int)$DataSet['id'];
@@ -4097,7 +4098,7 @@ function getbordlistduedate2($cardid){
         $total_late_due_date = $DataSet['totallateduedate'];
         return $total_late_due_date;
     }
-
+    
     function templateusercount($tmpId)
     {
         $query = "SELECT COUNT(id) as total_user FROM `tbl_user_template` WHERE template_id  ='".$tmpId."'";
