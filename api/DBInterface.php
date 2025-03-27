@@ -1009,6 +1009,8 @@ $query = "select tm.id as tmid,tm.team_name as tmname from tbl_user_team as tm w
                 "boardMember" => $memberName,
                 "countBoardAttachment" => $this->getTotalBoardAttachment((int)$DataSet['board_id']),
                 'countBoardCrad' => $this->getTotalCardByBoardId((int)$DataSet['board_id']),
+                "created_at" => $DataSet['createDate'],
+                "updated_at" => $DataSet['ud'],
             );
                 $data_result[] = $data;
  
@@ -1570,6 +1572,8 @@ function getInvitedBoard($uid){
             "boardMember" => $memberName,
             "countBoardAttachment" => $this->getTotalBoardAttachment((int)$DataSet['board_id']),
             'countBoardCrad' => $this->getTotalCardByBoardId((int)$DataSet['board_id']),
+            "created_at" => $DataSet['createDate'],
+            "updated_at" => $DataSet['ud'],
                 );
                 
                 $data_result[] = $data;
