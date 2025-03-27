@@ -1429,7 +1429,7 @@ $query = "select tm.id as tmid,tm.team_name as tmname from tbl_user_team as tm w
     function getLastInsertedusercardlabel($cardid){
     $query = "SELECT MAX(id) as bid FROM `tbl_board_list_card_labels` where cardid = $cardid";
     $result = mysqli_query($this->dbh,$query);
-   // echo $query;
+    //echo $query;die;
     $rowcount = mysqli_num_rows($result);
     if($rowcount > 0){
         $DataSet = mysqli_fetch_array($result);
