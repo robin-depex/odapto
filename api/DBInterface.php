@@ -2813,7 +2813,7 @@ function gettemplatebyCatid($id){
          return $response;
     }
     function gettemplatebyid($id){
- $query = "SELECT * FROM  tbl_templates WHERE status = '1' AND id = '".$id."'";
+        $query = "SELECT * FROM  tbl_templates WHERE status = '1' AND id = '".$id."'";
          $result = mysqli_query($this->dbh,$query);
         $rowcount = mysqli_num_rows($result);
         if($rowcount > 0){
@@ -2827,13 +2827,13 @@ function gettemplatebyCatid($id){
                 $data['id'] = (int)$DataSet['id'];
                 $data['name'] =  $DataSet['name'];
                 $data['temp_img'] = $temp_img;
-                 $data['temp_catid'] = $DataSet['cat_id'];
-                 $catquery = "SELECT * FROM  tbl_tmp_category WHERE id = '".$DataSet['cat_id']."'";
-         $catresult = mysqli_query($this->dbh,$catquery);
-         $catdata = mysqli_fetch_array($catresult);
-                 $data['cat_name'] = $catdata['cat_name'];
-                 $data['description'] = $DataSet['description'];
-               $data['board_detail'] = $this->boarddetailbyid($DataSet['id']);
+                $data['temp_catid'] = $DataSet['cat_id'];
+                $catquery = "SELECT * FROM  tbl_tmp_category WHERE id = '".$DataSet['cat_id']."'";
+                $catresult = mysqli_query($this->dbh,$catquery);
+                $catdata = mysqli_fetch_array($catresult);
+                $data['cat_name'] = $catdata['cat_name'];
+                $data['description'] = $DataSet['description'];
+                $data['board_detail'] = $this->boarddetailbyid($DataSet['id']);
                 $data_array[] = $data;
             $response = array(
                 "successBool" => true,
@@ -4119,6 +4119,56 @@ function getbordlistduedate2($cardid){
         $DataSet = mysqli_fetch_array($result);
         $total_template_card = $DataSet['total_template_card'];
         return $total_template_card;
+    }
+    function getTemplateBoard($tempId)
+    {
+        $query = "SELECT * FROM  tbl_templates WHERE status = '1' AND id = '".$tempId."'";
+        $result = mysqli_query($this->dbh,$query);
+        $rowcount = mysqli_num_rows($result);
+        if($rowcount > 0){
+            $data_array = array();
+            $DataSet = mysqli_fetch_array($result);
+                if(!empty($DataSet['image'])){
+                $temp_img = $this->site_url.'admin/temp/images/'.$DataSet['image'];
+                }else{
+                    $temp_img = '';
+                }
+                $data['id'] = (int)$DataSet['id'];
+                $data['name'] =  $DataSet['name'];
+                $data['temp_img'] = $temp_img;
+                $data['temp_catid'] = $DataSet['cat_id'];
+                $catquery = "SELECT * FROM  tbl_tmp_category WHERE id = '".$DataSet['cat_id']."'";
+                $catresult = mysqli_query($this->dbh,$catquery);
+                $catdata = mysqli_fetch_array($catresult);
+                $data['cat_name'] = $catdata['cat_name'];
+                $data['description'] = $DataSet['description'];
+                $data['board_id'] = $DataSet['board_id'];
+                $data_array[] = $data;
+                $response = array(
+                "successBool" => true,
+                "responseType" => "use_template_board",
+                "successCode" => "200",
+                    "response" => array(
+                        "board_id" => $DataSet['board_id']
+                    ),
+                    "ErrorObj"   => array(
+                        "ErrorCode" => "",
+                        "ErrorMsg"  => ""
+                    )       
+            );
+               
+         }else{
+            $response = array(
+                "successBool" => false,
+                "successCode" => "",
+                    "response" => array(),
+                    "ErrorObj"   => array(
+                        "ErrorCode" => "103",
+                        "ErrorMsg"  => "No Data Found"
+                    )       
+            );
+         }
+         return $response;
     }
 }    
 ?>
