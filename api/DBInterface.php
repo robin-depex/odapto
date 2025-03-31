@@ -2586,14 +2586,14 @@ $query1 = "select * FROM tbl_board_list_card_labels WHERE cardid = '".$DataSet['
         $rowcount1 = mysqli_num_rows($result1);
         if($rowcount1 > 0){
             $data_array1 = array();
-            while($DataSet1 = mysqli_fetch_array($result1)){
-                $userlabeldata = $this->getuserlabeldetail($DataSet1['labels']);
-               // print_r($userlabeldata);
-               $data1['label_id'] = $DataSet1['labels'];
-               $data1['label_name'] = $userlabeldata['label_name'];
-               $data1['color'] = $userlabeldata['color'];
-               $data_array1[] = $data1;
-            }
+            // while($DataSet1 = mysqli_fetch_array($result1)){
+            //     $userlabeldata = $this->getuserlabeldetail($DataSet1['labels']);
+            //   // print_r($userlabeldata);
+            //   $data1['label_id'] = $DataSet1['labels'];
+            //   $data1['label_name'] = isset($userlabeldata['label_name']) ? $userlabeldata['label_name'] : '';
+            //   $data1['color'] = isset($userlabeldata['color']) ? $userlabeldata['color'] : '';
+            //   $data_array1[] = $data1;
+            // }
             }else{
                $data_array1 = [];  
            }
