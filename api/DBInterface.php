@@ -673,6 +673,7 @@ $update1 = $this->update("tbl_users",$update_data1, array('ID' => $userid));
                 'userToken' => $token,
                 'emailid' => $emailid,
                 'membership_plan' => $query_result['membership_plan'],
+                'previlage'=> $query_result['previlage'],
                 ),
                 "ErrorObj"   => array(
                     "ErrorCode" => "",
@@ -2784,7 +2785,7 @@ function gettemplatebyCatid($id){
                  $catdata = mysqli_fetch_array($catresult);
                  $data['cat_name'] = $catdata['cat_name'];
                $data['no_of_subscription'] = $this->templateusercount($id);
-               $data['no_of_card'] = $this->templatecardcount($DataSet['cat_id']);
+               $data['no_of_card'] = $this->templatecardcount($DataSet['board_id']);
                  $data['description'] = $DataSet['description'];
                $data['board_detail'] = $this->boarddetailbyid($DataSet['id']);
                 $data_array[] = $data;
@@ -4112,12 +4113,12 @@ function getbordlistduedate2($cardid){
         return $total_template_user;
     }
     
-    function templatecardcount($tmpId)
+    function templatecardcount($bId)
     {
-        $query = "SELECT COUNT(id) as total_template_card FROM `tbl_tmp_board_list_card` WHERE cat_id  ='".$tmpId."'";
+        $query = "SELECT COUNT(card_id) as total_board_card FROM `tbl_board_list_card` WHERE board_id  ='".$bId."'";
         $result = mysqli_query($this->dbh,$query);
         $DataSet = mysqli_fetch_array($result);
-        $total_template_card = $DataSet['total_template_card'];
+        $total_template_card = $DataSet['total_board_card'];
         return $total_template_card;
     }
     function getTemplateBoard($tempId)
@@ -4149,7 +4150,9 @@ function getbordlistduedate2($cardid){
                 "responseType" => "use_template_board",
                 "successCode" => "200",
                     "response" => array(
-                        "board_id" => $DataSet['board_id']
+                        "board_id" => $DataSet['board_id'],
+                        "board_img" => $temp_img,
+                        "board_name" => $this->getBoardName($DataSet['board_id'])
                     ),
                     "ErrorObj"   => array(
                         "ErrorCode" => "",
@@ -4169,6 +4172,34 @@ function getbordlistduedate2($cardid){
             );
          }
          return $response;
+    }
+    
+    function getBoardName($bid) {
+         $query = "select board_title from tbl_user_board where board_id = '$bid'";
+         $sql_query = mysqli_query($this->dbh,$query);
+         $result =  mysqli_fetch_array($sql_query);
+         return $result['board_title'];
+        
+    }
+
+    function getusermemberslist($uid){
+        $query = "SELECT group_concat(member_id) as members FROM `tbl_team_members` WHERE user_id = '".$uid."' AND type = 'Member'";
+        $sql_query = mysqli_query($this->dbh, $query);
+        $num_rows = mysqli_num_rows($sql_query);
+        
+        if($num_rows > 0){
+            $results = mysqli_fetch_array($sql_query);
+            $members = $results['members'];
+            if(!empty($members)){
+                return $members;
+            }else{
+                return array();
+            }
+            
+        }else{
+              
+               return array();
+        }
     }
 }    
 ?>

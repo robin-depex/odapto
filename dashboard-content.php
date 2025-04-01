@@ -938,7 +938,7 @@ $result = $db->getUserMeta($value);
         <div class="save-board">     
      <div style="display:none;position:relative;left: 0px;bottom:0px;width:100%;background-color: #f1f1f1;border-top: 1px solid #f1f1f1;padding:7px;z-index: 99" id="Boardlist_<?php echo $i ?>" class="cardboxnew_<?php echo $listid;?>  col-sm-12 status">
         <div style="width: 100%;">
-        <form action="" m                                                     thod="post" id="addCardForm_<?php echo $listid ?>"  enctype="multipart/data">
+        <form action="" method="post" id="addCardForm_<?php echo $listid ?>"  enctype="multipart/data">
          <div class="form-group" style="margin-bottom: 0px;">
             <textarea rows="3" id="cardName_<?php echo $listid; ?>" class="form-control" style="height: 50px;"></textarea>
          </div>

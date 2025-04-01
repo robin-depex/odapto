@@ -32,14 +32,32 @@ if($code == $v_code){
 	
 if($api_key == $apikey){
 
-if($req_type == $request_url){
+//if($req_type == $request_url){
 /* Code Will Go Here*/	
 	
 $visibility = 	$arr['RequestData']['board_visibility'];
 $board_id = 	$arr['RequestData']['board_id'];
 $team_id = 	$arr['RequestData']['team_id'];
-
-if( ($privacy == "0") || ($privacy == "2") ){
+$board_details = $db->getBoardDetails($board_id);
+if($visibility == "2") {
+    $tempBoard = $db->get_data('tbl_templates',array('name'=>$board_details['board_title']));    
+    if(empty($tempBoard)){
+        $lastTempId = $db->insert("tbl_templates",array('name' => $board_details['board_title'],'image' => $board_details['bg_img'],'board_id' => $board_id));
+        $userTemplate = $db->insert("tbl_user_template",array('userid' => $uid,'template_id' => $lastTempId));
+        
+    } else {
+        $response = array(
+			"successBool" => false,
+			"successCode" => "",
+				"response" => array(),
+				"ErrorObj"	 => array(
+					"ErrorCode" => "403",
+					"ErrorMsg"	=> "Template already exist"
+				)		
+		);
+    }
+}
+if( ($visibility == "0") || ($visibility == "2") ){
 	$update = array("meta_value"=>$visibility);
 	$condition = array("meta_key"=>"board_visibility" , "board_id" => $board_id );
 	if($db->update("tbl_user_boardmeta",$update, $condition)){
@@ -104,17 +122,17 @@ if( ($privacy == "0") || ($privacy == "2") ){
 }	
 
 /* End Of Code */		
-}else{
-	$response = array(
-		"successBool" => false,
-		"successCode" => "",
-			"response" => array(),
-			"ErrorObj"	 => array(
-				"ErrorCode" => "103",
-				"ErrorMsg"	=> "Invalid Request Url"
-			)		
-	);
-}
+// }else{
+// 	$response = array(
+// 		"successBool" => false,
+// 		"successCode" => "",
+// 			"response" => array(),
+// 			"ErrorObj"	 => array(
+// 				"ErrorCode" => "103",
+// 				"ErrorMsg"	=> "Invalid Request Url"
+// 			)		
+// 	);
+// }
 }else{
 	
 	$response = array(

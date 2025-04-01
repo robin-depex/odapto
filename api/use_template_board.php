@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 $arr = json_decode($input,true);
 
 $req_type = $arr['RequestData']['requestType'];
-$v_code = $arr['RequetDasta']['v_code'];
+$v_code = $arr['RequestData']['v_code'];
 $api_key = $arr['RequestData']['apikey'];
 $userToken = $arr['RequestData']['userToken'];
 $uid = $arr['RequestData']['user_id'];
