@@ -2218,14 +2218,38 @@ $query1 = "SELECT * FROM `tbl_user_board`";
         }
     }
      function getboardcardmembers($value, $card_id){
-        $query = "SELECT * FROM tbl_board_card_members where Menber = $value and card_id = $card_id";
-        $result = mysqli_query($this->dbh,$query);
-        $rowcount = mysqli_num_rows($result);
-        if($rowcount > 0){
-           $DataSet = mysqli_fetch_array($result);
-           $data=$DataSet['Menber'];
-            return $data;
-        }
+        $query = "SELECT * FROM tbl_board_card_members where user_id  = $value and card_id = $card_id";
+        $sql_query = mysqli_query($this->dbh,$query);
+        $rowcount = mysqli_num_rows($sql_query);
+        $data_array = [];
+         if($rowcount > 0){
+             while($results = mysqli_fetch_array($sql_query)){
+                    $wherarray1 = array('ID' => $results['Menber']);
+                    $result = $this->getsingledata('tbl_users',$wherarray1);
+                    $data['member_id'] = $results['Menber'];
+                    $data['member_name'] = $result['Full_Name'];
+                    $data['member_email'] = $result['Email_ID']; 
+                    $data_array[] = $data;
+               }
+               
+               $response = array(
+                "successBool" => true,
+                "responseType" => "card_member_list",
+                "successCode" => "200",
+                    "response" => array(
+                       "AllCardMember" => $data_array
+                    ),
+                    "ErrorObj"   => array(
+                        "ErrorCode" => "",
+                        "ErrorMsg"  => ""
+                    )       
+            );
+            
+            return $response;
+          }
+           
+            
+        
     }
 
     function getmembersdetails(){
@@ -4181,7 +4205,7 @@ function getbordlistduedate2($cardid){
          return $result['board_title'];
         
     }
-
+    
     function getusermemberslist($uid){
         $query = "SELECT group_concat(member_id) as members FROM `tbl_team_members` WHERE user_id = '".$uid."' AND type = 'Member'";
         $sql_query = mysqli_query($this->dbh, $query);
