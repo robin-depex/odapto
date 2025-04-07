@@ -4,9 +4,9 @@ require_once("DBInterface.php");
 
 $db = new Database();
 $db->connect();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 //date_default_timezone_set('Asia/Kolkata');
 //date_default_timezone_set('Europe/Amsterdam');
 $arr = json_decode($input,true);

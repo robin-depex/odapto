@@ -3544,7 +3544,7 @@ function getuserlabellistios($uid){
                $data['Alltemplate'] = $this->gettemplatebyCatid((int)$DataSet['id']);
                 $data_array[] = $data;
             }
-$data_array[] =$data1;
+//$data_array[] =$data1;
             $rowcount1 = $rowcount+1;
             $response = array(
                 "successBool" => true,
