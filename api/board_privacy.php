@@ -1,7 +1,7 @@
 <?php  
 $input = file_get_contents('php://input');
-$input = $_REQUEST['data'];
-if($input!=""){
+// $input = $_REQUEST['data'];
+// if($input!=""){
 require_once("config.php");
 require_once("DBInterface.php");
 require_once("encryption.php");
@@ -38,27 +38,14 @@ if($api_key == $apikey){
 $visibility = 	$arr['RequestData']['board_visibility'];
 $board_id = 	$arr['RequestData']['board_id'];
 $team_id = 	$arr['RequestData']['team_id'];
+$cat_id = $arr['RequestData']['cat_id'];
 $board_details = $db->getBoardDetails($board_id);
-if($visibility == "2") {
-    $tempBoard = $db->get_data('tbl_templates',array('name'=>$board_details['board_title']));    
-    if(empty($tempBoard)){
-        $lastTempId = $db->insert("tbl_templates",array('name' => $board_details['board_title'],'image' => $board_details['bg_img'],'board_id' => $board_id));
-        $userTemplate = $db->insert("tbl_user_template",array('userid' => $uid,'template_id' => $lastTempId));
-        
-    } else {
-        $response = array(
-			"successBool" => false,
-			"successCode" => "",
-				"response" => array(),
-				"ErrorObj"	 => array(
-					"ErrorCode" => "403",
-					"ErrorMsg"	=> "Template already exist"
-				)		
-		);
-    }
-}
 if( ($visibility == "0") || ($visibility == "2") ){
-	$update = array("meta_value"=>$visibility);
+     $tempBoard = $db->getsingledata('tbl_templates',array('name'=>$board_details['board_title']));  
+    if(empty($tempBoard)){
+         $lastTempId = $db->insert("tbl_templates",array('name' => $board_details['board_title'],'image' => $board_details['bg_img'],'board_id' => $board_id,'cat_id' => $cat_id));
+         $userTemplate = $db->insert("tbl_user_template",array('userid' => $uid,'template_id' => $lastTempId));
+         	$update = array("meta_value"=>$visibility);
 	$condition = array("meta_key"=>"board_visibility" , "board_id" => $board_id );
 	if($db->update("tbl_user_boardmeta",$update, $condition)){
 		$response = array(
@@ -84,6 +71,19 @@ if( ($visibility == "0") || ($visibility == "2") ){
 				)		
 		);
 	}
+        
+    } else {
+        $response = array(
+			"successBool" => false,
+			"successCode" => "",
+				"response" => array(),
+				"ErrorObj"	 => array(
+					"ErrorCode" => "403",
+					"ErrorMsg"	=> "Template already exist"
+				)		
+		);
+    }
+
 }else{
 	$update = array("meta_value"=>$visibility);
 	$condition = array("meta_key"=>"board_visibility" , "board_id" => $board_id );
@@ -177,4 +177,4 @@ if($db->insert("error_log",$data)){
 	echo $result_response;
 }
 
-}
+//}

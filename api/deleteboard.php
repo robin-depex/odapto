@@ -28,21 +28,29 @@ if($api_key == $apikey){
 
 /* Code Will Go Here*/	
 	
-$delete_card_member = $db->delete('tbl_board_card_members',array('board_id'=>$board_id));
-$delete_invite = $db->delete('tbl_board_invite',array('bid'=>$board_id));
-$delete_list = $db->delete('tbl_board_list',array('board_id'=>$board_id));
-$delete_card = $db->delete('tbl_board_list_card',array('board_id'=>$board_id));
-$delete_attachment = $db->delete('tbl_board_list_card_attachements',array('board_id'=>$board_id));
-$delete_checklist = $db->delete('tbl_board_list_card_checklist',array('board_id'=>$board_id));
-$delete_checklistitm = $db->delete('tbl_board_list_card_checklist_item',array('board_id'=>$board_id));
-$delete_comment = $db->delete('tbl_board_list_card_comments',array('board_id'=>$board_id));
-$delete_label = $db->delete('tbl_board_list_card_labels',array('board_id'=>$board_id));
-$delete_duedate = $db->delete('tbl_board_list_duedate',array('board_id'=>$board_id));
-$delete_member = $db->delete('tbl_board_members',array('board_id'=>$board_id));
-$delete_board = $db->delete('tbl_user_board',array('board_id'=>$board_id));
-$delete_boardmeta = $db->delete('tbl_user_boardmeta',array('board_id'=>$board_id));
+// $delete_card_member = $db->delete('tbl_board_card_members',array('board_id'=>$board_id));
+// $delete_invite = $db->delete('tbl_board_invite',array('bid'=>$board_id));
+// $delete_list = $db->delete('tbl_board_list',array('board_id'=>$board_id));
+// $delete_card = $db->delete('tbl_board_list_card',array('board_id'=>$board_id));
+// $delete_attachment = $db->delete('tbl_board_list_card_attachements',array('board_id'=>$board_id));
+// $delete_checklist = $db->delete('tbl_board_list_card_checklist',array('board_id'=>$board_id));
+// $delete_checklistitm = $db->delete('tbl_board_list_card_checklist_item',array('board_id'=>$board_id));
+// $delete_comment = $db->delete('tbl_board_list_card_comments',array('board_id'=>$board_id));
+// $delete_label = $db->delete('tbl_board_list_card_labels',array('board_id'=>$board_id));
+// $delete_duedate = $db->delete('tbl_board_list_duedate',array('board_id'=>$board_id));
+// $delete_member = $db->delete('tbl_board_members',array('board_id'=>$board_id));
+// $delete_board = $db->delete('tbl_user_board',array('board_id'=>$board_id));
+// $delete_boardmeta = $db->delete('tbl_user_boardmeta',array('board_id'=>$board_id));
 
 
+        $updateData = array(
+                'status' => 0
+            );
+            $cond = array(
+                'board_id' => $board_id
+            );
+            $update = $db->update("tbl_user_board",$updateData,$cond);
+            
 	$response = array(
 		"successBool" => true,
 		"responseType" => "delete_board",

@@ -969,14 +969,14 @@ $query = "select tm.id as tmid,tm.team_name as tmname from tbl_user_team as tm w
             $offset = 0;
             $pages = ceil($total/$limit);
             $left_rec = $total - ($page * $limit); 
-            $query1 = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.team_id = 0 group by tbl_user_board.board_key order by tbl_user_board.board_id desc"; 
+            $query1 = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.team_id = 0 AND tbl_user_board.status = 1 group by tbl_user_board.board_key order by tbl_user_board.board_id desc"; 
             }else{
             $page = $pageno;
             $offset = $page  * $limit;
 
             $pages = ceil($total/$limit);
             $left_rec = $total - ($page * $limit);
-              $query1 = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.team_id = 0 group by tbl_user_board.board_key order by tbl_user_board.board_id desc limit $offset , $limit";  
+              $query1 = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.team_id = 0 AND tbl_user_board.status = 1 group by tbl_user_board.board_key order by tbl_user_board.board_id desc limit $offset , $limit";  
             } 
 //echo $query1;
             $result1 = mysqli_query($this->dbh,$query1);
@@ -1054,7 +1054,7 @@ function getallBoard($uid){
           $resultss = mysqli_query($this->dbh,$set_mode);
        /*$query = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid order by tbl_user_board.board_id desc";*/
 
-          $query = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid group by tbl_user_board.board_key order by tbl_user_board.board_id desc"; 
+          $query = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.status = 1 group by tbl_user_board.board_key order by tbl_user_board.board_id desc"; 
         $result = mysqli_query($this->dbh,$query);
         $rowcount = mysqli_num_rows($result);
         if($rowcount > 0){
@@ -1541,7 +1541,7 @@ function getInvitedBoard($uid){
  $set_mode = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''))";
  $resultss = mysqli_query($this->dbh,$set_mode);
 
- $query = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.type='TB' group by tbl_user_board.board_key order by tbl_user_board.board_id desc"; 
+ $query = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.type='TB' AND tbl_user_board.status = 1 group by tbl_user_board.board_key order by tbl_user_board.board_id desc"; 
 
    // $query = "SELECT bm.board_id ,ub.board_title,ub.board_star,ub.bg_color,ub.bg_img, GROUP_CONCAT(ubm.meta_key) as mkey, GROUP_CONCAT(ubm.meta_value) as mvalue FROM tbl_board_members as bm LEFT outer join tbl_user_boardmeta as ubm on ubm.board_id = bm.board_id LEFT outer join tbl_user_board as ub on ub.board_id = bm.board_id WHERE bm.member_id = $uid and bm.member_status = 1 AND bm.user_id!=bm.member_id group by board_id";
      $result = mysqli_query($this->dbh,$query);
