@@ -31,17 +31,17 @@ if(isset($_REQUEST['data'])){
 				$tempBoard = $db->get_data('tbl_templates',array('name'=>$result['board_title']));
 				if(empty($tempBoard))
 				{
-				    $lastTempId = $db->insert("tbl_templates",array('name' => $result['board_title'],'image' => $result['bg_img'],'cat_id' => $temp_catId,'description' => 'this is test template of board'));
+				    $lastTempId = $db->insert("tbl_templates",array('name' => $result['board_title'],'image' => $result['bg_img'],'cat_id' => $temp_catId,'board_id' => $board_id,'description' => 'this is test template of board'));
     		
         			$db->insert('tbl_user_template',array('userid' => $admin_id,'template_id' => $lastTempId));
-        			$tempbid = $db->insert('tbl_tmp_board',array('cat_id'=>$temp_catId,'board_name'=>$result['board_title'],'board_bgimage'=>$result['bg_img'],'status'=> '1'));
+        			$tempbid = $db->insert('tbl_tmp_board',array('cat_id'=>$lastTempId,'board_name'=>$result['board_title'],'board_bgimage'=>$result['bg_img'],'status'=> '1'));
         			
         			$boardList = $db->getBoardList($board_id);
     				foreach($boardList as $list)
     				{
     				    $listCard = $db->getListCard1($list['list_id']);
     				    
-    				    $listId = $db->insert('tbl_tmp_board_list',array('cat_id'=>$temp_catId,'board_id'=>$tempbid,'list_title'=>$list['list_title']));
+    				    $listId = $db->insert('tbl_tmp_board_list',array('cat_id'=>$temp_catId,'board_id'=>$tempbid,'list_title'=>$list['list_title'],'bgimage'=>$list['list_icon'],'bgcolor'=>$list['list_color']));
     				    foreach($listCard as $card)
     				    {
     				        $db->insert('tbl_tmp_board_list_card',array('board_id'=>$tempbid,'cat_id'=>$temp_catId,'list_id'=> $listId,'card_name'=> $card['card_title'],'card_description'=>$card['card_description']));

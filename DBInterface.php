@@ -250,7 +250,9 @@ $sql = "SELECT * FROM $table";
     function getName($id){
         $sql = "SELECT Full_Name FROM tbl_users WHERE ID = '".$id."'";
         $sql_query = mysqli_query($this->dbh,$sql);
+        
         $row=mysqli_fetch_array($sql_query);
+       
         return $row['Full_Name'];
     }
     function getEmail($id){
@@ -1246,6 +1248,8 @@ function getTeamDetails($tid){
             while($DataSet = mysqli_fetch_array($result)){
                 $data['list_title'] = $DataSet['list_title'];
                 $data['list_id'] = $DataSet['list_id'];
+                $data['list_color'] = $DataSet['list_color'];
+                $data['list_icon'] = $DataSet['list_icon'];
                 //$data['bgimage'] = $DataSet['bgimage'];
                 $data['bgcolor'] = '#f7f7f7';
                 $data_array[] = $data;
@@ -2489,14 +2493,15 @@ function getAll($tbl, $pageno){
             return $result;
         }
     }
-
-    function getCardNotification()  {
+    
+    function getCardNotification($cardid)  {
         $query = "SELECT * FROM tbl_card_notification where card_id='".$cardid."' AND notif_for='web'";
         $sql_query = mysqli_query($this->dbh, $query);
         $num_rows = mysqli_num_rows($sql_query);
         if($num_rows > 0){
             $data_array = array();
             while($result = mysqli_fetch_array($sql_query)){
+                $data['notify_id'] = $result['id'];
                 $data['title'] = $result['title'];
                 $data['message'] = $result['message'];
                 $data['user_from'] = $result['user_from'];
@@ -2508,6 +2513,15 @@ function getAll($tbl, $pageno){
             return $data_array;
         }
     }
+    
+    function getTotalFileSize($userId) {
+        $query = "SELECT sum(file_size) As totalfilesize FROM tbl_board_list_card_attachements where userid='".$userId."'";
+        $sql_query = mysqli_query($this->dbh, $query);
+        $result = mysqli_fetch_array($sql_query);
+        return $result['totalfilesize'];
+        
+    }
+   
 
 }    
 ?>

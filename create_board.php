@@ -8,7 +8,7 @@ $db->connect();
 if(isset($_REQUEST['token'])){
 	
 	if($_REQUEST['token'] == $_SESSION['Tocken']){
-
+echo $_REQUEST['boardTitle'];die;
 		$board_title = $_REQUEST['boardTitle'];
 		$teamId = $_REQUEST['teamId'];
 		$board_privacy = $_REQUEST['board_privacy'];
@@ -184,6 +184,8 @@ $inserttemp = $db->insert('tbl_user_template',array('userid'=>$uid,'template_id'
                 'board_id'=>$bid,
                 'list_title'=>$board_list['list_title'],
                 'listkey'=>$list_key,
+                'list_color'=>$board_list['bgcolor'],
+                'list_icon'=>$board_list['bgimage'],
                       );
     
             $db->insert('tbl_board_list',$list_insert);
