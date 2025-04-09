@@ -514,7 +514,7 @@ if($teamDetails == 0){
      $count = sizeof($list_data);
      $width = (288*$count)+50;
      ?>
-     <div id="scroll" class="boardlistitem" style="width:<?php echo $width.'px'; ?>">
+     <div id="scroll" class="boardlistitem" style="width:100%;">
 
       <?php
       
@@ -557,11 +557,17 @@ if($teamDetails == 0){
             <input type="hidden" id="list_id" value="<?php echo $value['list_id'];?>">
              
                      <div class="form-group icon">
-                         <?php $list_icons = $db->getListIcon(0,100); foreach($list_icons as $icon) { ?>
-                             <div class="col-sm-2" onclick="userlistIcon(this.id,<?php echo $value['list_id'];?>)" id="<?php echo $icon['images']; ?>">
-                                <img src="<?php echo $icon['images'] ?>" alt="<?php echo htmlspecialchars($icon['name']) ?>" style="width:30px; gap">
-                            </div>
-                         <?php } ?>
+                        <?php 
+$current_icon = $value['current_icon']; // yeh icon jo selected hai abhi
+$list_icons = $db->getListIcon(0,100); 
+foreach($list_icons as $icon) {
+    $is_selected = ($icon['images'] == $current_icon) ? 'selected-icon' : '';
+    ?>
+    <div class=" icon-div <?php echo $is_selected; ?>" onclick="userlistIcon('<?php echo $icon['images']; ?>', <?php echo $value['list_id']; ?>)">
+        <img src="<?php echo $icon['images']; ?>" alt="<?php echo htmlspecialchars($icon['name']); ?>" style="width:30px;">
+    </div>
+<?php } ?>
+
                      </div>
                     
             
@@ -588,7 +594,7 @@ if($teamDetails == 0){
         <input type="text" class="form-control list-Title n-p  dc_filter_val" id="<?php echo $i."_".$value['list_id']; ?>" onblur="return editListTitle(this.id)" value="<?php echo ucfirst($value['list_title']); ?>" style="height:27px;width: 90%; text-align: center;color:#fff">
         
         </span>
-       <span style="display: inline-flex;" >
+       <span>
             <p class="number"> <?php $numberCard = $db->countListCard($listid); echo $numberCard;?> 
         </span>
        
@@ -650,50 +656,61 @@ if($teamDetails == 0){
         }
         
         
-function userlistColor(elem,list_id){
-   
+function userlistColor(elem, list_id) {
     var color = elem;
     var id = list_id;
     var action = 'list_bg_color';
+
     $.ajax({
-      url: 'changeBgColor.php',
-      type: 'POST',
-      data: {action: action,color:color,id:id},
-      success: function(rel){
-          var obj = jQuery.parseJSON(rel);
-          if(obj.result=="TRUE")
-          {
-               location.reload();
-        
-          }else if(obj.result=="FALSE"){ 
-            $(".error").html(obj.message);
-          }
-      }
-    })
- }
- 
- function userlistIcon(elem,list_id)
- {
-    var icon = elem;
-    var id = list_id;
+        url: 'changeBgColor.php',
+        type: 'POST',
+        data: { action: action, color: color, id: id },
+        success: function(rel) {
+            var obj = jQuery.parseJSON(rel);
+            if (obj.result == "TRUE") {
+               
+                var target = document.querySelector('.out' + id + ' .board-title-input');
+                if (target) {
+                    target.style.background = color;
+                }
+            } else if (obj.result == "FALSE") {
+                $(".error").html(obj.message);
+            }
+        }
+    });
+}
+
+ function userlistIcon(iconUrl, list_id) {
     var action = 'list_bg_icon';
+
     $.ajax({
-      url: 'changeBgColor.php',
-      type: 'POST',
-      data: {action: action,icon:icon,id:id},
-      success: function(rel){
-          var obj = jQuery.parseJSON(rel);
-          if(obj.result=="TRUE")
-          {
-               location.reload();
-           
-        
-          }else if(obj.result=="FALSE"){ 
-            $(".error").html(obj.message);
-          }
-      }
-    })
- }
+        url: 'changeBgColor.php',
+        type: 'POST',
+        data: { action: action, icon: iconUrl, id: list_id },
+        success: function(rel) {
+            var obj = jQuery.parseJSON(rel);
+            if (obj.result === "TRUE") {
+
+               var classSelector = '.out' + list_id;
+                var outElement = $(classSelector);
+                if (outElement.length > 0) {
+                    outElement.find('.iconImg').attr('src', iconUrl + '?t=' + new Date().getTime());
+                }
+
+                $(".icon-div").removeClass("selected-icon");
+                $(`.icon-div img[src="${iconUrl}"]`).parent().addClass("selected-icon");
+
+            } else {
+                $(".error").html(obj.message);
+            }
+        },
+        error: function() {
+            $(".error").html("Something went wrong!");
+        }
+    });
+}
+
+
         
         
        </script>
@@ -935,7 +952,7 @@ $result = $db->getUserMeta($value);
    </div>
    
 
-        <div class="save-board">     
+        <div class="save-board">    
      <div style="display:none;position:relative;left: 0px;bottom:0px;width:100%;background-color: #f1f1f1;border-top: 1px solid #f1f1f1;padding:7px;z-index: 99" id="Boardlist_<?php echo $i ?>" class="cardboxnew_<?php echo $listid;?>  col-sm-12 status">
         <div style="width: 100%;">
         <form action="" method="post" id="addCardForm_<?php echo $listid ?>"  enctype="multipart/data">
@@ -945,7 +962,7 @@ $result = $db->getUserMeta($value);
          <div class="col-sm-12 n-p">
            <a id="<?php echo $i."_".$listid; ?>" href="javascript:void(0)" class="list-btn save_card" onclick="return createCard(this.id);">Save</a>
 
-           <a href="javascript:void(0)" id="<?php echo $i."_closeList" ?>" onclick="return close_list(this.id)" style="width:16px; height: 16px;display: inline-block; margin-left: 10px;color: #000"><span class="fa fa-times"></span></a>
+           <a href="jabascript:void(0)" id="<?php echo $i."_closeList" ?>" onclick="return close_list(this.id)" style="width:16px; height: 16px;display: inline-block; margin-left: 10px;color: #000"><span class="fa fa-times"></span></a>
          </div>
 
         </form>
@@ -1130,15 +1147,26 @@ $('#'+id).addClass('fa fa-star-o');
    }
 
 
-function close_list(elem){
+function close_list(elem) {
   var id = elem;
   var hideId = id.split("_");
-  var div = "Boardlist_"+hideId[0];
-  var listId = "list_"+hideId[0];
+  var div = "Boardlist_" + hideId[0];
+  var listId = "list_" + hideId[0];
+  var btnId = hideId[0] + "_addcardbtn"; // ID of the hidden button
+
+  // Hide the board list
   document.getElementById(div).style.display = "none";
-  document.getElementById(hideId[0]).style.display = "inline-block";
+  
+  // Show the "Add Card" button again by removing .hide-force
+  var btn = document.getElementById(btnId);
+  if (btn) {
+    btn.classList.remove("hide-force");
+  }
+
+  // Reset min-height if needed
   document.getElementById(listId).style.minHeight = "0px";
 }
+
 
 function openCardModal(elem){
 
@@ -1173,6 +1201,7 @@ $('#cardModal').toggle(function () {
   
 });
  }
+
 
 function deleteCard(event){
   var id = event;
@@ -1216,11 +1245,24 @@ function ShowRenameBoard(event){
     $("#renameBoardDiv").css({"display":"block"});
 }
 
-function ShowIcon(event){
-    $("#IconDiv_"+ event).css({"display":"block"});
-    loadImages(event);
-    
+function ShowIcon(event) {
+    // Pehle sab IconDiv ko hide karo
+    $("[id^='IconDiv_']").each(function () {
+        if ($(this).css("display") === "block" && this.id !== "IconDiv_" + event) {
+            $(this).css("display", "none");
+        }
+    });
+
+    // Fir clicked wale ko toggle karo
+    var currentDiv = $("#IconDiv_" + event);
+    if (currentDiv.css("display") === "block") {
+        currentDiv.css("display", "none");
+    } else {
+        currentDiv.css("display", "block");
+        // loadImages(event); // images load tabhi ho jab open ho
+    }
 }
+
 function editListTitle(clicked){
   var id = clicked;
   //alert(id);
@@ -1246,34 +1288,33 @@ function editListTitle(clicked){
   return false;
 }
 
-function createList(){
-      var list_name = $("#list_name").val();
-      if(list_name == ""){
-        $("#list_name").focus();
-      }else{
-        var data = $("#listForm").serialize();
-        $.ajax({
-            url: "create_list.php",
-            type: "POST",
-            data: data,
-            success: function(rel){
-              var obj = jQuery.parseJSON(rel);
-              if(obj.result=="TRUE"){
-                var url = obj.url;
-              // alert(obj.divwidth);
-                $('#list_name').val('');
-                $('.boardlistitem').append(obj.msgdata);
-                $('.boardlistitem').css('width',obj.divwidth);
-               location.reload();
-                // window.location.href = url;
-              }else if(obj.result=="FALSE"){
-                  $("#listTitle").html(obj.message);
-              }
-            }
-        });
-        return false;
+function createList() {
+  var list_name = $("#list_name").val();
+  if (list_name == "") {
+    $("#list_name").focus();
+  } else {
+    var data = $("#listForm").serialize();
+    $.ajax({
+      url: "create_list.php",
+      type: "POST",
+      data: data,
+      success: function (rel) {
+        var obj = jQuery.parseJSON(rel);
+        if (obj.result == "TRUE") {
+          $('#list_name').val('');
+          $('.boardlistitem').append(obj.msgdata); // new list element HTML from server
+       
+          
+        } else if (obj.result == "FALSE") {
+          $("#listTitle").html(obj.message);
+        }
       }
+    });
+    return false;
+  }
 }
+
+
 $('#list_name').keypress(function(event){
 
   var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -1293,7 +1334,7 @@ $('#list_name').keypress(function(event){
                 var url = obj.url;
                 $('#list_name').val('');
                 $('.boardlistitem').append(obj.msgdata);
-                $('.boardlistitem').css('width',obj.divwidth);
+                // $('.boardlistitem').css('width',obj.divwidth);
                // window.location.href = url;
               }else if(obj.result=="FALSE"){
                   $("#listTitle").html(obj.message);
@@ -1305,66 +1346,87 @@ $('#list_name').keypress(function(event){
   }
 
 });
-function createCard(elem){
-    var id = elem;
-    var hideId = id.split("_");
-    var list_id = hideId[1];
-    //alert(list_id);
-    var cardid = "cardName_"+list_id;
-    var cardname = document.getElementById(cardid).value;
-    var token = document.getElementById("token").value;
-    var qstring = document.getElementById("qstring").value;
-    if(cardname == ""){
-      document.getElementById(cardid).focus();
-    }else{
-      var data = "card_title="+cardname+"&list_id="+list_id+"&token="+token+"&qstring="+qstring;
-      //alert(data);
-      $.ajax({
-            url: "create_card.php",
-            type: "POST",
-            data: data,
-            success: function(rel){
-              var obj = jQuery.parseJSON(rel);
-              if(obj.result=="TRUE"){
-                var url = obj.url;
-                 $('#list_'+list_id).append(obj.message);
-                 $('#cardName_'+list_id).val('');
-                 $('.cardboxnew_'+list_id).css('display','none');
-                 $('.cardsav_'+list_id).css('display','inline-block');
-                //window.location.href = url;
-              }else if(obj.result=="FALSE"){
-                  $("#listTitle").html(obj.message);
-              }
-            }
-        });
-        return false;
-    }
+function createCard(elem) {
+  var id = elem; // e.g. "1_530"
+  var parts = id.split("_"); // ["1", "530"]
+  var prefix = parts[0];     // "1"
+  var list_id = parts[1];    // "530"
 
+  console.dir(elem);
+
+  var cardid = "cardName_" + list_id;
+  var cardInput = document.getElementById(cardid);
+
+  if (!cardInput) {
+    console.error("Input with ID " + cardid + " not found.");
+    return;
+  }
+
+  var cardname = cardInput.value;
+  var token = document.getElementById("token").value;
+  var qstring = document.getElementById("qstring").value;
+
+  if (cardname === "") {
+    cardInput.focus();
+  } else {
+    var data = "card_title=" + cardname + "&list_id=" + list_id + "&token=" + token + "&qstring=" + qstring;
+
+    $.ajax({
+      url: "create_card.php",
+      type: "POST",
+      data: data,
+      success: function (rel) {
+        var obj = jQuery.parseJSON(rel);
+
+        if (obj.result === "TRUE") {
+          var url = obj.url;
+          $('#list_' + list_id).append(obj.message);
+          $('#cardName_' + list_id).val('');
+          $('.cardboxnew_' + list_id).css('display', 'none');
+          $('.cardsav_' + list_id).css('display', 'inline-block');
+
+         
+          var btnId = prefix +"_addcardbtn";
+          $('#' + btnId).removeClass('hide-force');
+
+          console.log("Card created. Button shown:", btnId);
+        } else if (obj.result === "FALSE") {
+          $("#listTitle").html(obj.message);
+        }
+      }
+    });
+
+    return false;
+  }
 }
 
-function addCard(clicked){
 
-    var id = clicked;
-    var results = id.split('_');
-      id = results[0];
-    document.getElementById(clicked).style.display = "none";
-    
-    var CurrentBoardList = "Boardlist_"+id;
-    var listId = "list_"+id;
-    var i;
-    for (i = 1; i < 50; i++) {
-      var otherBoardList = "Boardlist_"+i;
-      if(CurrentBoardList == otherBoardList){
-        document.getElementById(CurrentBoardList).style.display = "block";
-        document.getElementById(listId).style.minHeight = "0px";
-      }else{
-          document.getElementById(otherBoardList).style.display = "none";
-          document.getElementById(i).style.display = "inline-block";
-      }
-    }
-
+function addCard(clickedId) {
+  // Just hide the clicked button
+  var clickedBtn = document.getElementById(clickedId);
+  if (clickedBtn) {
+    clickedBtn.classList.add("hide-force");
   }
-  
+
+  // Get numeric id from something like "1_addcardbtn"
+  var id = clickedId.split('_')[0];
+
+  var currentBoardListId = "Boardlist_" + id;
+  var listElementId = "list_" + id;
+
+  // Show current board list
+  var boardElement = document.getElementById(currentBoardListId);
+  if (boardElement) {
+    boardElement.style.display = "block";
+  }
+
+  // Adjust height of the list container if needed
+  var listElement = document.getElementById(listElementId);
+  if (listElement) {
+    listElement.style.minHeight = "0px";
+  }
+}
+
   
 
 
@@ -1547,5 +1609,85 @@ $(document).ready(function(){
 .modal-backdrop {
     z-index: 1050;
 }
+.col-sm-12{
+    padding:0;
+}
+img.iconImg{
+    background: #000000f7 !important;
+    width: 34px;
+    padding: 5px;
+    border-radius: 7px !important;
+}
+.IconDiv{
+        
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    padding: 0;
+}
+.board-title-input form{
+        display: flex;
+    align-items: center;
+        justify-content: space-between;
+}
+.board-title-input p.number{
+    margin:0;
+    border-radius:20%;
+}
+.board-title-input input:focus {
+      background-color: #ffffff29 !important;
+    box-shadow: 0 0 0px 1px #ffffffa8 !important;
+}
+.icon{
+    
+    gap: 13px;
+    align-items: center !important;
+}
+.form-group.icon{
+        display: flex
+;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    width: 100%;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: start;
+    row-gap: 9px;
+    padding: 10px;
+}
+.list-span{
+    color:black;
+}
+[name="add_card_btn"]{
+    height: unset;
+    padding: 9px 17px !important;
+    border-radius: 19px !important;
+        display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px;
+}
+.hide-force {
+  display: none !important;
+}
 
+#scroll{
+        width: 100%;
+    height: fit-content !important;
+  padding:0 15px !important;
+    display: flex
+;
+    flex-wrap: wrap !important;
+}
+div#scroll .dc_filter {
+    float: unset !important;!i;!;
+    width: 288px;
+    /* height: fit-content; */
+    margin-left: 10px;
+    float: unset !important;
+    display: inline-block;
+}
+.overlay{
+    postion:relative !important;
+}
+.overlay::after {content: "";     background: #000000a3;     height: 100%;     width: 100%;     position: absolute;     z-index: 9;     top: 0;     backdrop-filter: blur(1px); }
       </style>
