@@ -920,6 +920,8 @@ $user_data = mysqli_fetch_array($user_sql);
 }
 
 
+
+
  function TeamData($uid){
 $query = "select tm.id as tmid,tm.team_name as tmname from tbl_user_team as tm where tm.user_id = $uid";
         $result = mysqli_query($this->dbh,$query);
@@ -940,14 +942,6 @@ $query = "select tm.id as tmid,tm.team_name as tmname from tbl_user_team as tm w
         }
         return $response;
     }
-
-
-
-
-
-
-
-
 
 
   function getpersonalBoard($uid,$pageno){
@@ -4224,6 +4218,350 @@ function getbordlistduedate2($cardid){
               
                return array();
         }
+    }
+    
+    function getUserDeletedBoard($uid,$pageno){
+        $query = "SELECT * FROM `tbl_user_board` where admin_id = '".$uid."' AND status = '0'";
+        $sql_query = mysqli_query($this->dbh,$query);
+        $data_array = array();
+        while($result =  mysqli_fetch_array($sql_query))
+        {
+           
+            $data['board_id'] = $result['board_id'];
+            $data['board_title'] = $result['board_title'];
+            $data['bg_color'] = $result['bg_color'];
+            $data['bg_img'] = $result['bg_img'];
+            $data['bg_type'] = $result['bg_type'];
+            $data_array[] = $data;
+        }
+        
+       $response = array(
+                        "successBool"   => true,
+                        "responseType"   => "deleted_board",
+                        "successCode"   => "200",
+                            "response"  => array(
+                                'deleted_board' => $data_array,
+                               
+                            ),
+                            "ErrorObj"   => array(
+                                "ErrorCode" => "",
+                                "ErrorMsg"  => ""
+                            )
+                    );
+    
+       return $response;
+
+    }
+    
+    function googleLogin($email,$deviceType,$deviceID,$device_token,$id_token,$fullname)
+    {
+        if(empty($emailid)){
+            $result = array(
+                "successBool" => false,
+                "successCode" => "",
+                "response" => array(),
+                "ErrorObj"   => array(
+                    "ErrorCode" => "101",
+                    "ErrorMsg"  => "Please Enter emailid."
+                )       
+            );
+            
+        }else{
+            
+                $query = "SELECT * FROM tbl_users WHERE Email_ID = '$emailid' ";
+                $resultdata = mysqli_query($this->dbh,$query);
+                $rowcount = mysqli_num_rows( $resultdata );
+                $date = date("Y-m-d H:i:s");   
+                $user_token = md5($date);
+  
+                if($rowcount>0){
+
+                 $query_result = mysqli_fetch_array($resultdata);
+                 $userid = $query_result['ID'];
+                 $update_data1 = array('login_type' => 'google');
+                $update1 = $this->update("tbl_users",$update_data1, array('ID' => $userid));
+ 
+ 
+                if($query_result['user_verify_status'] == "1"){
+      
+                 //dc code for profile image
+                 if($query_result['profile_pic_type']=='url'){
+                	$profile_pics = $query_result['profile_pics'];
+                }else if($query_result['profile_pic_type']=='file'){
+                	$profile_pics =  $this->site_url.'user_profile_Image/'.$query_result['profile_pics'];
+                }else{
+                	$profile_pics = '';
+                } 
+                //dc code end
+                    $devicestatus = $this->chkUserDevice($userid);
+            //echo $devicestatus;
+                    if($devicestatus==0){
+                    $devicedata = array('user_id' => $userid,'type' => $type,'device_id' => $dev_id,'token' => $user_token,'push_token' => $device_token);
+                     $this->insert('tbl_user_device',$devicedata);
+             }else{
+                 $cond_device = array('user_id' => $userid);
+                 $update_data = array('type' => $type,'device_id' => $dev_id,'token' => $user_token,'push_token' => $device_token);
+                $update = $this->update("tbl_user_device",$update_data, $cond_device);
+                    }
+                     $token = $this->getUDToken($userid,$dev_id,$type);
+                     //echo $token;
+             $result = array(
+                            "successBool" => true,
+                            "successCode" => "200",
+                            "response" => array(
+                            'message'=>'You are successfully loggedin',
+                            'user_id' => $query_result['ID'],
+                            'fullname' => $query_result['Full_Name'],
+                            'profileImage' => $profile_pics,
+                            'device_token' => $device_token,
+                            'userToken' => $token,
+                            'emailid' => $emailid,
+                            'membership_plan' => $query_result['membership_plan'],
+                            'previlage'=> $query_result['previlage'],
+                            ),
+                            "ErrorObj"   => array(
+                                "ErrorCode" => "",
+                                "ErrorMsg"  => ""
+                            )       
+                        );
+            
+            
+            
+             //echo $result;
+              }else{
+                          $result = array(
+                            "successBool" => false,
+                            "successCode" => "",
+                            "response" => array(),
+                            "ErrorObj"   => array(
+                                "ErrorCode" => "109",
+                                "ErrorMsg"  => "Please Activate Your Account"
+                            )       
+                        );
+                    }
+            }else{
+                if (!$id_token) {
+                    $result = array(
+                            "successBool" => false,
+                            "successCode" => "",
+                            "response" => array(),
+                            "ErrorObj"   => array(
+                                "ErrorCode" => "400",
+                                "ErrorMsg"  => "Missing ID token"
+                            )       
+                        );
+                   
+                }
+                $verify_url = "https://oauth2.googleapis.com/tokeninfo?id_token=" . urlencode($id_token);
+                $response = file_get_contents($verify_url);
+                $payload = json_decode($response, true);
+                if (isset($payload['aud']) && $payload['aud'] === '649854156531-d6hj11s57t2ig7je3rcujkt4dhqeg40b.apps.googleusercontent.com') {
+                    $pass = '12345';
+                    $datet = date("Y-m-d-H-i-s");
+                	$token = md5($datet.$payload['name']); 
+                	$userKey = substr($token,0,4);
+                	$status = 1;
+                	$name = $payload['name'];
+                    $userData = array(
+        				'Full_Name' 	=> $payload['name'],
+        				'Email_ID' 		=> $payload['email'],
+        				'User_Password' => md5($pass),
+        				'userKey'		=> $userKey,
+        				'status' 		=> $status,
+        				'login_type' 		=> 'google',
+        				'AddDate' 		=> date("Y-m-d H:i:s")
+        			);
+        			$insertDataUserTable = $this->insert("tbl_users",$userData);
+        			if($insertDataUserTable == true){
+							
+				        $uid = $this->lastInsertedId($userKey);
+        			}
+                    $code = date("his");
+
+    				$data_user_device = array(
+    					'user_id'		=> $uid,
+    					'type'			=> $deviceType,
+    					'device_id'		=> $deviceID,
+    					'token' 		=> $token,
+    					'push_token'	=> $device_token,
+    					'vcode'			=> $code,
+    					'status'        => 1
+    				);
+    				$this->insert("tbl_user_device",$data_user_device);
+                    //profileid
+        				$profile_id = strtotime(date("Ymdhis"));
+        				$user_meta_pid = array("meta_key" => "profile_id","meta_value"=> $profile_id,"user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_pid);
+
+        				//full name
+        				$user_meta_name = array(
+        						"meta_key" => "full_name",
+        						"meta_value"=> $name,
+        						"user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_name);
+
+        				$username = explode("@", $payload['email']);
+        				$user_meta_username = array(
+        						"meta_key" => "user_name",
+        						"meta_value"=> "@".$username[0],
+        						 "user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_username);
+
+        				$first = explode(" ", $name);
+        				$initials = strtoupper(substr($first[0], 0, 1))."".strtoupper(substr($first[1], 0, 1));
+        				$user_meta_in = array(
+        						"meta_key" => "initials",
+        						"meta_value"=> $initials,
+        						 "user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_in);
+
+        				$user_meta_in = array(
+        					"meta_key" => "Bio",
+        					"user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_in);
+
+        				$user_meta_bg = array("meta_key" => "bg_color","meta_value"=>"#f52d39","user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_bg);
+				
+        				$user_meta_bgimg = array("meta_key" => "bg_img","meta_value"=>"","user_id" => $uid);			
+        				$insert = $this->insert("tbl_usermeta",$user_meta_bgimg);
+        				if($insert)
+        				{
+        				    $companyName = "www.Odapto.com";
+
+                        				$to = $payload['email'];
+                        				$subject = "Odapto: Your account details.";
+                                        
+                        $message = '<html>
+                        <head>
+                        <title>Mailer</title>
+                        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">';
+                        $message .= '<style type="text/css">';
+                        $message .=  " *{
+                        	margin: 0;
+                        	padding: 0;
+                        	box-sizing:border-box;
+                        	font-family: 'Montserrat', sans-serif;
+                        }
+                        .confirm-btn{
+                            border-radius: 3px;
+                            background: #3aa54c;
+                            color: #fff !important;
+                            display: block;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 1.25em;
+                            margin: 24px auto 24px;
+                            padding: 10px 18px;
+                            text-decoration: none;
+                            width: 300px;
+                            letter-spacing: 1px;
+                            text-align: center;
+                        }
+                        table, th, td {
+                          border: 1px solid #e8e8e8;
+                          border-collapse: collapse;
+                          font-size: 13px;
+                          color: #666;
+                        }
+                        th, td {
+                          padding: 5px;
+                          text-align: left;
+                        }
+                        body p {
+                        	color: #666;
+                        	font-size: 14px;
+                        }
+                        </style>
+                        </head>";
+                        
+                        $message .= '<body style="background:#e6e6e6">
+                        
+                          <div style="max-width:800px;margin:auto;margin-top:20px";>
+                        
+                            <div style="width:100%;background:#8c2d37 !important;border-radius:8px 8px 0 0;padding:10px;">
+                                <img style="max-width:120px;margin:auto;display:block" src="https://www.odapto.com/images/logo.png">
+                            </div>
+                               <div style="background:#fff;width:100%;padding:20px 0;padding-bottom:0">
+                                <h2 style="text-align:center">We are glad you are here!</h2>';
+                        
+                                
+                               $message .= '<table style="width:540px;margin:auto">
+                              <tr>
+                              <td>Email</td>
+                              <td>'.$payload['email'].'</td>
+                              </tr>
+                              <tr>
+                              <td>Password</td>
+                              <td>********</td>
+                              </tr>
+                              </table>';
+                        
+                        $message .= '<div style="text-align:center;margin:30px 0">
+                              <p style="margin-bottom:20px">We just want to confirm you are you.</p>
+                              <p>If you did not create a Odapto account, just delete this email and everything will go back to the way it was.</p>
+                              </div>
+                        
+                          </div>
+                        </div> 
+                        
+                        </body>
+                        </html>';
+                        
+                        				         
+                        				$header = "From:admin@odapto.com \r\n";
+                        				$header .= "MIME-Version: 1.0\r\n";
+                        				$header .= "Content-type: text/html\r\n";
+                                        $fromemail = 'admin@odapto.com';
+                                        $retval = $this->sendEmail1($subject,$message,$payload['email'],$fromemail);
+                                        $result = array(
+                                            "successBool" => true,
+                                            "successCode" => "200",
+                                            "response" => array(
+                                            'message'=>'You are successfully loggedin',
+                                            'user_id' => $uid,
+                                            'fullname' => $payload['name'],
+                                            'profileImage' => $payload['picture'],
+                                            'device_token' => $device_token,
+                                            'userToken' => $token,
+                                            'emailid' => $payload['email'],
+                                            'membership_plan' => '1',
+                                            'previlage'=> '0',
+                                            ),
+                                            "ErrorObj"   => array(
+                                                "ErrorCode" => "",
+                                                "ErrorMsg"  => ""
+                                            )       
+                                        );
+        				}
+                    
+                } else {
+                    $result = array(
+                            "successBool" => false,
+                            "successCode" => "",
+                            "response" => array(),
+                            "ErrorObj"   => array(
+                                "ErrorCode" => "401",
+                                "ErrorMsg"  => "Invalid token or mismatched client ID"
+                            )       
+                        );
+                    
+                }
+                $result = array(
+                            "successBool" => false,
+                            "successCode" => "",
+                            "response" => array(),
+                            "ErrorObj"   => array(
+                                "ErrorCode" => "108",
+                                "ErrorMsg"  => "login credential are incorrect please try again !"
+                            )       
+                        );
+            }
+      //  }
+
+        }
+
+       return $result;  
     }
 }    
 ?>
