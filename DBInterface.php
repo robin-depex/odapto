@@ -330,7 +330,7 @@ $sql = "SELECT * FROM $table";
 function getStaredBoard($uid){
     $set_mode = "SET sql_mode = ''";
           $resultss = mysqli_query($this->dbh,$set_mode);
-    $query = "select ub.*, group_concat(ubm.meta_key) as mkey , group_concat(ubm.meta_value) as mvalue from tbl_user_board as ub , tbl_user_boardmeta as ubm where ub.admin_id = $uid and ub.board_star = 1 and ub.board_id = ubm.board_id group by board_key";
+    $query = "select ub.*, group_concat(ubm.meta_key) as mkey , group_concat(ubm.meta_value) as mvalue from tbl_user_board as ub , tbl_user_boardmeta as ubm where ub.admin_id = $uid and ub.board_star = 1 and AND ub.status = '1' and ub.board_id = ubm.board_id group by board_key";
     //echo $query;die;
      $result = mysqli_query($this->dbh,$query);
         $rowcount = mysqli_num_rows($result);
@@ -361,7 +361,7 @@ function getBoardKeyValue($bid)
 function getInvitedBoard($uid){
     $set_mode = "SET sql_mode = ''";
     $resultss = mysqli_query($this->dbh,$set_mode);
-    $query = "SELECT bm.board_id ,ub.board_title,ub.board_star,ub.bg_color,ub.bg_img,ub.board_fontcolor, GROUP_CONCAT(ubm.meta_key) as mkey, GROUP_CONCAT(ubm.meta_value) as mvalue FROM tbl_board_members as bm LEFT outer join tbl_user_boardmeta as ubm on ubm.board_id = bm.board_id LEFT outer join tbl_user_board as ub on ub.board_id = bm.board_id WHERE bm.member_id = $uid AND bm.user_id != bm.member_id  and bm.member_status = 1 group by board_id";
+    $query = "SELECT bm.board_id ,ub.board_title,ub.board_star,ub.bg_color,ub.bg_img,ub.board_fontcolor, GROUP_CONCAT(ubm.meta_key) as mkey, GROUP_CONCAT(ubm.meta_value) as mvalue FROM tbl_board_members as bm LEFT outer join tbl_user_boardmeta as ubm on ubm.board_id = bm.board_id LEFT outer join tbl_user_board as ub on ub.board_id = bm.board_id WHERE bm.member_id = $uid AND bm.user_id != bm.member_id  and bm.member_status = 1 and AND ub.status = '1' group by board_id";
     $result = mysqli_query($this->dbh,$query);
     $rowcount = mysqli_num_rows($result);
     if($rowcount > 0){

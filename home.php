@@ -1,4 +1,4 @@
- <?php 
+<?php 
  //require_once("common/config.php");
 //  ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
@@ -89,6 +89,11 @@ if(isset($star_board) && sizeof($star_board) > 0) { ?>
          <li>
             <a href="dashboard.php?page=board&b=<?php echo $bid;?>&t=<?php echo $board_url;?>&k=<?php echo $board_key;?>">
          <i class="fa fa-eye" aria-hidden="true"></i>
+       </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" onclick="deleteBoard(<?php echo $bid?>)">
+         <i class="fa fa-trash" aria-hidden="true"></i>
        </a>
         </li>
         </ul>
@@ -209,7 +214,7 @@ if(isset($invited_board) && sizeof($invited_board) > 0) { ?>
       <div class="col-sm-12">
 
      <?php 
- $query1 = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.team_id = 0 order by tbl_user_board.board_id desc";  
+ $query1 = "select * from tbl_user_board INNER JOIN tbl_board_members ON tbl_user_board.board_id = tbl_board_members.board_id where tbl_board_members.member_id = $uid AND tbl_user_board.team_id = 0 AND tbl_user_board.status='1' order by tbl_user_board.board_id desc";  
             $personalboard = $db->get_sqldata($query1);
             
      if(!empty($personalboard)) {
@@ -243,7 +248,7 @@ $whearmetakeyp = array('board_id'=>$pboard['board_id'],'meta_key'=>'board_key');
          ?>
          <div class="col-sm-3 board_filter" >
             
-     <a href="dashboard.php?page=board&b=<?php echo $pboard['board_id']?>&t=<?php echo $bordmetaurlp['meta_value']; ?>&k=<?php echo $bordmetakeyp['meta_value'] ?>">
+     
          <div class="col-sm-12 n-p dash-box1"  style="<?=$color?>;min-height:150px">
            
             <div class="col-sm-10"> <h4 class="list-title board_filter_val"  style="<?=$fcolor;?>;"><span><?php echo $pboard['board_title']; ?></span></h4></div>
@@ -266,16 +271,23 @@ $whearmetakeyp = array('board_id'=>$pboard['board_id'],'meta_key'=>'board_key');
       <div class="hover-list"></div>
       <div class="hover-list-search">
         <ul class="list-inline icon-hover-list">
-        
+       
         <li>
+        <a href="dashboard.php?page=board&b=<?php echo $pboard['board_id']?>&t=<?php echo $bordmetaurlp['meta_value']; ?>&k=<?php echo $bordmetakeyp['meta_value'] ?>">
          <i class="fa fa-eye" aria-hidden="true"></i>
+         </a>
         </li>
        
+       <li>
+            <a href="javascript:void(0)" onclick="deleteBoard(<?php echo $pboard['board_id']?>)">
+         <i class="fa fa-trash" aria-hidden="true"></i>
+       </a>
+        </li>
          </ul>
       </div>
          </div>
      
-         </a>
+         
       </div>
       
          <?php
@@ -385,7 +397,7 @@ if(isset($team_board) && sizeof($team_board) > 0) { ?>
       ?>
         <div class="col-sm-3">
 
-   <a href="<?php echo $board_link;?>">
+  
          <div class="col-sm-12 n-p dash-box1"  style="<?=$color?>;min-height:150px">
            
             <div class="col-sm-10"> <h4 class="list-title"  style="<?=$fcolor;?>;"><span><?php if(isset($value1['board_title'])) { echo $value1['board_title']; } ?></span></h4></div>
@@ -409,13 +421,20 @@ if(isset($team_board) && sizeof($team_board) > 0) { ?>
       <div class="hover-list-search">
         <ul class="list-inline icon-hover-list">
       <li>
+           <a href="<?php echo $board_link;?>">
          <i class="fa fa-eye" aria-hidden="true"></i>
+         </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" onclick="deleteBoard(<?php echo $value1['board_id']?>)">
+         <i class="fa fa-trash" aria-hidden="true"></i>
+       </a>
         </li>
        </ul>
       </div>
          </div>
      
-         </a>
+         
       </div>
       <?php  
       } }
@@ -892,6 +911,29 @@ function deleteUser(elem){
     });
     
 } 
+
+function deleteBoard(bid) {
+    if (confirm("Are you sure you want to delete this board?")) {
+        $.ajax({
+            url: 'delete_board.php',
+            type: 'POST',
+            data: { board_id: bid },
+            success: function(response) {
+                let res = JSON.parse(response);
+                if (res.success) {
+                    alert("Board deleted successfully.");
+                    location.reload();
+                   
+                } else {
+                    alert("Error: " + res.message);
+                }
+            },
+            error: function() {
+                alert("AJAX request failed.");
+            }
+        });
+    }
+}
 
 </script>
 

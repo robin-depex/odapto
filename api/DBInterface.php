@@ -4255,7 +4255,7 @@ function getbordlistduedate2($cardid){
     
     function googleLogin($email,$deviceType,$deviceID,$device_token,$id_token,$fullname)
     {
-        if(empty($emailid)){
+        if(empty($email)){
             $result = array(
                 "successBool" => false,
                 "successCode" => "",
@@ -4268,7 +4268,7 @@ function getbordlistduedate2($cardid){
             
         }else{
             
-                $query = "SELECT * FROM tbl_users WHERE Email_ID = '$emailid' ";
+                $query = "SELECT * FROM tbl_users WHERE Email_ID = '$email' ";
                 $resultdata = mysqli_query($this->dbh,$query);
                 $rowcount = mysqli_num_rows( $resultdata );
                 $date = date("Y-m-d H:i:s");   

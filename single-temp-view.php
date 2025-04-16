@@ -37,39 +37,9 @@ $counttemp = count($usertem);
   <?php echo $board_detail[0]['description'];?></p>
       </div>
       <div class="col-sm-3">
-<?php 
-if($board_detail[0]['plan_tag']==$_SESSION['membership_id']){
-  //echo $counttemp;
-if($board_detail[0]['plan_tag']==1){ 
-//echo $counttemp;
-  ?>
-<a class="template-btn <?php if($countbord==0){ echo 'nodata';}?>" style="cursor:pointer;" <?php if($countbord>0){  if($counttemp>=3){ ?> href="javascript:void(0)" data-toggle="modal" data-target="#cre-board_upgrade"  <?php }else{?> onclick="boartcopy(<?=$bid?>)" <?php } ?> <?php } ?>>Use template </a>
 
-<?php }else{ ?>
-  <a class="template-btn <?php if($countbord==0){ echo 'nodata';}?>" style="cursor:pointer;" <?php if($countbord>0){ ?> onclick="boartcopy(<?=$bid?>)" <?php } ?>>Use template </a> 
-<?php }
- }else{
-if($board_detail[0]['plan_tag']==1){ 
-//die;
-  ?>
- <a class="template-btn <?php if($countbord==0){ echo 'nodata';}?>" style="cursor:pointer;" <?php if($countbord>0){ echo $countbord; if($counttemp>=3){ echo $countbord."2";?> href="javascript:void(0)" data-toggle="modal" data-target="#cre-board_upgrade"  <?php }else{?> onclick="boartcopy(<?=$bid?>)" <?php } ?> <?php } ?>>Use template</a>
-<?php }else{ ?>
- <a class="template-btn" href="javascript:void(0)" data-toggle="modal" data-target="#cre-board_upgrade">Use template</a> 
-     <!-- <a class="template-btn" href="javascript:void(0)" data-toggle="modal" data-target="cre-board_upgrade">+<?php if($board_detail[0]['plan_tag']==2){ echo 'Business';}else if($board_detail[0]['plan_tag']=='3'){ echo 'Enterprise';} ?></a> -->
-  <!-- <a class="template-btn" style="cursor:pointer;" onclick="boartcopy(<?=$bid?>)"><?php if($board_detail[0]['plan_tag']==2){ echo 'Business';}else if($board_detail[0]['plan_tag']=='3'){ echo 'Enterprise';} ?></a>-->
-<?php }
- }
+ <a class="template-btn <?php if($countbord==0){ echo 'nodata';}?>" style="cursor:pointer;"  href="javascript:void(0)"   onclick="boartcopy(<?=$bid?>)" >Use template</a>
 
-
- /*if($board_detail[0]['plan_tag']==$_SESSION['membership_id']){ ?>
-   <a class="template-btn" style="cursor:pointer;" onclick="boartcopy(<?=$bid?>)">Use template</a>
-   <?php }else{ 
-if($board_detail[0]['plan_tag']==1){
-    ?>
-   <a class="template-btn" style="cursor:pointer;" onclick="boartcopy(<?=$bid?>)">Use template</a>
-<?php }else{ ?>
-    <a class="template-btn" style="cursor:pointer;" onclick="boartcopy(<?=$bid?>)"><?php if($board_detail[0]['plan_tag']==1){ echo 'Free';}else if($board_detail[0]['plan_tag']==2){ echo 'Business Class';}else if($board_detail[0]['plan_tag']=='3'){ echo 'Enterprise';} ?></a>
-<?php }*/ ?>
 
        
       </div>
