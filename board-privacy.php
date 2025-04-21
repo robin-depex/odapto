@@ -41,7 +41,7 @@ if(isset($_REQUEST['data'])){
     				{
     				    $listCard = $db->getListCard1($list['list_id']);
     				    
-    				    $listId = $db->insert('tbl_tmp_board_list',array('cat_id'=>$temp_catId,'board_id'=>$tempbid,'list_title'=>$list['list_title'],'bgimage'=>$list['list_icon'],'bgcolor'=>$list['list_color']));
+    				    $listId = $db->insert('tbl_tmp_board_list',array('cat_id'=>$temp_catId,'board_id'=>$tempbid,'list_title'=>$list['list_title'],'list_color'=>$list['list_color'],'list_icon'=>$list['list_icon'],'bgimage'=>$list['list_icon'],'bgcolor'=>$list['list_color']));
     				    foreach($listCard as $card)
     				    {
     				        $db->insert('tbl_tmp_board_list_card',array('board_id'=>$tempbid,'cat_id'=>$temp_catId,'list_id'=> $listId,'card_name'=> $card['card_title'],'card_description'=>$card['card_description']));

@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(0);
 ob_start();
 session_start();
@@ -130,6 +131,13 @@ if($valuecover['background']==0)
 #CardDesc{
     display:inline-block !important;
 }
+#attachmentDiv{
+      
+    top: 50%;
+    border-radius: 14px;
+    box-shadow: 0 0 0px 1px #b3c0be;
+}
+
 </style>
 <div class="imagePreviewDb <?php echo $class;?>" style="background-color: #<?php echo $valuecover['background'];?>;">
   <img src="attachments/<?php echo $valuecover['cover']; ?>" class="img-responsive" id="cover_img">
@@ -162,8 +170,16 @@ if($valuecover['background']==0)
 </div>
 
 <div class="clearfix"></div>
-<div class="col-md-12 n-p" id="activityDiv">
-<div class="col-md-9 n-p">
+<div class="col-md-12 n-p" id="activityDiv" style="
+    display: flex;
+    gap: 15px;
+">
+<div class="col-md-9 n-p" style="
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 0px #c8c6c6;
+    padding: 0 10px !important;
+">
 <div class="col-sm-12">
 <div class="memberdata">
  		<?php $my_user_id=$db->membersAjax($cardid);
@@ -275,7 +291,7 @@ $background = 'green';
 		<div class="form-group">
 		<textarea class="form-control" rows="3" id="desc" style="border-radius: 0px;"><?php echo $card_description; ?></textarea>
 		<input type="hidden" id="card" value="<?php echo $cardid; ?>">
-		<button class="list-btn" type="button" id="saveCardDesc"> Save Description</button>
+		<button class="list-btn btn-depex" type="button" id="saveCardDesc"> Save Description</button>
 
 		<span class="fa fa-times close-div" id="close_div" ></span>
 		</div>
@@ -372,21 +388,28 @@ if($valueatt['location']!='')
 <?php }else{
 	$bgclass='img-responsive';
 	$ext = $valueatt['ext'];
-	
 	?>
 	<div class="col-sm-12 n-p attachment_div deldiv_<?php echo $valueatt['id']; ?>" style="margin-bottom:10px;margin-left: 16px;margin-top: 5px;">
  <div class="col-sm-2 n-p <?php echo $bgclass; ?>" style="margin-right: 20px;" >
-
+        <?php if($ext == 'pdf') { ?>
+        <embed src='attachments/<?php echo $valueatt['images']; ?>' type='application/pdf' style="height:80px;width: 100%" />
+        <?php } else if($ext == 'mp4' || $ext == 'webm') { ?>
+        <video width='100%' height='80px' controls>
+        <source src="attachments/<?php echo $valueatt['images']; ?>" type="video/<?php echo $ext?>">
+        </video>
+        <?php } else { ?>
 	  <img src="attachments/<?php echo $valueatt['images']; ?>"  style="height:80px;width: 100%">
- 
+        <?php } ?>
 </div> 
 <div class="col-sm-10 n-p">
   	<h4><?php echo $valueatt['title_name']; ?></h4>
 		<a href="attachments/<?php echo $valueatt['images']; ?>" download style="color: #000;margin-right: 8px;"> <span class="fa fa-download" ></span> Download </a>
   <!--	<a href="<?php echo $db->site_url?>/attachments/<?php echo $valueatt['images']; ?>" download style="color: #000;margin-right: 8px;"> <span class="fa fa-download" ></span> Download </a>-->
-	 
-  	<a href="javascript:void(0)" class="<?php echo $class; ?>" id="makeremove_<?php echo $valueatt['id']; ?>"  style="color: #000;margin-right: 8px;"> <span class="fa fa-picture-o"></span> <?php echo $cover ?> </a>
-  
+	 <?php if($ext == 'pdf' || $ext == 'mp4') { ?>
+  	<a href="attachments/<?php echo $valueatt['images']; ?>"  style="color: #000;margin-right: 8px;" target="_blank"> <span class="fa fa-eye" ></span> View </a>
+    <?php } else { ?>
+    <a href="javascript:void(0)" class="<?php echo $class; ?>" id="makeremove_<?php echo $valueatt['id']; ?>"  style="color: #000;margin-right: 8px;"> <span class="fa fa-picture-o"></span> <?php echo $cover ?> </a>
+    <?php } ?>
   	<a href="javascript:void(0)" class="deleteAttachment"  id="<?php echo $valueatt['id']; ?>"  style="color: #000;margin-right: 8px;"> <span class="fa fa-times"></span> Delete </a>
 	
 	
@@ -667,11 +690,13 @@ $parcentcheck = 0;
 	</form>
 	<div class="clearfix"></div>
 	<!--<h3 style="color:#606060;font-size:16px;font-weight: bold;letter-spacing: 1px;"><span class="fa fa-comments"></span> Activities:</h3>-->
+	
 	<div class="col-md-12 n-p" id="cardNotification">
 
 	<?php 
 	 	$notification = $db->getCardNotification($cardid);
 		 foreach ($notification as $value) {
+		    $notify_id = $value['notify_id'];
 			$title = $value['title'];
 			$message = $value['message'];
 			$user_from = $db->getUserMeta($value['user_from']);
@@ -683,7 +708,6 @@ $parcentcheck = 0;
 			<div class="col-md-1 pro-mar">
 				<span id="profile_initials"><?php echo $user_from['initials']; ?></span>
 			</div>
-			
 			<div class="col-md-10 n-p" style="width: 88%">
 				<h3 class="name">
 	      			<span class="heading"><?php echo $user_from['full_name']; ?></span>
@@ -691,8 +715,9 @@ $parcentcheck = 0;
 	      		<span class="time-ago pull-right">
 	      				<?php echo $notify_date_time; ?> ago
 	      		</span>
-	      		<p class="cardsnotify" id="display_notify">
+	      		<p class="comments" id="display_comm_<?php echo $notify_id ?>">
 	      		 <?php 
+	      		 
 	      		 $regex = "/#+([a-zA-Z0-9_-]+)/";
 	      		 $str = preg_replace($regex, '<img src="'.SITE_URL.'smile/$1.png" style="width:20px">', $message);
 	      		 echo $str;
@@ -710,9 +735,8 @@ $parcentcheck = 0;
 	?>		
 
 
-	</div>
+	</div> 
 	<div class="col-md-12 n-p" id="cardCommetns" style="display:block;"></div>
-	
 	<?php
 		$result = $db->getCardComments($cardid); 
 		foreach ($result as $value) {
@@ -798,8 +822,13 @@ $parcentcheck = 0;
 </div>
 </div>
 </div>
-<button class="btn btn-primary" onclick="reloadPage()">Done</button>
-<div class="col-md-3 side-div">
+<!--<button class="btn btn-primary" onclick="reloadPage()">Done</button>-->
+<div class="col-md-3 side-div" style="
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 0px #c8c6c6;
+    
+">
 		<h3 style="color:#606060;font-size:16px;font-weight: bold;letter-spacing: 1px;"><span class="fa fa-plus"></span>Add:</h3>
 		<hr>
 		<div class="clearfix"></div>
@@ -849,7 +878,7 @@ return '<h6 class="heading">'.$heading.' <span class="close-div fa fa-times pull
 						}
 						
 
-						?> style="margin: 5px 0px;padding: 3px; background-color: #e8e8e8; border:1px solid #eeeeee;" onclick="addMyMember(<?=$boardid?>,<?=$result[0]?>,<?=$list_id?>,<?=$cardid?>,<?=$value?>,'<?=$result['initials']?>','<?=$idjs?>')" id="meber<?php echo $result[0] ?> <?=$idjs?>"><span id="profile_initials"><?php echo $result['initials']; ?>
+						?> style="margin: 5px 0px;padding: 3px; background-color: #e8e8e8; border:1px solid #eeeeee;" onclick="addMyMember(<?=$boardid?>,<?=$result[0]?>,<?=$cardid?>,<?=$value?>,'<?=$result['initials']?>','<?=$idjs?>')" id="meber<?php echo $result[0] ?> <?=$idjs?>"><span id="profile_initials"><?php echo $result['initials']; ?>
 						</span> 
 
 						<span class="heading"><?php echo $result1['Email_ID'] ;  ?></span>
@@ -904,7 +933,8 @@ return '<h6 class="heading">'.$heading.' <span class="close-div fa fa-times pull
 				      $(this).not('.labmyname').hide();
 				    }
 				    if (($(this).find('span').text().search(patt) >= 0)) {
-						$(this).show();
+
+				      $(this).show();
 				    }
 				  });
 				  
@@ -975,7 +1005,7 @@ return '<h6 class="heading">'.$heading.' <span class="close-div fa fa-times pull
 		</select>
 		</div>
 		  <div class="form-group">
-			<button class="list-btn addchecklist">Add</button>
+			<button class="list-btn btn-depex addchecklist">Add</button>
 		</div>	
 			<div class="clearfix"></div>
 			
@@ -1013,7 +1043,7 @@ $('#checklistolddata').append(response1);
 		
 		}
 });
-function addMyMember(board_id,userId,listId,cardId,menberId,myname,idjs){
+function addMyMember(board_id,userId,cardId,menberId,myname,idjs){
     
 	var myid = $(this).attr("id");
 	//alert(myid);
@@ -1021,7 +1051,7 @@ function addMyMember(board_id,userId,listId,cardId,menberId,myname,idjs){
 	$.ajax({
 		url: 'profile_ajax.php',
 		type: 'POST',
-		data: { board_id: board_id,userId:userId,listId:listId,cardId:cardId,addmenber:addmenber,menberId:menberId},
+		data: { board_id: board_id,userId:userId,cardId:cardId,addmenber:addmenber,menberId:menberId},
 		success: function(data){
 			//alert(data);
 			//alert('#meber'+userId);
@@ -1041,7 +1071,7 @@ function addMyMember(board_id,userId,listId,cardId,menberId,myname,idjs){
 
 
 
-function addMylabel(board_id,userId,labelId,listId,cardId,idjlab,labelname,labelColor){
+function addMylabel(board_id,userId,labelId,cardId,idjlab,labelname,labelColor){
 	var myid = $(this).attr("id");
 	if(labelname==''){
 var labname = '&nbsp';
@@ -1054,7 +1084,7 @@ var labname = labelname;
 	$.ajax({
 		url: 'profile_ajax.php',
 		type: 'POST',
-		data: { board_id: board_id,userId:userId,listId:listId,cardId:cardId,addlabel:addlabel,labelId:labelId,idjlab:idjlab,labelname:labelname,labelColor:labelColor},
+		data: { board_id: board_id,userId:userId,cardId:cardId,addlabel:addlabel,labelId:labelId,idjlab:idjlab,labelname:labelname,labelColor:labelColor},
 		success: function(data){
 		if(data==1){
 			$('#'+idjlab).removeClass("hiddeni tog_bg");
@@ -1149,10 +1179,9 @@ $('#checklistolddata').change(function(){
 <div class="clearfix"></div>
  <div class="form-group">	
  	<input type="hidden" id="duecardid" value="<?php echo $_SESSION['cardid']; ?>">
-	 <input type="hidden" id="duelistid" value="<?php echo $_SESSION['list_id']; ?>">
  	<input type="hidden" id="dueuserid" value="<?php echo $_SESSION['sess_login_id']; ?>">
  	<input type="hidden" id="dueboardid" value="<?php echo $_SESSION['boardid'] ; ?>">
-   <button type="button" class="form-control btn btn-primary" name="saveduedate" id="saveduedate">Save</button>
+   <button type="button" class="form-control btn btn-primary btn-depex" name="saveduedate" id="saveduedate">Save</button>
  </div>
 <script>
 
@@ -1185,7 +1214,6 @@ $('#saveduedate').click(function(event){
 	var duedate = $('#duedate').val();
 	var duetime = $('#duetime').val();
 	var cardid = $('#duecardid').val();
-	var listid = $('#duelistid').val();
 	var userid = $('#dueuserid').val();
 	var boardid = $('#dueboardid').val();
 
@@ -1194,7 +1222,7 @@ var addduedate='addduedate';
 	$.ajax({
 		url: 'profile_ajax.php',
 		type: 'POST',
-		data: {listid:listid,cardid:cardid,userid:userid,addduedate:addduedate,duedate:duedate,duetime:duetime,boardid:boardid},
+		data: {cardid:cardid,userid:userid,addduedate:addduedate,duedate:duedate,duetime:duetime,boardid:boardid},
 		success: function(data){
 			//alert(data);
 			//alert('#meber'+userId);
@@ -1264,7 +1292,7 @@ echo $calendar->show() */
 			</li>
 			<li class="side-list"><a href="javascript:void(0)" id="attachment" onclick="dropboxapi()"> <i class="fa fa-paperclip" aria-hidden="true"></i> Attachments</a></li>
 		
-		<?php if($singluserdata['membership_plan']==3){
+		<?php if($singluserdata['membership_plan']!=3){
 if($singluserdata['evernote']==1){
 if(!empty($_SESSION['oauth_token'])){
 //echo $_SESSION['oauth_token'];
@@ -1274,7 +1302,7 @@ if(!empty($_SESSION['oauth_token'])){
 <script>
 $(document).ready(function(){
 	$('.evernote').click(function(){
-		$('#evernoteDiv').css({'display':'block','top':'247px','right':'-57px','minHeight':'318px'});
+		$('#evernoteDiv').css({'display':'block' });
 	});
 });
 </script>
@@ -1324,7 +1352,7 @@ $.ajax({
 
 		<h3 style="color:#606060;font-size:16px;font-weight: bold;letter-spacing: 1px;"><span class="fa fa-plus"></span>Actions:</h3>
 		<hr>
-		<ul style="list-style-type: none;padding: 0px;position: relative">
+		<ul style="list-style-type: none;padding: 0px;">
 		<li class="side-list">
 			<a href="javascript:void(0)" onclick="Movedata()"> <i class="fa fa-arrows" aria-hidden="true"></i> Move</a></li>
 
@@ -1604,7 +1632,7 @@ $labelColor = $value['color'];
 	?>
 <li style="position:relative"> 
 	
-	<span onclick="addMylabel(<?=$boardid?>,<?php echo $uid;?>,<?=$value['id']?>,<?=$list_id?>,<?=$cardid?>,'<?=$idjlab?>','<?php echo $labelname ?>','<?php echo $labelColor;?>')" id="<?php echo $idjlab; ?>" class="label-div <?php echo $classlab; ?>" id="<?php echo $value['color'] ?>" style="background: <?php echo $value['color'] ?>">
+	<span onclick="addMylabel(<?=$boardid?>,<?php echo $uid;?>,<?=$value['id']?>,<?=$cardid?>,'<?=$idjlab?>','<?php echo $labelname ?>','<?php echo $labelColor;?>')" id="<?php echo $idjlab; ?>" class="label-div <?php echo $classlab; ?>" id="<?php echo $value['color'] ?>" style="background: <?php echo $value['color'] ?>">
 		<span class="labmyname" style="color: #fff;"><?php echo $value['label_name'] ?></span>
 		<!--<span class="select-icon2 fa fa-check" >-->
 
@@ -1645,6 +1673,15 @@ $labelColor = $value['color'];
 <div class="col-md-12 n-p emoji">
 <ul style="margin: 0px; padding: 0px; list-style: none;">
 <li>
+    <?php
+   
+    $userFileSize = $db->getTotalFileSize($uid);
+    $max_size_mb = 200048;
+    
+    $disabled = ($userFileSize >= $max_size_mb) ? 'disabled' : '';
+    $title = ($userFileSize >= $max_size_mb) ? 'You have reached the maximum upload limit of '.$max_size_mb.' Mb' : 'Upload your file';
+    $showMessage = ($userFileSize >= $max_size_mb);
+    ?>
 	<!--<form id="submit_form" method="POST" action="upload.php"> -->
 	<form id="submit_form" method="POST" action="">
 	<div class="col-sm-12 n-p clearfix">
@@ -1653,16 +1690,19 @@ $labelColor = $value['color'];
 
 		</div>
 		<label>Computer</label>
-		<div class="form-group col-sm-9 n-p">
+		<div class="form-group  n-p">
 
-			<input style="border: 0;border-radius: 4px 0 0 4px" type="file" name="image" class="form-control choose-btn" id="image_file">
+			<input  type="file" name="image" class="form-control choose-btn" id="image_file">
+			<?php if ($showMessage): ?>
+                <p style="color: red; font-size: 14px; margin: 5px 0;"><?php echo $title; ?></p>
+            <?php endif; ?>
 		</div>
-        <div class="form-group col-sm-3 n-p pull-right">
-			<input type="submit" class="list-btn" name="uploadimage" id="uploadimage" value="Upload" style="margin-top: 0px;padding: 7px 10px;border-radius: 0 4px 4px 0">
+        <div class="form-group  n-p pull-right">
+			<input type="submit" class="list-btn" name="uploadimage" <?php echo $disabled; ?> title="<?php echo $title; ?>" id="uploadimage" value="Upload" style="margin-top: 0px;padding: 7px 10px;border-radius: 0 4px 4px 0">
 		<input type="hidden" name="userid" value="<?php echo $uid; ?>" id="userid">
         <input type="hidden" name="cardid" value="<?php echo $cardid; ?>" id="cardc">			
 		</div>
-		 <?php if($singluserdata['membership_plan']!=1){
+		 <?php if($singluserdata['membership_plan']!=5){
 if($singluserdata['googledrive']==1){
 		  ?>
 		  
@@ -2039,7 +2079,7 @@ $(".close-div,#closeDelCard").click(function(event) {
 		$(card_listid).css({"display":"block"});
 		$("#desc").val("");
 		$(this).parent('.heading').parent('.popup-container').css('display', 'none');
-		$("#activityDiv").css({'display': 'block'});
+		$("#activityDiv").css({'display': 'flex'});
 		$('#dropbox-container').html('');
 	});
 
@@ -2273,13 +2313,13 @@ $(".js-comment-add-emoji").click(function(event) {
 
 $(".js-comment-add-attachment").click(function(event) {
 	/* Act on the event */
-	$("#attachmentDiv").css({'display':'block','top':'247px','right':'-57px','minHeight':'318px'});
+	$("#attachmentDiv").css({'display':'block' });
 });
 
 //code by vinay
 
 $('#attachment').click(function(){
-$("#attachmentDiv").css({'display':'block','top':'247px','right':'-57px','minHeight':'318px'});
+$("#attachmentDiv").css({'display':'block' });
 $('#attachmentDiv').show();
 });
 
@@ -2300,7 +2340,7 @@ $('.close-div').click(function(event) {
  $("#movedataid").hide();
 });
 function Checklist(){
-	$("#Checklistdiv").css({'display':'block','top':'140px','right':'0px','minHeight':'318px','position': 'absolute'});
+	$("#Checklistdiv").css({'display':'block'});
 $('#Checklistdiv').show();
 }
 $('.close-div').click(function(event) {

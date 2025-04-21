@@ -11,7 +11,9 @@ $name=$db->getName($senderid);
 //print_r($_FILES['image']['name']);
 //print_r($_POST);
 if($_FILES['image']['name'] != ''){
-
+     $file_size = $_FILES['image']['size']; // Size in bytes
+     $file_size_mb = round($file_size / (1024 * 1024)); // Convert to MB
+   
 	$ext = end(explode(".", $_FILES['image']['name']));
 	$allowed_type = array("jpg","png","JPG","JPEG","jpeg");
 	//if (in_array($ext, $allowed_type)) {
@@ -20,13 +22,24 @@ if($_FILES['image']['name'] != ''){
 		 
 		if(move_uploaded_file($_FILES['image']['tmp_name'], $path)){
 
-		$image=imagecreatefromjpeg("$path");
-		$thumb=imagecreatetruecolor(100, 100); imagecopyresampled($thumb,$image,0,0,0,0,1,1,imagesx($image),imagesy($image));
-		$mainColor=strtoupper(dechex(imagecolorat($thumb,0,0)));
-
+// 		$image=imagecreatefromjpeg("$path");
+// 		$thumb=imagecreatetruecolor(100, 100); imagecopyresampled($thumb,$image,0,0,0,0,1,1,imagesx($image),imagesy($image));
+// 		$mainColor=strtoupper(dechex(imagecolorat($thumb,0,0)));
+        $mainColor = '567284';
 		$userid = $_REQUEST['userid'];
 		$cardid = $_REQUEST['cardid'];
-	$card_data = $db->get_single_data('tbl_board_list_card',array('card_id'=>$cardid));
+		$userDetails = $db->get_single_data('tbl_users',array('id'=>$userid));
+		$userFileSize = $db->getTotalFileSize($userid);		
+		$file_size_mb = $file_size_mb + $userFileSize;
+	    $card_data = $db->get_single_data('tbl_board_list_card',array('card_id'=>$cardid));
+	    $card_attachmets = $db->get_data('tbl_board_list_card_attachements',array('cardid'=>$cardid));
+	    
+	    if(empty($card_attachmets))
+	    {
+	        $makeCove = '1';
+	    } else {
+	        $makeCove = '0';
+	    }
 		$file_title= $_REQUEST['file_title'];
 		$ckey = $db->generateRandomString();
 		$attachment_insert = array(
@@ -40,9 +53,10 @@ if($_FILES['image']['name'] != ''){
 			'datetime'	=> date("Y-m-d h:m:s"),
 			'ckey'		=> $ckey,
 			'status'	=> 1,
-			'cover_image' => 0,
+			'cover_image' => $makeCove,
             'file_type' => 'file',
-			'file_extenstion' => $ext, 
+			'file_extenstion' => $ext,
+			'file_size' => $file_size_mb,
 		);
 		//echo json_encode($attachment_insert); die();
 		$table = "tbl_board_list_card_attachements";
@@ -83,19 +97,19 @@ if($_FILES['image']['name'] != ''){
                             'status' => 1
                         );
                     $insertNotification = $db->insert("tbl_push_notification",$notify_data);
-
-					$card_notify_data=array(
-						'title' =>  'New Attachment Added',
-						'message' =>  $name.' added a  new attachment',
-						'notify_date_time' => date('Y-m-d H:i:s'),
-						'user_from' =>$senderid,
-						'user_to' => $usr_id,
-						'list_id' => $card_data['list_id'],
-						'card_id' => $cardid,
-						'notif_for' => 'web'
-					);
-		 
-			 $insertCardNotification = $db->insert("tbl_card_notification",$card_notify_data);
+                    
+                    $card_notify_data=array(
+                                                'title' =>  'New Attachment Added',
+                                                'message' =>  $name.' added a  new attachment',
+                                                'notify_date_time' => date('Y-m-d H:i:s'),
+                                                'user_from' =>$senderid,
+                                                'user_to' => $usr_id,
+                                                'list_id' => $card_data['list_id'],
+                                                'card_id' => $cardid,
+                                                'notif_for' => 'web'
+                                            );
+                                 
+                                     $insertCardNotification = $db->insert("tbl_card_notification",$card_notify_data);
 						    
 						}
 					}

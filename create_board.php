@@ -4,7 +4,6 @@ require_once("common/config.php");
 require_once('DBInterface.php');
 $db = new Database();
 $db->connect();
-
 if(isset($_REQUEST['token'])){
 	
 	if($_REQUEST['token'] == $_SESSION['Tocken']){
@@ -142,7 +141,7 @@ $inserttemp = $db->insert('tbl_user_template',array('userid'=>$uid,'template_id'
                 'board_fontcolor'=>$temp_boards['board_fontcolor'],
                 'type'=>'PB',
                 'admin_board_id'=>$id,
-                'bg_img'=>$db->site_url.'admin/temp/images/'.$temp_boards['bg_img'],
+                'bg_img'=>  $temp_boards['bg_img'],
     
                 );
             $boards=$db->insert('tbl_user_board',$board_insert);
@@ -184,8 +183,8 @@ $inserttemp = $db->insert('tbl_user_template',array('userid'=>$uid,'template_id'
                 'board_id'=>$bid,
                 'list_title'=>$board_list['list_title'],
                 'listkey'=>$list_key,
-                'list_color'=>$board_list['bgcolor'],
-                'list_icon'=>$board_list['bgimage'],
+                'list_color'=>$board_list['list_color'],
+                'list_icon'=>$board_list['list_icon'],
                       );
     
             $db->insert('tbl_board_list',$list_insert);

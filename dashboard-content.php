@@ -78,7 +78,318 @@ if($bid != $board_id){
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css">
+<style type="text/css">
+          .imagePreview<?php echo $card_id; ?>{
+            background-size: cover;
+            background-color: #000;
+            text-align: -webkit-center;
+            margin-bottom: 5px;
+           }
+           .imagePreview<?php echo $card_id; ?> img{
+                min-height: 70px !important;
+        max-height: 100px !important;
+        min-width: 60px !important;
+           }
+           .imagePreviewDb<?php echo $card_id; ?>{
+            background-size: cover;
+            background-color: #000;
+            text-align: -webkit-center;
+            margin-bottom: 0px;
+           }
+           .imagePreviewDb<?php echo $card_id; ?> img{
+              height: 160px;
+           }
+        </style>
 
+        <style type="text/css">
+        .out<?php echo $listid; ?>{
+            position:relative;
+            width: 288px;
+         /*   height: 350px;*/
+            float: left !important;
+            }
+          .in1<?php echo $listid; ?>{
+          width:300px;
+          /*height:400px;*/
+          left:0;
+          top:0;
+          position: absolute;
+          }
+          .in2<?php echo $listid; ?>{
+          width:300px;
+          /*height:400px;*/
+          position: absolute;
+          left:0;
+          top:0;
+          z-index:-1;
+          -webkit-transform: rotateY(-180deg); /* Safari */
+              transform: rotateY(-180deg);
+
+          }
+          .rotate{
+              -webkit-transform: rotateY(180deg); /* Safari */
+              transform: rotateY(180deg);
+            transition:all 1s ease-out;
+          }
+          .rotate1{
+            -webkit-transform: rotateY(0deg); /* Safari */
+            transform: rotateY(0deg);
+            transition:all 1s ease-out;
+            z-index: 99 !important;
+          }
+      .list-Title{
+  letter-spacing:1px !important;
+  font-family: 'Ubuntu', sans-serif;
+}
+.board-title-input{
+      background: #eaeaea;
+      padding: 5px 15px;
+}
+.task{
+  margin-top: 0;
+    display: flex
+;
+    flex-direction: column;
+    align-items: stretch;
+}
+.list-Title:focus{
+  border:0 !important;
+  box-shadow: none !important;
+}
+.card-Title{
+  border:0;
+  margin-bottom: 7px; 
+}
+.card-Title:hover{
+  border:0;
+}
+.save_card:focus, .list-btn:focus{
+ color: #fff;
+}
+.all-item{
+  display: flex;
+}
+
+#categoryPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1051; /* Bootstrap modal z-index is 1050, set higher */
+}
+
+/* If using Bootstrap, ensure backdrop is also above */
+.modal-backdrop {
+    z-index: 1050;
+}
+.col-sm-12{
+    padding:0;
+}
+img.iconImg{
+    background: #01010117 !important;
+    width: 30px;
+    padding: 5px;
+    border-radius: 50% !important
+    cursor: pointer;
+}
+.IconDiv{
+       position: absolute;
+    left: 0px;
+    width: 100%;
+    padding: 0;
+    box-shadow: 0 0 5px 0px #c7c7c7;
+    border-radius: 16px;
+    overflow: overlay;
+    
+}
+.board-title-input form{
+        display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    gap: 11px;
+}
+.board-title-input p.number{
+    margin:0;
+  
+}
+.board-title-input input:focus {
+      background-color: #ffffff29 !important;
+    box-shadow: 0 0 0px 1px #ffffffa8 !important;
+}
+.icon{
+    
+    gap: 13px;
+    align-items: center !important;
+}
+.form-group.icon{
+        display: flex
+;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    width: 100%;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: start;
+    row-gap: 9px;
+    padding: 10px;
+    margin:0 !important;
+}
+.list-span{
+    color:black;
+}
+[name="add_card_btn"]{
+    height: unset;
+    padding: 9px 17px !important;
+    border-radius: 19px !important;
+        display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px;
+    align-self: center;
+}
+.hide-force {
+  display: none !important;
+}
+
+#scroll{
+       width: 100%;
+    min-height:500px !important;
+    padding: 0 15px !important;
+    display: flex;
+    /* flex-wrap: wrap !important; */
+    overflow: scroll;
+}
+div#scroll .dc_filter {
+    float: unset !important;!i;!;
+    width: 288px;
+    /* height: fit-content; */
+    margin-left: 10px;
+    float: unset !important;
+    display: inline-block;
+}
+#scroll {
+  overflow: auto;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE 10+ */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hide scrollbar by default */
+#scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Show and style scrollbar on hover */
+#scroll:hover {
+  scrollbar-width: thin;       /* Firefox */
+  scrollbar-color: #888 #f1f1f1; /* Firefox: thumb and track */
+}
+
+#scroll:hover::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#scroll:hover::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+#scroll:hover::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+#scroll:hover::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.overlay{
+    postion:relative !important;
+}
+/*.overlay::after {content: "";     background: #000000a3;     height: 100%;     width: 100%;     position: absolute;     z-index: 9;     top: 0;     backdrop-filter: blur(1px); }*/
+      
+    .list-btn{
+        background:#2f8f7c !important;
+        color:white !important;
+    }  
+    .navbar-inverse .navbar-nav>li>a{
+        background-color:#0c937b !important;
+    }
+    .second-header{
+        margin-bottom:20px !important;
+    }
+    .highlighted {
+        background-color: #e4e4e44f;
+    box-shadow: 0 0 1px 0px #c7c7c7;
+    border-radius: 50%;
+}
+/*.icon-div.selected-icon::before {*/
+/*    content: "\f058";*/
+/*    position: absolute;*/
+/*    font-family: 'FontAwesome';*/
+/*    right: -10px;*/
+/*    color: #048cff;*/
+/*    top: -12px;*/
+/*}*/
+
+.icon-div.selected-icon {
+    border: 1px solid #048cff;
+    padding: 7px;
+    box-shadow: 0 0 0;
+    border-radius: 34px;
+    border-color: rgb(0, 170, 255);
+    border-width: 2px;
+    border-radius: 10.5px;
+    box-sizing: border-box !important;
+}
+.icon-div {
+    border: 1px solid #eaf5ff;
+    padding: 7px;
+    box-shadow: 0 0 0;
+    border-radius: 34px;
+    border-color: rgb(242 242 242 / 70%);
+    border-width: 2px;
+}
+#myNavbar{
+    background:#01493c;
+}
+.icolor{
+    height: 23px !important;
+    width: 23px;
+    border-radius: 50%;
+    margin: 0;
+}
+.circle-container{
+    border: 1px solid #eaf5ff;
+    padding: 4px;
+    box-shadow: 0 0 0;
+    border-radius: 50%;
+    border-color: rgb(242 242 242 / 70%);
+    border-width: 2px;
+}
+    span.svg-icon-popup svg {
+    width: 100% !important;
+}
+span.svg-icon-header,span.svg-icon-popup,span.svg-icon-all{
+    display:contents;
+    cursor:pointer;
+}
+span.svg-icon-popup path {
+    fill: black;
+}
+span.svg-icon-header svg path {
+    fill: white;
+    cursor:pointer;
+}
+      </style>
 <style type="text/css">
 .heading{
   text-align: center !important; 
@@ -228,7 +539,9 @@ width: 100%;
     margin: 0;
     top: 0;
     display: flex;
+   gap: 11px;
     flex-wrap: wrap;
+    padding-left: 20px;
 }
 
 .IconDiv{
@@ -259,6 +572,93 @@ width: 100%;
 }
 .dc_filter_val:hover {
    border-color: black;
+}
+.icon-div{
+    position:relative;
+}
+.circle-container.checked>div::after,.icon-container .checked ::after{
+        content: '✓';
+    position: absolute;
+    top: -9px;
+    right: -7px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-container.checked,.icon-container .checked{
+  border-color: rgb(0, 170, 255);
+}
+body{
+            background-size: cover !important;
+    background-repeat: repeat !important;
+}
+div#attachmentDiv,#movedataid,div#copydataid{
+       
+         top: 255px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px #f5f5f5;
+    height: 300px !important;
+    overflow: scroll;
+    right: 283px !important;
+}
+#movedataid,div#copydataid{
+    top:0 !important;
+}
+div#Checklistdiv,div#addDueDate{
+    right: 50% !important;
+    top: 161px !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px #f5f5f5;
+    /* transform: translate(-50%, 0%) !important; */
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px #f5f5f5;
+    height: unset !important;
+    height: 300px !important;
+    overflow: scroll;
+}
+
+div#addmembers,div#addlabels{
+      right: 276px !important;
+    /* transform: translate(-50%, 0%) !important; */
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px #f5f5f5;
+    height: unset !important;
+    height: 300px !important;
+    overflow: scroll;
+}
+div#addlabels{
+    top:250px !important;
+}
+
+   #image_file {
+        width: 100%;
+        padding: 55px 15px;
+        border: 2px dotted #2f8f7c;
+        border-radius: 6px;
+        background-color: #ffffff;
+        font-size: 14px;
+        color: #333;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* On focus or hover */
+    #image_file:hover,
+    #image_file:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        background-color: #fff;
+    }
+       .btn-depex{ padding: 6px !important;
+    height: unset;
+    border-radius: 34px;
+    box-shadow: 0 0 1px 1px #313131d6;
 }
 </style>
 <div class="second-header">
@@ -460,7 +860,7 @@ if($teamDetails == 0){
           <form action="" method="post" id="listForm" >
              <div class="form-group" style="margin-bottom: 0px;">
                <input type="text" class="form-control input-sm" id="list_name" name="list_name" required="required" style="width:80% !important;" placeholder="Add List...">
-               <a href="javascript:void(0)" class="list-btn save_card pull-right" value="Add" onclick="return createList()" style="margin-top: -30px;padding:5px 10px; ">Add</a>
+               <a href="javascript:void(0)" class="list-btn  save_card pull-right" value="Add" onclick="return createList()" style="margin-top: -30px;padding:5px 10px; ">Add</a>
              </div>
     
               <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['Tocken']; ?>">
@@ -514,6 +914,7 @@ if($teamDetails == 0){
      $count = sizeof($list_data);
      $width = (288*$count)+50;
      ?>
+    
      <div id="scroll" class="boardlistitem" style="width:100%;">
 
       <?php
@@ -548,56 +949,184 @@ if($teamDetails == 0){
       <div class="col-sm-12" style="padding-left:0px;">
           <?php $list = $db->getListDetailByListId($value['list_id']); ?>
         <div class="board-title-input" style=" background:<?php echo $list['list_color'];?>">
-        <form action="" method="post">
+        <form onsubmit="return false;" >
         <!--Icon and color-->
             
-             <div class="col-md-4 IconDiv" id="IconDiv_<?php echo $value['list_id'];?>" >
-          <h6 class="heading">Icons & Colors <span class="fa fa-times pull-right close-invite"></span></h6>
-          <hr>
-            <input type="hidden" id="list_id" value="<?php echo $value['list_id'];?>">
-             
-                     <div class="form-group icon">
-                        <?php 
-$current_icon = $value['current_icon']; // yeh icon jo selected hai abhi
-$list_icons = $db->getListIcon(0,100); 
-foreach($list_icons as $icon) {
-    $is_selected = ($icon['images'] == $current_icon) ? 'selected-icon' : '';
-    ?>
-    <div class=" icon-div <?php echo $is_selected; ?>" onclick="userlistIcon('<?php echo $icon['images']; ?>', <?php echo $value['list_id']; ?>)">
-        <img src="<?php echo $icon['images']; ?>" alt="<?php echo htmlspecialchars($icon['name']); ?>" style="width:30px;">
-    </div>
-<?php } ?>
+           <div class="col-md-4 IconDiv" id="IconDiv_<?php echo $value['list_id'];?>">
+    <h6 class="heading">Icons & Colors <span class="fa fa-times pull-right close-invite"></span></h6>
+    <hr>
+    <input type="hidden" id="list_id" value="<?php echo $value['list_id'];?>">
+    <div class="form-group icon">
+        <div class="icon-section" style="position: relative;">
+            <!-- Collapsed Icon Grid -->
+            <div class="icon-container" id="iconContainer_<?php echo $value['list_id'];?>">
+                <?php 
+                $current_icon = $value['current_icon'];
+                $list_icons = $db->getListIcon(0, 100); 
 
-                     </div>
-                    
-            
-          <!--  <h6 class="heading">Color<span class="fa fa-times pull-right close-invite"></span></h6>-->
-          <!--<hr>-->
-             <div class="form-group color">
-                <?php $list_colors = $db->get_data('tbl_background_color',array('status'=>1)); foreach($list_colors as $color) { ?>
-                     <div class="col-sm-2" onclick="userlistColor(this.id,<?php echo $value['list_id'];?>)" id="<?php echo $color['color']; ?>">
-                        <div style="background:<?php echo $color['color']; ?>" class="col-sm-12 icolor"></div>
-                      </div>
+                foreach($list_icons as $icon) {
+                    $is_selected = ($icon['images'] == $current_icon) ? 'selected-icon' : '';
+                    $svg_path = $icon['images'];
+                    // Get SVG file content
+                    $svg_content = file_get_contents($svg_path);
+                ?>
+                    <div class="icon-div <?php echo $is_selected; ?>" onclick="userlistIcon('<?php echo $svg_path; ?>', <?php echo $value['list_id']; ?>, this)">
+                        <span class="svg-icon-all" data-icon="<?php echo $svg_path; ?>">
+                            <?php echo $svg_content; ?>
+                        </span>
+                    </div>
                 <?php } ?>
             </div>
-            
+
+            <!-- Expand Button -->
+         <div class="text-center mt-2" title="Expand More" style="position: absolute;right: 17px;bottom: 7px;background: white;">
+                <div class="" onclick="togglePopup(530, this)" style="
+">
+                    <div class="icon-div" style="
+    background: #f4929200;
+    padding: 0;
+">
+                        <span class="arrow" style="color: black;display: flex;background: #ededed;align-items: center;justify-content: center;transform: rotate(0deg);border-radius: 7px;padding: 7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="100%" height="100%">
+                                <path fill="currentColor" fill-rule="evenodd" d="M5.21913912,3.62462689 C4.8741241,3.19336934 4.94403748,2.56407608 5.37529504,2.21906105 C5.8065526,1.87404603 6.43584586,1.94395942 6.78086088,2.37521697 L10.7808609,7.37508686 C11.0730464,7.74030922 11.0730464,8.25927442 10.7808609,8.62449678 L6.78086088,13.6243667 C6.43584586,14.0556242 5.8065526,14.1255376 5.37529504,13.7805226 C4.94403748,13.4355076 4.8741241,12.8062143 5.21913912,12.3749567 L8.71936215,7.99979182 L5.21913912,3.62462689 Z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Color Section (Initially Hidden) -->
+        <div class="color-section" id="colorSection_<?php echo $value['list_id'];?>">
+            <div class="form-group color">
+                <?php 
+                $list_colors = $db->get_data('tbl_background_color', array('status' => 1)); 
+                foreach ($list_colors as $color) { 
+                ?>
+                    <div class="circle-container color-button-<?php echo $value['list_id']; ?>" id="<?php echo $color['color']; ?>" data-color="<?php echo $color['color']; ?>" data-id="<?php echo $value['list_id']; ?>" onclick="userlistColor('<?php echo $color['color']; ?>', <?php echo $value['list_id']; ?>)">
+                        <div style="background:<?php echo $color['color']; ?>;" class="col-sm-12 icolor"></div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+
     </div>
+
+    <style>
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 101px !important;
+            overflow: hidden;
+            gap: 6px;
+            padding: 9px;
+        }
+
+        .icon-div {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .icon-div img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .selected-icon {
+            border: 2px solid #007bff;
+            position: relative;
+        }
+
+        .selected-icon::after {
+            content: '✓';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-section {
+            position: relative;
+        }
+
+        /* Hide color section initially */
+        .color-section {
+            display: block;
+        }
+        .arrow {
+    transition: transform 0.3s ease;
+}
+.side-div{
+   position:relative;
+}
+    </style>
+
+    <script>
+  function togglePopup(id, clickedElement) {
+    const iconContainer = document.getElementById('iconContainer_' + id);
+    const colorSection = document.getElementById('colorSection_' + id);
+    const arrowIcon = clickedElement.querySelector('.arrow');
+
+    const isOpen = iconContainer.style.maxHeight === 'none';
+
+    if (isOpen) {
+        iconContainer.style.maxHeight = '101px';
+        iconContainer.style.overflow = 'hidden';
+        colorSection.style.display = 'block';
+        arrowIcon.style.transform = 'rotate(0deg)';
+        arrowIcon.style.backgroundColor = 'white';
+        arrowIcon.style.color = 'black';
+    } else {
+        iconContainer.style.maxHeight = 'none';
+        iconContainer.style.overflow = 'visible';
+        colorSection.style.display = 'none';
+        arrowIcon.style.transform = 'rotate(90deg)';
+        arrowIcon.style.backgroundColor = '#f56d39';
+        arrowIcon.style.color = 'white';
+   arrowIcon.style.borderRadius = '7px';
+        
+    }
+}
+
+
+    </script>
+</div>
+
        
         <!--Icon and color End -->
 
-        <span class="icon" onClick="return ShowIcon(<?php echo $value['list_id'];?>)" style="display: inline-flex;" >
+        <span class="icon" onClick="return ShowIcon(<?php echo $value['list_id'];?>,this)" style="display: flex;min-width: 30px;max-height: 30px;justify-content: center;align-items: center;border-radius: 50%;padding-top: 2px;padding: 6px;" >
              <?php if($list['list_icon'] != '') { ?>
-        <img src="<?php echo $list['list_icon'];?>" class="iconImg">
+             <span class='svg-icon-header'><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#FFFFFF" fill-rule="evenodd" d="M13,5 L13,10.5 C13,10.7761424 13.2238576,11 13.5,11 L19,11 C19.5522847,11 20,11.4477153 20,12 C20,12.5522847 19.5522847,13 19,13 L13.5,13 C13.2238576,13 13,13.2238576 13,13.5 L13,19 C13,19.5522847 12.5522847,20 12,20 C11.4477153,20 11,19.5522847 11,19 L11,13.5 C11,13.2238576 10.7761424,13 10.5,13 L5,13 C4.44771525,13 4,12.5522847 4,12 C4,11.4477153 4.44771525,11 5,11 L10.5,11 C10.7761424,11 11,10.7761424 11,10.5 L11,5 C11,4.44771525 11.4477153,4 12,4 C12.5522847,4 13,4.44771525 13,5 Z"></path></svg></span>
+    
         <?php } else { ?>
-        <i class="fa fa-plus" style="width:20px; color:#fff"></i>
-        <?php } ?>
-        <input type="text" class="form-control list-Title n-p  dc_filter_val" id="<?php echo $i."_".$value['list_id']; ?>" onblur="return editListTitle(this.id)" value="<?php echo ucfirst($value['list_title']); ?>" style="height:27px;width: 90%; text-align: center;color:#fff">
         
+        <span class="svg-icon-header"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#FFFFFF" fill-rule="evenodd" d="M13,5 L13,10.5 C13,10.7761424 13.2238576,11 13.5,11 L19,11 C19.5522847,11 20,11.4477153 20,12 C20,12.5522847 19.5522847,13 19,13 L13.5,13 C13.2238576,13 13,13.2238576 13,13.5 L13,19 C13,19.5522847 12.5522847,20 12,20 C11.4477153,20 11,19.5522847 11,19 L11,13.5 C11,13.2238576 10.7761424,13 10.5,13 L5,13 C4.44771525,13 4,12.5522847 4,12 C4,11.4477153 4.44771525,11 5,11 L10.5,11 C10.7761424,11 11,10.7761424 11,10.5 L11,5 C11,4.44771525 11.4477153,4 12,4 C12.5522847,4 13,4.44771525 13,5 Z"></path></svg></span>
+        <?php } ?>
+         </span>
+          <input type="text" class="form-control list-Title n-p  dc_filter_val" id="<?php echo $i."_".$value['list_id']; ?>" onblur="return editListTitle(this.id)" value="<?php echo ucfirst($value['list_title']); ?>" style="height:27px;width: 90%; text-align: center;color:#fff">
+       <span>
+            <p class="number"> <?php $numberCard = $db->countListCard($listid); echo $numberCard;?> </p>
+           
         </span>
        <span>
-            <p class="number"> <?php $numberCard = $db->countListCard($listid); echo $numberCard;?> 
-        </span>
-       
+            <p class="number1"><a href="javascript:void(0)" onclick="deleteList(<?php echo $listid ?>)"> <i class="fa fa-trash"></i> </a></p>
+       </span>
         </form>
         </div>
        <div class="col-sm-12 task" style="<?=$bck;?>; padding:8px 10px;position: relative;">
@@ -656,32 +1185,80 @@ foreach($list_icons as $icon) {
         }
         
         
-function userlistColor(elem, list_id) {
-    var color = elem;
-    var id = list_id;
+function userlistColor(color, list_id) {
     var action = 'list_bg_color';
+
+    // Save to localStorage
+    localStorage.setItem('selectedColor_' + list_id, color);
 
     $.ajax({
         url: 'changeBgColor.php',
         type: 'POST',
-        data: { action: action, color: color, id: id },
+        data: { action: action, color: color, id: list_id },
         success: function(rel) {
             var obj = jQuery.parseJSON(rel);
             if (obj.result == "TRUE") {
-               
-                var target = document.querySelector('.out' + id + ' .board-title-input');
+                var target = document.querySelector('.out' + list_id + ' .board-title-input');
                 if (target) {
                     target.style.background = color;
                 }
-            } else if (obj.result == "FALSE") {
+
+                // Remove existing 'checked' class from all
+                document.querySelectorAll('.color-button-' + list_id).forEach(el => {
+                    el.classList.remove('checked');
+                });
+
+                // Add 'checked' class to selected one
+                var selectedButton = document.querySelector('[data-color="' + color + '"][data-id="' + list_id + '"]');
+                if (selectedButton) {
+                    selectedButton.classList.add('checked');
+                }
+            } else {
                 $(".error").html(obj.message);
             }
         }
     });
 }
 
- function userlistIcon(iconUrl, list_id) {
+// On page load, restore previously selected colors
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('[data-color][data-id]').forEach(el => {
+        var id = el.getAttribute('data-id');
+        var savedColor = localStorage.getItem('selectedColor_' + id);
+        if (savedColor && el.getAttribute('data-color') === savedColor) {
+            el.classList.add('checked');
+
+            var target = document.querySelector('.out' + id + ' .board-title-input');
+            if (target) {
+                target.style.background = savedColor;
+            }
+        }
+    });
+});
+
+// Automatically apply the saved color and checked class on page load
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("[data-color][data-id]").forEach(button => {
+        var id = button.getAttribute('data-id');
+        var savedColor = localStorage.getItem('selectedColor_' + id);
+        if (savedColor && savedColor === button.getAttribute('data-color')) {
+            button.classList.add('checked');
+            var target = document.querySelector('.out' + id + ' .board-title-input');
+            if (target) {
+                target.style.background = savedColor;
+            }
+        }
+    });
+});
+
+
+function userlistIcon(iconUrl, list_id, clickedElement) {
     var action = 'list_bg_icon';
+
+    // Save to localStorage immediately
+    let iconSelections = JSON.parse(localStorage.getItem("selectedIcons")) || {};
+    iconSelections[list_id] = iconUrl;
+    localStorage.setItem("selectedIcons", JSON.stringify(iconSelections));
 
     $.ajax({
         url: 'changeBgColor.php',
@@ -689,26 +1266,94 @@ function userlistColor(elem, list_id) {
         data: { action: action, icon: iconUrl, id: list_id },
         success: function(rel) {
             var obj = jQuery.parseJSON(rel);
+
             if (obj.result === "TRUE") {
+                var outElement = $('.out' + list_id);
 
-               var classSelector = '.out' + list_id;
-                var outElement = $(classSelector);
-                if (outElement.length > 0) {
-                    outElement.find('.iconImg').attr('src', iconUrl + '?t=' + new Date().getTime());
-                }
+                // Load and inject SVG
+                fetch(iconUrl)
+                    .then(response => response.text())
+                    .then(svg => {
+                        // Inject in header
+                        if (outElement.length > 0) {
+                            outElement.find('.svg-icon-header').html(svg);
+                        }
 
-                $(".icon-div").removeClass("selected-icon");
-                $(`.icon-div img[src="${iconUrl}"]`).parent().addClass("selected-icon");
+                        // Remove all .checked from the icon set
+                        document.querySelectorAll('#iconContainer_' + list_id + ' .icon-div').forEach(el => {
+                            el.classList.remove('checked');
+                        });
 
+                        // Add 'checked' to the clicked .icon-div
+                        clickedElement.classList.add('checked');
+
+                        // Inject SVG into the clicked icon box if needed
+                        const svgBox = clickedElement.querySelector('.svg-icon');
+                        if (svgBox) svgBox.innerHTML = svg;
+                    });
             } else {
                 $(".error").html(obj.message);
             }
         },
-        error: function() {
+        error: function () {
             $(".error").html("Something went wrong!");
         }
     });
 }
+
+
+
+
+function restoreSelectedIcons() {
+    let iconSelections = JSON.parse(localStorage.getItem("selectedIcons")) || {};
+
+    // Iterate over each list_id stored in localStorage
+    Object.keys(iconSelections).forEach(list_id => {
+        let iconUrl = iconSelections[list_id];
+
+        // Target the specific icon container for the current list_id
+        const containerSelector = `#iconContainer_${list_id}`;
+
+        // Remove all existing 'checked' classes from icons in this container
+        document.querySelectorAll(containerSelector + ' .icon-div').forEach(el => {
+            el.classList.remove('checked');
+        });
+
+        // Loop through each icon div in the container
+        document.querySelectorAll(containerSelector + ' .icon-div').forEach(function(el) {
+            // Look for the <span> element that holds the icon URL in data-icon
+            const $iconSpan = el.querySelector('.svg-icon-all');
+            
+            if ($iconSpan) {
+                const storedIconUrl = $iconSpan.getAttribute('data-icon');
+
+                // Compare the stored icon URL with the one in the data-icon attribute
+                if (storedIconUrl === iconUrl) {
+                    el.classList.add('checked');
+                }
+            }
+        });
+
+        // Optionally, update the header icon for the current list_id
+        fetch(iconUrl)
+            .then(response => response.text())
+            .then(svg => {
+                const headerSelector = `.out${list_id} .svg-icon-header`;
+                document.querySelector(headerSelector).innerHTML = svg;
+            })
+            .catch(error => console.error("Error fetching icon:", error)); // Handle any error while fetching the icon
+    });
+}
+
+
+
+
+
+$(document).ready(function () {
+    restoreSelectedIcons();
+});
+
+
 
 
         
@@ -857,7 +1502,7 @@ function userlistColor(elem, list_id) {
            <?php
           }else{
             ?>
-          <div style="display:inline-block;margin-left: 10px;">
+          <div style="display:inline-block;">
           <span style="font-size: 16px !important" class="fa fa-paperclip edit-card"></span>
             <span class="label label-success"><?php echo $countAtt; ?></span>
           </div>
@@ -969,7 +1614,7 @@ $result = $db->getUserMeta($value);
       </div>
     </div>
   </div>  
- <a href="javascript:void(0)" id="<?php echo $i; ?>_addcardbtn"  name="add_card_btn" onclick="return addCard(this.id);" class="list-btn cardsav_<?php echo $listid ?> btn btn-primary" style="display:inline-block"><i class="fa fa-plus" style="font-size:12px"></i>Add a card...</a>
+ <a href="javascript:void(0)" id="<?php echo $i; ?>_addcardbtn"  name="add_card_btn" onclick="return addCard(this.id);" class="list-btn cardsav_<?php echo $listid ?> btn btn-primary" style="display:inline-block"><i class="fa fa-plus" style="font-size:12px"></i>Add card</a>
 
    
 
@@ -980,24 +1625,25 @@ $result = $db->getUserMeta($value);
      </div>
  
 </div>
-
-
-
-      <?php
+       <?php
         $i++;
         }
       }
       ?>
 
      </div>
-     
+
+       
+
+</script>
     </div>
    </div>
 
 
 <div style="width: 100%;min-height:100% !important; background-color: rgba(0,0,0,0.5);position: absolute;top: 0px;left: 0px; display: none;padding:0px 20px 20px 20px; z-index: 99" id="cardModal">
 
-  <div class="col-md-4" style="background-color: #f1f1f1;height:auto !important;width:65%;left:17%; padding:20px;border-radius:5px;position:relative;top:10px;z-index:1;">
+  <div class="col-md-4" style="background-color: #f1f1f1;height:auto !important;width:100%;max-width:1090px;left:50%;
+    transform: translateX(-50%); padding:20px;border-radius:5px;position:relative;top:10px;z-index:1;">
     <span class="fa fa-times pull-right close-invite"></span>
     <div class="clearfix"></div>
 
@@ -1245,23 +1891,42 @@ function ShowRenameBoard(event){
     $("#renameBoardDiv").css({"display":"block"});
 }
 
-function ShowIcon(event) {
-    // Pehle sab IconDiv ko hide karo
+function ShowIcon(event, element) {
+    // Hide all other IconDivs
     $("[id^='IconDiv_']").each(function () {
         if ($(this).css("display") === "block" && this.id !== "IconDiv_" + event) {
             $(this).css("display", "none");
         }
     });
 
-    // Fir clicked wale ko toggle karo
+    // Remove all highlights
+    $(".icon.highlighted").removeClass("highlighted");
+
     var currentDiv = $("#IconDiv_" + event);
+
     if (currentDiv.css("display") === "block") {
         currentDiv.css("display", "none");
     } else {
         currentDiv.css("display", "block");
-        // loadImages(event); // images load tabhi ho jab open ho
+        $(element).addClass("highlighted");
+
+        // Set a flag to identify this open div
+        $(document).off("click.outsideIcon").on("click.outsideIcon", function (e) {
+            // Check if the click target is outside both the icon and the div
+            if (!$(e.target).closest(currentDiv).length && !$(e.target).closest(element).length) {
+                currentDiv.css("display", "none");
+                $(element).removeClass("highlighted");
+                $(document).off("click.outsideIcon"); // Unbind after closing
+            }
+        });
     }
+
+    return false;
 }
+
+
+
+
 
 function editListTitle(clicked){
   var id = clicked;
@@ -1436,7 +2101,7 @@ function addCard(clickedId) {
 <script>
 $(document).ready(function(){
   if( $("#cardModal").css('display') == 'block') { 
-      $('body').css('overflow' , 'hidden')
+      $('body').css('overflow' , 'scroll')
   }
   else  if( $("#cardModal").css('display') == 'none') { 
       $('body').css('overflow' , 'inherit')
@@ -1477,6 +2142,29 @@ $(document).ready(function(){
       }
     })
      }
+     
+     function deleteList(lid) {
+    if (confirm("Are you sure you want to delete this list?")) {
+        $.ajax({
+            url: 'delete_list.php',
+            type: 'POST',
+            data: { list_id: lid },
+            success: function(response) {
+                let res = JSON.parse(response);
+                if (res.success) {
+                    alert("List deleted successfully.");
+                    location.reload();
+                   
+                } else {
+                    alert("Error: " + res.message);
+                }
+            },
+            error: function() {
+                alert("AJAX request failed.");
+            }
+        });
+    }
+}
  </script>
  
  
@@ -1504,190 +2192,4 @@ $(document).ready(function(){
 }
 </style>
 
-<style type="text/css">
-          .imagePreview<?php echo $card_id; ?>{
-            background-size: cover;
-            background-color: #000;
-            text-align: -webkit-center;
-            margin-bottom: 5px;
-           }
-           .imagePreview<?php echo $card_id; ?> img{
-                min-height: 70px !important;
-        max-height: 100px !important;
-        min-width: 60px !important;
-           }
-           .imagePreviewDb<?php echo $card_id; ?>{
-            background-size: cover;
-            background-color: #000;
-            text-align: -webkit-center;
-            margin-bottom: 0px;
-           }
-           .imagePreviewDb<?php echo $card_id; ?> img{
-              height: 160px;
-           }
-        </style>
 
-        <style type="text/css">
-        .out<?php echo $listid; ?>{
-            position:relative;
-            width: 288px;
-         /*   height: 350px;*/
-            float: left !important;
-            }
-          .in1<?php echo $listid; ?>{
-          width:300px;
-          /*height:400px;*/
-          left:0;
-          top:0;
-          position: absolute;
-          }
-          .in2<?php echo $listid; ?>{
-          width:300px;
-          /*height:400px;*/
-          position: absolute;
-          left:0;
-          top:0;
-          z-index:-1;
-          -webkit-transform: rotateY(-180deg); /* Safari */
-              transform: rotateY(-180deg);
-
-          }
-          .rotate{
-              -webkit-transform: rotateY(180deg); /* Safari */
-              transform: rotateY(180deg);
-            transition:all 1s ease-out;
-          }
-          .rotate1{
-            -webkit-transform: rotateY(0deg); /* Safari */
-            transform: rotateY(0deg);
-            transition:all 1s ease-out;
-            z-index: 99 !important;
-          }
-      .list-Title{
-  letter-spacing:1px !important;
-  font-family: 'Ubuntu', sans-serif;
-}
-.board-title-input{
-      background: #eaeaea;
-      padding: 5px 15px;
-}
-.task{
-  margin-top: 0;
-}
-.list-Title:focus{
-  border:0 !important;
-  box-shadow: none !important;
-}
-.card-Title{
-  border:0;
-  margin-bottom: 7px; 
-}
-.card-Title:hover{
-  border:0;
-}
-.save_card:focus, .list-btn:focus{
- color: #fff;
-}
-.all-item{
-  display: flex;
-}
-
-#categoryPopup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1051; /* Bootstrap modal z-index is 1050, set higher */
-}
-
-/* If using Bootstrap, ensure backdrop is also above */
-.modal-backdrop {
-    z-index: 1050;
-}
-.col-sm-12{
-    padding:0;
-}
-img.iconImg{
-    background: #000000f7 !important;
-    width: 34px;
-    padding: 5px;
-    border-radius: 7px !important;
-}
-.IconDiv{
-        
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    padding: 0;
-}
-.board-title-input form{
-        display: flex;
-    align-items: center;
-        justify-content: space-between;
-}
-.board-title-input p.number{
-    margin:0;
-    border-radius:20%;
-}
-.board-title-input input:focus {
-      background-color: #ffffff29 !important;
-    box-shadow: 0 0 0px 1px #ffffffa8 !important;
-}
-.icon{
-    
-    gap: 13px;
-    align-items: center !important;
-}
-.form-group.icon{
-        display: flex
-;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    width: 100%;
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: start;
-    row-gap: 9px;
-    padding: 10px;
-}
-.list-span{
-    color:black;
-}
-[name="add_card_btn"]{
-    height: unset;
-    padding: 9px 17px !important;
-    border-radius: 19px !important;
-        display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 9px;
-}
-.hide-force {
-  display: none !important;
-}
-
-#scroll{
-        width: 100%;
-    height: fit-content !important;
-  padding:0 15px !important;
-    display: flex
-;
-    flex-wrap: wrap !important;
-}
-div#scroll .dc_filter {
-    float: unset !important;!i;!;
-    width: 288px;
-    /* height: fit-content; */
-    margin-left: 10px;
-    float: unset !important;
-    display: inline-block;
-}
-.overlay{
-    postion:relative !important;
-}
-.overlay::after {content: "";     background: #000000a3;     height: 100%;     width: 100%;     position: absolute;     z-index: 9;     top: 0;     backdrop-filter: blur(1px); }
-      </style>
