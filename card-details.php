@@ -1476,7 +1476,8 @@ $cardlst_count1 = count($card_data1['cardList'])+1;
 $('#copycarddetail').click(function(){
 	var bordid = $('#board_list1').val();
 	var copycomment = $('#copycomment').val();
-	var listid = $('#listlist1').val();
+	var listid = $('#
+	').val();
 	var positionid = $('#position_list1').val();
 	var data = "bordidmove1="+bordid+"&listmove1="+listid+"&positionmove1="+positionid+"&copycomment="+copycomment;
 	    $.ajax({
@@ -1484,8 +1485,7 @@ $('#copycarddetail').click(function(){
         type: "POST",
         data: data,
         success: function(rel){
-        	//alert(rel);
-   window.location.replace(rel);
+			location.reload();
         }
       });
 });
@@ -1532,7 +1532,7 @@ $('#movecarddetail').click(function(){
         type: "POST",
         data: data,
         success: function(rel){
-   window.location.replace(rel);
+			location.reload();
         }
       });
 });
