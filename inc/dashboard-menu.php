@@ -5,40 +5,25 @@ if(isset($_POST['submit'])){
     
     
     if(!empty($_FILES['image']['name'])){
-        $img_name=md5(date('ymdhis').$_FILES['image']['name']);
+        $img_name= $_FILES['image']['name'];
+        
         $path='https://odapto.com/board_img/' .$img_name;
         move_uploaded_file($_FILES['image']['tmp_name'], './board_img/' .$img_name);
-        
+        $data = array();
+        $updata = array();
+        $con = array('board_id' => $_GET['b']);
+        $data['bg_img']=$img_name;
+        $updata['bg_img']=$path;
+        $updata['bg_color']='';
+        $updata['bg_type']='img';
+        if($db->insert("tbl_board_img",$data)){
+            $db->update("tbl_user_board",$updata, $con);
+        }else{
+            $error .='Some thing Went Wrong';
+        }
     }
     
-    date_default_timezone_set("Asia/Kolkata");
-            $date = date("Y-m-d H:i:s");
-            $status = 1;
-             $con = array(
-                    'board_id' => $_SESSION['boardid']
-                );
-            $data = array();
-            $updata = array();
-            if(!empty($_FILES['image']['name'])){
-                $data['bg_img']=$img_name;
-                $updata['bg_img']=$img_name;
-                $updata['bg_color']='';
-                $updata['bg_type']='img';
-            }else{
-                 $data['bg_img']='';
-                 $updata['bg_img']='';
-                 $updata['bg_color']='#fff';
-                 $updata['bg_type']='color';
-            }
-            
-            
-             if($db->insert("tbl_board_img",$data)){
-                 $db->update("tbl_user_board",$updata, $con);
-                    echo "added";
-              
-                }else{
-                    $error .='Some thing Went Wrong';
-                }
+             
 }
 
 ?>
@@ -502,7 +487,7 @@ if($_REQUEST['page'] == "board"){
 <?php
 
 //print_r($singluserdata);
- if($singluserdata['membership_plan']!=1){ ?>
+ if($singluserdata['membership_plan']!=5){ ?>
 <div class="drive-section">
       <div class="col-sm-7">
        <img class="img-responsive" src="images/google-drive-banner.jpg">
@@ -539,7 +524,7 @@ if($_REQUEST['page'] == "board"){
        </div>
      </div>
 
-        <?php if($singluserdata['membership_plan']!=1){ ?>
+        <?php if($singluserdata['membership_plan']!=5){ ?>
 
        <div class="drive-section">
       <div class="col-sm-7">
@@ -579,7 +564,7 @@ if($singluserdata['dropbox']==0){ ?>
     
       
 <?php 
-if($singluserdata['membership_plan']==3){ ?>
+if($singluserdata['membership_plan']!=5){ ?>
 <div class="drive-section">
 <div class="col-sm-7">
        <img class="img-responsive" src="images/evernotset.jpg">
@@ -831,7 +816,6 @@ $("."+type).html('<input type="button" onclick = "changedrivestatus(1,'+colon+ty
     var bid = "<?php echo $_GET['b']; ?>";
     var id = $("#userid").val();
    
-    //alert(redirect_url);
     $.ajax({
       url: './changeBgColor.php',
       type: 'POST',
@@ -841,6 +825,7 @@ $("."+type).html('<input type="button" onclick = "changedrivestatus(1,'+colon+ty
           
           if(obj.result=="TRUE")
           {
+            
             location.reload();
             $(".error").html(obj.message).css('color', 'white'); 
           }else if(obj.result=="FALSE"){ 
@@ -1015,6 +1000,16 @@ $(document).ready(function(){
 });
 </script>
 
+<script>
+     var img_name = "<?php echo $_FILES['image']['name']; ?>";
+    if(img_name !== '')
+    {
+         var bg_img = "https://odapto.com/board_img/" + img_name;
+        $('body').css("background-image", "url('" + bg_img + "')");
+    }
+    
+    
+</script>
 
 
 
